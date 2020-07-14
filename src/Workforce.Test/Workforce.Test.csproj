@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Workforce API
+
+Public API for the Workforce software
+
+The version of the OpenAPI document: v1
+Contact: adamlonsdale@me.com
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workforce.Test</RootNamespace>
+    <AssemblyName>Workforce.Test</AssemblyName>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workforce\Workforce.csproj">
+      <Project>{0912F96C-17DF-4DD8-B242-4DB9808EA94D}</Project>
+      <Name>Workforce</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
+
