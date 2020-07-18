@@ -28,46 +28,6 @@ namespace Workforce.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a specific Location from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>Location</returns>
-        Location LocationById (Guid id);
-
-        /// <summary>
-        /// Get a specific Location from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>ApiResponse of Location</returns>
-        ApiResponse<Location> LocationByIdWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Locations within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;EmploymentType&gt;</returns>
-        List<EmploymentType> V1LocationGet ();
-
-        /// <summary>
-        /// Get all Locations within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        ApiResponse<List<EmploymentType>> V1LocationGetWithHttpInfo ();
-        /// <summary>
         /// Add a new Location to the Workforce system
         /// </summary>
         /// <remarks>
@@ -76,7 +36,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns></returns>
-        void V1LocationPost (Location location = default(Location));
+        void CreateOrUpdateLocation (Location location = default(Location));
 
         /// <summary>
         /// Add a new Location to the Workforce system
@@ -87,7 +47,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V1LocationPostWithHttpInfo (Location location = default(Location));
+        ApiResponse<Object> CreateOrUpdateLocationWithHttpInfo (Location location = default(Location));
+        /// <summary>
+        /// Get a specific Location from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>Location</returns>
+        Location GetLocationById (Guid id);
+
+        /// <summary>
+        /// Get a specific Location from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>ApiResponse of Location</returns>
+        ApiResponse<Location> GetLocationByIdWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Locations within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;EmploymentType&gt;</returns>
+        List<EmploymentType> GetLocations ();
+
+        /// <summary>
+        /// Get all Locations within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
+        ApiResponse<List<EmploymentType>> GetLocationsWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -98,46 +98,6 @@ namespace Workforce.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a specific Location from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>Task of Location</returns>
-        System.Threading.Tasks.Task<Location> LocationByIdAsync (Guid id);
-
-        /// <summary>
-        /// Get a specific Location from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>Task of ApiResponse (Location)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Location>> LocationByIdAsyncWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Locations within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        System.Threading.Tasks.Task<List<EmploymentType>> V1LocationGetAsync ();
-
-        /// <summary>
-        /// Get all Locations within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EmploymentType>>> V1LocationGetAsyncWithHttpInfo ();
-        /// <summary>
         /// Add a new Location to the Workforce system
         /// </summary>
         /// <remarks>
@@ -146,7 +106,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V1LocationPostAsync (Location location = default(Location));
+        System.Threading.Tasks.Task CreateOrUpdateLocationAsync (Location location = default(Location));
 
         /// <summary>
         /// Add a new Location to the Workforce system
@@ -157,7 +117,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V1LocationPostAsyncWithHttpInfo (Location location = default(Location));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateLocationAsyncWithHttpInfo (Location location = default(Location));
+        /// <summary>
+        /// Get a specific Location from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>Task of Location</returns>
+        System.Threading.Tasks.Task<Location> GetLocationByIdAsync (Guid id);
+
+        /// <summary>
+        /// Get a specific Location from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>Task of ApiResponse (Location)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Location>> GetLocationByIdAsyncWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Locations within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
+        System.Threading.Tasks.Task<List<EmploymentType>> GetLocationsAsync ();
+
+        /// <summary>
+        /// Get all Locations within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<EmploymentType>>> GetLocationsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -279,242 +279,14 @@ namespace Workforce.Api
         }
 
         /// <summary>
-        /// Get a specific Location from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>Location</returns>
-        public Location LocationById (Guid id)
-        {
-             Workforce.Client.ApiResponse<Location> localVarResponse = LocationByIdWithHttpInfo(id);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get a specific Location from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>ApiResponse of Location</returns>
-        public Workforce.Client.ApiResponse< Location > LocationByIdWithHttpInfo (Guid id)
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< Location >("/v1/Location/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("LocationById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a specific Location from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>Task of Location</returns>
-        public async System.Threading.Tasks.Task<Location> LocationByIdAsync (Guid id)
-        {
-             Workforce.Client.ApiResponse<Location> localVarResponse = await LocationByIdAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get a specific Location from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Location</param>
-        /// <returns>Task of ApiResponse (Location)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Location>> LocationByIdAsyncWithHttpInfo (Guid id)
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Location>("/v1/Location/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("LocationById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Locations within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;EmploymentType&gt;</returns>
-        public List<EmploymentType> V1LocationGet ()
-        {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = V1LocationGetWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all Locations within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        public Workforce.Client.ApiResponse< List<EmploymentType> > V1LocationGetWithHttpInfo ()
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< List<EmploymentType> >("/v1/Location", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1LocationGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Locations within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EmploymentType>> V1LocationGetAsync ()
-        {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = await V1LocationGetAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all Locations within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<EmploymentType>>> V1LocationGetAsyncWithHttpInfo ()
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmploymentType>>("/v1/Location", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1LocationGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Add a new Location to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns></returns>
-        public void V1LocationPost (Location location = default(Location))
+        public void CreateOrUpdateLocation (Location location = default(Location))
         {
-             V1LocationPostWithHttpInfo(location);
+             CreateOrUpdateLocationWithHttpInfo(location);
         }
 
         /// <summary>
@@ -523,7 +295,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> V1LocationPostWithHttpInfo (Location location = default(Location))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateLocationWithHttpInfo (Location location = default(Location))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -559,7 +331,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1LocationPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateLocation", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -572,9 +344,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V1LocationPostAsync (Location location = default(Location))
+        public async System.Threading.Tasks.Task CreateOrUpdateLocationAsync (Location location = default(Location))
         {
-             await V1LocationPostAsyncWithHttpInfo(location);
+             await CreateOrUpdateLocationAsyncWithHttpInfo(location);
 
         }
 
@@ -584,7 +356,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="location"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> V1LocationPostAsyncWithHttpInfo (Location location = default(Location))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateLocationAsyncWithHttpInfo (Location location = default(Location))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -622,7 +394,235 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1LocationPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateLocation", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Location from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>Location</returns>
+        public Location GetLocationById (Guid id)
+        {
+             Workforce.Client.ApiResponse<Location> localVarResponse = GetLocationByIdWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a specific Location from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>ApiResponse of Location</returns>
+        public Workforce.Client.ApiResponse< Location > GetLocationByIdWithHttpInfo (Guid id)
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< Location >("/v1/Location/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLocationById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Location from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>Task of Location</returns>
+        public async System.Threading.Tasks.Task<Location> GetLocationByIdAsync (Guid id)
+        {
+             Workforce.Client.ApiResponse<Location> localVarResponse = await GetLocationByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a specific Location from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Location</param>
+        /// <returns>Task of ApiResponse (Location)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Location>> GetLocationByIdAsyncWithHttpInfo (Guid id)
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Location>("/v1/Location/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLocationById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Locations within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;EmploymentType&gt;</returns>
+        public List<EmploymentType> GetLocations ()
+        {
+             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = GetLocationsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all Locations within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
+        public Workforce.Client.ApiResponse< List<EmploymentType> > GetLocationsWithHttpInfo ()
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< List<EmploymentType> >("/v1/Location", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLocations", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Locations within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
+        public async System.Threading.Tasks.Task<List<EmploymentType>> GetLocationsAsync ()
+        {
+             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = await GetLocationsAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all Locations within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<EmploymentType>>> GetLocationsAsyncWithHttpInfo ()
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmploymentType>>("/v1/Location", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLocations", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

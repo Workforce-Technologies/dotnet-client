@@ -28,46 +28,6 @@ namespace Workforce.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a specific Department from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>Department</returns>
-        Department DepartmentById (Guid id);
-
-        /// <summary>
-        /// Get a specific Department from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>ApiResponse of Department</returns>
-        ApiResponse<Department> DepartmentByIdWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Departments within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Department&gt;</returns>
-        List<Department> V1DepartmentGet ();
-
-        /// <summary>
-        /// Get all Departments within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Department&gt;</returns>
-        ApiResponse<List<Department>> V1DepartmentGetWithHttpInfo ();
-        /// <summary>
         /// Add a new Department to the Workforce system
         /// </summary>
         /// <remarks>
@@ -76,7 +36,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns></returns>
-        void V1DepartmentPost (Department department = default(Department));
+        void CreateOrUpdateDepartment (Department department = default(Department));
 
         /// <summary>
         /// Add a new Department to the Workforce system
@@ -87,7 +47,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V1DepartmentPostWithHttpInfo (Department department = default(Department));
+        ApiResponse<Object> CreateOrUpdateDepartmentWithHttpInfo (Department department = default(Department));
+        /// <summary>
+        /// Get a specific Department from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>Department</returns>
+        Department GetDepartmentById (Guid id);
+
+        /// <summary>
+        /// Get a specific Department from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>ApiResponse of Department</returns>
+        ApiResponse<Department> GetDepartmentByIdWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Departments within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;Department&gt;</returns>
+        List<Department> GetDepartments ();
+
+        /// <summary>
+        /// Get all Departments within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;Department&gt;</returns>
+        ApiResponse<List<Department>> GetDepartmentsWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -98,46 +98,6 @@ namespace Workforce.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a specific Department from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>Task of Department</returns>
-        System.Threading.Tasks.Task<Department> DepartmentByIdAsync (Guid id);
-
-        /// <summary>
-        /// Get a specific Department from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>Task of ApiResponse (Department)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Department>> DepartmentByIdAsyncWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Departments within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;Department&gt;</returns>
-        System.Threading.Tasks.Task<List<Department>> V1DepartmentGetAsync ();
-
-        /// <summary>
-        /// Get all Departments within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;Department&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Department>>> V1DepartmentGetAsyncWithHttpInfo ();
-        /// <summary>
         /// Add a new Department to the Workforce system
         /// </summary>
         /// <remarks>
@@ -146,7 +106,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V1DepartmentPostAsync (Department department = default(Department));
+        System.Threading.Tasks.Task CreateOrUpdateDepartmentAsync (Department department = default(Department));
 
         /// <summary>
         /// Add a new Department to the Workforce system
@@ -157,7 +117,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V1DepartmentPostAsyncWithHttpInfo (Department department = default(Department));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateDepartmentAsyncWithHttpInfo (Department department = default(Department));
+        /// <summary>
+        /// Get a specific Department from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>Task of Department</returns>
+        System.Threading.Tasks.Task<Department> GetDepartmentByIdAsync (Guid id);
+
+        /// <summary>
+        /// Get a specific Department from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>Task of ApiResponse (Department)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Department>> GetDepartmentByIdAsyncWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Departments within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;Department&gt;</returns>
+        System.Threading.Tasks.Task<List<Department>> GetDepartmentsAsync ();
+
+        /// <summary>
+        /// Get all Departments within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;Department&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Department>>> GetDepartmentsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -279,242 +279,14 @@ namespace Workforce.Api
         }
 
         /// <summary>
-        /// Get a specific Department from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>Department</returns>
-        public Department DepartmentById (Guid id)
-        {
-             Workforce.Client.ApiResponse<Department> localVarResponse = DepartmentByIdWithHttpInfo(id);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get a specific Department from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>ApiResponse of Department</returns>
-        public Workforce.Client.ApiResponse< Department > DepartmentByIdWithHttpInfo (Guid id)
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< Department >("/v1/Department/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DepartmentById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a specific Department from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>Task of Department</returns>
-        public async System.Threading.Tasks.Task<Department> DepartmentByIdAsync (Guid id)
-        {
-             Workforce.Client.ApiResponse<Department> localVarResponse = await DepartmentByIdAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get a specific Department from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Department</param>
-        /// <returns>Task of ApiResponse (Department)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Department>> DepartmentByIdAsyncWithHttpInfo (Guid id)
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Department>("/v1/Department/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("DepartmentById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Departments within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Department&gt;</returns>
-        public List<Department> V1DepartmentGet ()
-        {
-             Workforce.Client.ApiResponse<List<Department>> localVarResponse = V1DepartmentGetWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all Departments within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Department&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Department> > V1DepartmentGetWithHttpInfo ()
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Department> >("/v1/Department", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1DepartmentGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Departments within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;Department&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Department>> V1DepartmentGetAsync ()
-        {
-             Workforce.Client.ApiResponse<List<Department>> localVarResponse = await V1DepartmentGetAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all Departments within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;Department&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Department>>> V1DepartmentGetAsyncWithHttpInfo ()
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Department>>("/v1/Department", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1DepartmentGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Add a new Department to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns></returns>
-        public void V1DepartmentPost (Department department = default(Department))
+        public void CreateOrUpdateDepartment (Department department = default(Department))
         {
-             V1DepartmentPostWithHttpInfo(department);
+             CreateOrUpdateDepartmentWithHttpInfo(department);
         }
 
         /// <summary>
@@ -523,7 +295,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> V1DepartmentPostWithHttpInfo (Department department = default(Department))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateDepartmentWithHttpInfo (Department department = default(Department))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -559,7 +331,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1DepartmentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateDepartment", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -572,9 +344,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V1DepartmentPostAsync (Department department = default(Department))
+        public async System.Threading.Tasks.Task CreateOrUpdateDepartmentAsync (Department department = default(Department))
         {
-             await V1DepartmentPostAsyncWithHttpInfo(department);
+             await CreateOrUpdateDepartmentAsyncWithHttpInfo(department);
 
         }
 
@@ -584,7 +356,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> V1DepartmentPostAsyncWithHttpInfo (Department department = default(Department))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateDepartmentAsyncWithHttpInfo (Department department = default(Department))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -622,7 +394,235 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1DepartmentPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateDepartment", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Department from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>Department</returns>
+        public Department GetDepartmentById (Guid id)
+        {
+             Workforce.Client.ApiResponse<Department> localVarResponse = GetDepartmentByIdWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a specific Department from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>ApiResponse of Department</returns>
+        public Workforce.Client.ApiResponse< Department > GetDepartmentByIdWithHttpInfo (Guid id)
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< Department >("/v1/Department/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDepartmentById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Department from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>Task of Department</returns>
+        public async System.Threading.Tasks.Task<Department> GetDepartmentByIdAsync (Guid id)
+        {
+             Workforce.Client.ApiResponse<Department> localVarResponse = await GetDepartmentByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a specific Department from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Department</param>
+        /// <returns>Task of ApiResponse (Department)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Department>> GetDepartmentByIdAsyncWithHttpInfo (Guid id)
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Department>("/v1/Department/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDepartmentById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Departments within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;Department&gt;</returns>
+        public List<Department> GetDepartments ()
+        {
+             Workforce.Client.ApiResponse<List<Department>> localVarResponse = GetDepartmentsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all Departments within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;Department&gt;</returns>
+        public Workforce.Client.ApiResponse< List<Department> > GetDepartmentsWithHttpInfo ()
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< List<Department> >("/v1/Department", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDepartments", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Departments within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;Department&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Department>> GetDepartmentsAsync ()
+        {
+             Workforce.Client.ApiResponse<List<Department>> localVarResponse = await GetDepartmentsAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all Departments within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;Department&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Department>>> GetDepartmentsAsyncWithHttpInfo ()
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Department>>("/v1/Department", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDepartments", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

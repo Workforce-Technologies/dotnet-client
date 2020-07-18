@@ -28,46 +28,6 @@ namespace Workforce.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a specific Nationality from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>Nationality</returns>
-        Nationality NationalityById (Guid id);
-
-        /// <summary>
-        /// Get a specific Nationality from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>ApiResponse of Nationality</returns>
-        ApiResponse<Nationality> NationalityByIdWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Nationalities within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Nationality&gt;</returns>
-        List<Nationality> V1NationalityGet ();
-
-        /// <summary>
-        /// Get all Nationalities within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Nationality&gt;</returns>
-        ApiResponse<List<Nationality>> V1NationalityGetWithHttpInfo ();
-        /// <summary>
         /// Add a new Nationality to the Workforce system
         /// </summary>
         /// <remarks>
@@ -76,7 +36,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns></returns>
-        void V1NationalityPost (Nationality nationality = default(Nationality));
+        void CreateOrUpdateNationality (Nationality nationality = default(Nationality));
 
         /// <summary>
         /// Add a new Nationality to the Workforce system
@@ -87,7 +47,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V1NationalityPostWithHttpInfo (Nationality nationality = default(Nationality));
+        ApiResponse<Object> CreateOrUpdateNationalityWithHttpInfo (Nationality nationality = default(Nationality));
+        /// <summary>
+        /// Get all Nationalities within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;Nationality&gt;</returns>
+        List<Nationality> GetNationalities ();
+
+        /// <summary>
+        /// Get all Nationalities within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;Nationality&gt;</returns>
+        ApiResponse<List<Nationality>> GetNationalitiesWithHttpInfo ();
+        /// <summary>
+        /// Get a specific Nationality from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>Nationality</returns>
+        Nationality GetNationalityById (Guid id);
+
+        /// <summary>
+        /// Get a specific Nationality from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>ApiResponse of Nationality</returns>
+        ApiResponse<Nationality> GetNationalityByIdWithHttpInfo (Guid id);
         #endregion Synchronous Operations
     }
 
@@ -98,46 +98,6 @@ namespace Workforce.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a specific Nationality from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>Task of Nationality</returns>
-        System.Threading.Tasks.Task<Nationality> NationalityByIdAsync (Guid id);
-
-        /// <summary>
-        /// Get a specific Nationality from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>Task of ApiResponse (Nationality)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Nationality>> NationalityByIdAsyncWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Nationalities within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;Nationality&gt;</returns>
-        System.Threading.Tasks.Task<List<Nationality>> V1NationalityGetAsync ();
-
-        /// <summary>
-        /// Get all Nationalities within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;Nationality&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Nationality>>> V1NationalityGetAsyncWithHttpInfo ();
-        /// <summary>
         /// Add a new Nationality to the Workforce system
         /// </summary>
         /// <remarks>
@@ -146,7 +106,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V1NationalityPostAsync (Nationality nationality = default(Nationality));
+        System.Threading.Tasks.Task CreateOrUpdateNationalityAsync (Nationality nationality = default(Nationality));
 
         /// <summary>
         /// Add a new Nationality to the Workforce system
@@ -157,7 +117,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V1NationalityPostAsyncWithHttpInfo (Nationality nationality = default(Nationality));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateNationalityAsyncWithHttpInfo (Nationality nationality = default(Nationality));
+        /// <summary>
+        /// Get all Nationalities within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;Nationality&gt;</returns>
+        System.Threading.Tasks.Task<List<Nationality>> GetNationalitiesAsync ();
+
+        /// <summary>
+        /// Get all Nationalities within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;Nationality&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Nationality>>> GetNationalitiesAsyncWithHttpInfo ();
+        /// <summary>
+        /// Get a specific Nationality from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>Task of Nationality</returns>
+        System.Threading.Tasks.Task<Nationality> GetNationalityByIdAsync (Guid id);
+
+        /// <summary>
+        /// Get a specific Nationality from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>Task of ApiResponse (Nationality)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Nationality>> GetNationalityByIdAsyncWithHttpInfo (Guid id);
         #endregion Asynchronous Operations
     }
 
@@ -279,242 +279,14 @@ namespace Workforce.Api
         }
 
         /// <summary>
-        /// Get a specific Nationality from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>Nationality</returns>
-        public Nationality NationalityById (Guid id)
-        {
-             Workforce.Client.ApiResponse<Nationality> localVarResponse = NationalityByIdWithHttpInfo(id);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get a specific Nationality from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>ApiResponse of Nationality</returns>
-        public Workforce.Client.ApiResponse< Nationality > NationalityByIdWithHttpInfo (Guid id)
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< Nationality >("/v1/Nationality/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("NationalityById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a specific Nationality from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>Task of Nationality</returns>
-        public async System.Threading.Tasks.Task<Nationality> NationalityByIdAsync (Guid id)
-        {
-             Workforce.Client.ApiResponse<Nationality> localVarResponse = await NationalityByIdAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get a specific Nationality from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Nationality</param>
-        /// <returns>Task of ApiResponse (Nationality)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Nationality>> NationalityByIdAsyncWithHttpInfo (Guid id)
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Nationality>("/v1/Nationality/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("NationalityById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Nationalities within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Nationality&gt;</returns>
-        public List<Nationality> V1NationalityGet ()
-        {
-             Workforce.Client.ApiResponse<List<Nationality>> localVarResponse = V1NationalityGetWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all Nationalities within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Nationality&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Nationality> > V1NationalityGetWithHttpInfo ()
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Nationality> >("/v1/Nationality", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1NationalityGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Nationalities within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;Nationality&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Nationality>> V1NationalityGetAsync ()
-        {
-             Workforce.Client.ApiResponse<List<Nationality>> localVarResponse = await V1NationalityGetAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all Nationalities within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;Nationality&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Nationality>>> V1NationalityGetAsyncWithHttpInfo ()
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Nationality>>("/v1/Nationality", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1NationalityGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Add a new Nationality to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns></returns>
-        public void V1NationalityPost (Nationality nationality = default(Nationality))
+        public void CreateOrUpdateNationality (Nationality nationality = default(Nationality))
         {
-             V1NationalityPostWithHttpInfo(nationality);
+             CreateOrUpdateNationalityWithHttpInfo(nationality);
         }
 
         /// <summary>
@@ -523,7 +295,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> V1NationalityPostWithHttpInfo (Nationality nationality = default(Nationality))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateNationalityWithHttpInfo (Nationality nationality = default(Nationality))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -559,7 +331,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1NationalityPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateNationality", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -572,9 +344,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V1NationalityPostAsync (Nationality nationality = default(Nationality))
+        public async System.Threading.Tasks.Task CreateOrUpdateNationalityAsync (Nationality nationality = default(Nationality))
         {
-             await V1NationalityPostAsyncWithHttpInfo(nationality);
+             await CreateOrUpdateNationalityAsyncWithHttpInfo(nationality);
 
         }
 
@@ -584,7 +356,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nationality"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> V1NationalityPostAsyncWithHttpInfo (Nationality nationality = default(Nationality))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateNationalityAsyncWithHttpInfo (Nationality nationality = default(Nationality))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -622,7 +394,235 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1NationalityPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateNationality", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Nationalities within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;Nationality&gt;</returns>
+        public List<Nationality> GetNationalities ()
+        {
+             Workforce.Client.ApiResponse<List<Nationality>> localVarResponse = GetNationalitiesWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all Nationalities within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;Nationality&gt;</returns>
+        public Workforce.Client.ApiResponse< List<Nationality> > GetNationalitiesWithHttpInfo ()
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< List<Nationality> >("/v1/Nationality", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetNationalities", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Nationalities within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;Nationality&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Nationality>> GetNationalitiesAsync ()
+        {
+             Workforce.Client.ApiResponse<List<Nationality>> localVarResponse = await GetNationalitiesAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all Nationalities within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;Nationality&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Nationality>>> GetNationalitiesAsyncWithHttpInfo ()
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Nationality>>("/v1/Nationality", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetNationalities", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Nationality from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>Nationality</returns>
+        public Nationality GetNationalityById (Guid id)
+        {
+             Workforce.Client.ApiResponse<Nationality> localVarResponse = GetNationalityByIdWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a specific Nationality from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>ApiResponse of Nationality</returns>
+        public Workforce.Client.ApiResponse< Nationality > GetNationalityByIdWithHttpInfo (Guid id)
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< Nationality >("/v1/Nationality/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetNationalityById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Nationality from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>Task of Nationality</returns>
+        public async System.Threading.Tasks.Task<Nationality> GetNationalityByIdAsync (Guid id)
+        {
+             Workforce.Client.ApiResponse<Nationality> localVarResponse = await GetNationalityByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a specific Nationality from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Nationality</param>
+        /// <returns>Task of ApiResponse (Nationality)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Nationality>> GetNationalityByIdAsyncWithHttpInfo (Guid id)
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Nationality>("/v1/Nationality/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetNationalityById", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

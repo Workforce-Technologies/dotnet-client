@@ -28,6 +28,27 @@ namespace Workforce.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Add a new Employee to the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns></returns>
+        void CreateOrUpdateEmployee (Employee employee = default(Employee));
+
+        /// <summary>
+        /// Add a new Employee to the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> CreateOrUpdateEmployeeWithHttpInfo (Employee employee = default(Employee));
+        /// <summary>
         /// Get a specific Employee from Workforce
         /// </summary>
         /// <remarks>
@@ -36,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Employee</returns>
-        Employee EmployeeById (Guid id);
+        Employee GetEmployeeById (Guid id);
 
         /// <summary>
         /// Get a specific Employee from Workforce
@@ -47,7 +68,26 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>ApiResponse of Employee</returns>
-        ApiResponse<Employee> EmployeeByIdWithHttpInfo (Guid id);
+        ApiResponse<Employee> GetEmployeeByIdWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Employees within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;Employee&gt;</returns>
+        List<Employee> GetEmployees ();
+
+        /// <summary>
+        /// Get all Employees within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
+        ApiResponse<List<Employee>> GetEmployeesWithHttpInfo ();
         /// <summary>
         /// Search for Employees within Workforce
         /// </summary>
@@ -71,46 +111,6 @@ namespace Workforce.Api
         /// <param name="lastName"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
         ApiResponse<List<Employee>> SearchEmployeesWithHttpInfo (string firstName = default(string), string lastName = default(string));
-        /// <summary>
-        /// Get all Employees within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Employee&gt;</returns>
-        List<Employee> V1EmployeeGet ();
-
-        /// <summary>
-        /// Get all Employees within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
-        ApiResponse<List<Employee>> V1EmployeeGetWithHttpInfo ();
-        /// <summary>
-        /// Add a new Employee to the Workforce system
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns></returns>
-        void V1EmployeePost (Employee employee = default(Employee));
-
-        /// <summary>
-        /// Add a new Employee to the Workforce system
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V1EmployeePostWithHttpInfo (Employee employee = default(Employee));
         #endregion Synchronous Operations
     }
 
@@ -121,6 +121,27 @@ namespace Workforce.Api
     {
         #region Asynchronous Operations
         /// <summary>
+        /// Add a new Employee to the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task CreateOrUpdateEmployeeAsync (Employee employee = default(Employee));
+
+        /// <summary>
+        /// Add a new Employee to the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateEmployeeAsyncWithHttpInfo (Employee employee = default(Employee));
+        /// <summary>
         /// Get a specific Employee from Workforce
         /// </summary>
         /// <remarks>
@@ -129,7 +150,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of Employee</returns>
-        System.Threading.Tasks.Task<Employee> EmployeeByIdAsync (Guid id);
+        System.Threading.Tasks.Task<Employee> GetEmployeeByIdAsync (Guid id);
 
         /// <summary>
         /// Get a specific Employee from Workforce
@@ -140,7 +161,26 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of ApiResponse (Employee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Employee>> EmployeeByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Employee>> GetEmployeeByIdAsyncWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Employees within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;Employee&gt;</returns>
+        System.Threading.Tasks.Task<List<Employee>> GetEmployeesAsync ();
+
+        /// <summary>
+        /// Get all Employees within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Employee>>> GetEmployeesAsyncWithHttpInfo ();
         /// <summary>
         /// Search for Employees within Workforce
         /// </summary>
@@ -164,46 +204,6 @@ namespace Workforce.Api
         /// <param name="lastName"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Employee>>> SearchEmployeesAsyncWithHttpInfo (string firstName = default(string), string lastName = default(string));
-        /// <summary>
-        /// Get all Employees within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;Employee&gt;</returns>
-        System.Threading.Tasks.Task<List<Employee>> V1EmployeeGetAsync ();
-
-        /// <summary>
-        /// Get all Employees within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Employee>>> V1EmployeeGetAsyncWithHttpInfo ();
-        /// <summary>
-        /// Add a new Employee to the Workforce system
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V1EmployeePostAsync (Employee employee = default(Employee));
-
-        /// <summary>
-        /// Add a new Employee to the Workforce system
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V1EmployeePostAsyncWithHttpInfo (Employee employee = default(Employee));
         #endregion Asynchronous Operations
     }
 
@@ -325,14 +325,137 @@ namespace Workforce.Api
         }
 
         /// <summary>
+        /// Add a new Employee to the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns></returns>
+        public void CreateOrUpdateEmployee (Employee employee = default(Employee))
+        {
+             CreateOrUpdateEmployeeWithHttpInfo(employee);
+        }
+
+        /// <summary>
+        /// Add a new Employee to the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateEmployeeWithHttpInfo (Employee employee = default(Employee))
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/_*+json", 
+                "application/json-patch+json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = employee;
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/v1/Employee", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateEmployee", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add a new Employee to the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task CreateOrUpdateEmployeeAsync (Employee employee = default(Employee))
+        {
+             await CreateOrUpdateEmployeeAsyncWithHttpInfo(employee);
+
+        }
+
+        /// <summary>
+        /// Add a new Employee to the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employee"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateEmployeeAsyncWithHttpInfo (Employee employee = default(Employee))
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/_*+json", 
+                "application/json-patch+json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            localVarRequestOptions.Data = employee;
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Employee", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateEmployee", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get a specific Employee from Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Employee</returns>
-        public Employee EmployeeById (Guid id)
+        public Employee GetEmployeeById (Guid id)
         {
-             Workforce.Client.ApiResponse<Employee> localVarResponse = EmployeeByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Employee> localVarResponse = GetEmployeeByIdWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -342,7 +465,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>ApiResponse of Employee</returns>
-        public Workforce.Client.ApiResponse< Employee > EmployeeByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< Employee > GetEmployeeByIdWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -374,7 +497,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("EmployeeById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetEmployeeById", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -387,9 +510,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of Employee</returns>
-        public async System.Threading.Tasks.Task<Employee> EmployeeByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<Employee> GetEmployeeByIdAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<Employee> localVarResponse = await EmployeeByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Employee> localVarResponse = await GetEmployeeByIdAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -400,7 +523,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of ApiResponse (Employee)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Employee>> EmployeeByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Employee>> GetEmployeeByIdAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -434,7 +557,118 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("EmployeeById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetEmployeeById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Employees within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;Employee&gt;</returns>
+        public List<Employee> GetEmployees ()
+        {
+             Workforce.Client.ApiResponse<List<Employee>> localVarResponse = GetEmployeesWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all Employees within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
+        public Workforce.Client.ApiResponse< List<Employee> > GetEmployeesWithHttpInfo ()
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< List<Employee> >("/v1/Employee", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmployees", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Employees within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;Employee&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Employee>> GetEmployeesAsync ()
+        {
+             Workforce.Client.ApiResponse<List<Employee>> localVarResponse = await GetEmployeesAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all Employees within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Employee>>> GetEmployeesAsyncWithHttpInfo ()
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Employee>>("/v1/Employee", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmployees", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -570,240 +804,6 @@ namespace Workforce.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SearchEmployees", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Employees within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Employee&gt;</returns>
-        public List<Employee> V1EmployeeGet ()
-        {
-             Workforce.Client.ApiResponse<List<Employee>> localVarResponse = V1EmployeeGetWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all Employees within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Employee> > V1EmployeeGetWithHttpInfo ()
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Employee> >("/v1/Employee", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1EmployeeGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Employees within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;Employee&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Employee>> V1EmployeeGetAsync ()
-        {
-             Workforce.Client.ApiResponse<List<Employee>> localVarResponse = await V1EmployeeGetAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all Employees within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Employee>>> V1EmployeeGetAsyncWithHttpInfo ()
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Employee>>("/v1/Employee", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1EmployeeGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Add a new Employee to the Workforce system 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns></returns>
-        public void V1EmployeePost (Employee employee = default(Employee))
-        {
-             V1EmployeePostWithHttpInfo(employee);
-        }
-
-        /// <summary>
-        /// Add a new Employee to the Workforce system 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> V1EmployeePostWithHttpInfo (Employee employee = default(Employee))
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = employee;
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/Employee", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1EmployeePost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Add a new Employee to the Workforce system 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V1EmployeePostAsync (Employee employee = default(Employee))
-        {
-             await V1EmployeePostAsyncWithHttpInfo(employee);
-
-        }
-
-        /// <summary>
-        /// Add a new Employee to the Workforce system 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employee"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> V1EmployeePostAsyncWithHttpInfo (Employee employee = default(Employee))
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-            localVarRequestOptions.Data = employee;
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Employee", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1EmployeePost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

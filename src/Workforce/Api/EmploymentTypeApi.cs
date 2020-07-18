@@ -28,46 +28,6 @@ namespace Workforce.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a specific Employment Type from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>EmploymentType</returns>
-        EmploymentType EmploymentTypeById (Guid id);
-
-        /// <summary>
-        /// Get a specific Employment Type from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>ApiResponse of EmploymentType</returns>
-        ApiResponse<EmploymentType> EmploymentTypeByIdWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Employment Types within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;EmploymentType&gt;</returns>
-        List<EmploymentType> V1EmploymentTypeGet ();
-
-        /// <summary>
-        /// Get all Employment Types within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        ApiResponse<List<EmploymentType>> V1EmploymentTypeGetWithHttpInfo ();
-        /// <summary>
         /// Add a new Employment Type to the Workforce system
         /// </summary>
         /// <remarks>
@@ -76,7 +36,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns></returns>
-        void V1EmploymentTypePost (EmploymentType employmentType = default(EmploymentType));
+        void CreateOrUpdateEmploymentType (EmploymentType employmentType = default(EmploymentType));
 
         /// <summary>
         /// Add a new Employment Type to the Workforce system
@@ -87,7 +47,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V1EmploymentTypePostWithHttpInfo (EmploymentType employmentType = default(EmploymentType));
+        ApiResponse<Object> CreateOrUpdateEmploymentTypeWithHttpInfo (EmploymentType employmentType = default(EmploymentType));
+        /// <summary>
+        /// Get a specific Employment Type from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>EmploymentType</returns>
+        EmploymentType GetEmploymentTypeById (Guid id);
+
+        /// <summary>
+        /// Get a specific Employment Type from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>ApiResponse of EmploymentType</returns>
+        ApiResponse<EmploymentType> GetEmploymentTypeByIdWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Employment Types within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;EmploymentType&gt;</returns>
+        List<EmploymentType> GetEmploymentTypes ();
+
+        /// <summary>
+        /// Get all Employment Types within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
+        ApiResponse<List<EmploymentType>> GetEmploymentTypesWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -98,46 +98,6 @@ namespace Workforce.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a specific Employment Type from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>Task of EmploymentType</returns>
-        System.Threading.Tasks.Task<EmploymentType> EmploymentTypeByIdAsync (Guid id);
-
-        /// <summary>
-        /// Get a specific Employment Type from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>Task of ApiResponse (EmploymentType)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmploymentType>> EmploymentTypeByIdAsyncWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Employment Types within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        System.Threading.Tasks.Task<List<EmploymentType>> V1EmploymentTypeGetAsync ();
-
-        /// <summary>
-        /// Get all Employment Types within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EmploymentType>>> V1EmploymentTypeGetAsyncWithHttpInfo ();
-        /// <summary>
         /// Add a new Employment Type to the Workforce system
         /// </summary>
         /// <remarks>
@@ -146,7 +106,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V1EmploymentTypePostAsync (EmploymentType employmentType = default(EmploymentType));
+        System.Threading.Tasks.Task CreateOrUpdateEmploymentTypeAsync (EmploymentType employmentType = default(EmploymentType));
 
         /// <summary>
         /// Add a new Employment Type to the Workforce system
@@ -157,7 +117,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V1EmploymentTypePostAsyncWithHttpInfo (EmploymentType employmentType = default(EmploymentType));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateEmploymentTypeAsyncWithHttpInfo (EmploymentType employmentType = default(EmploymentType));
+        /// <summary>
+        /// Get a specific Employment Type from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>Task of EmploymentType</returns>
+        System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeByIdAsync (Guid id);
+
+        /// <summary>
+        /// Get a specific Employment Type from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>Task of ApiResponse (EmploymentType)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EmploymentType>> GetEmploymentTypeByIdAsyncWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Employment Types within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
+        System.Threading.Tasks.Task<List<EmploymentType>> GetEmploymentTypesAsync ();
+
+        /// <summary>
+        /// Get all Employment Types within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<EmploymentType>>> GetEmploymentTypesAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -279,242 +279,14 @@ namespace Workforce.Api
         }
 
         /// <summary>
-        /// Get a specific Employment Type from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>EmploymentType</returns>
-        public EmploymentType EmploymentTypeById (Guid id)
-        {
-             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = EmploymentTypeByIdWithHttpInfo(id);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get a specific Employment Type from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>ApiResponse of EmploymentType</returns>
-        public Workforce.Client.ApiResponse< EmploymentType > EmploymentTypeByIdWithHttpInfo (Guid id)
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< EmploymentType >("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmploymentTypeById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a specific Employment Type from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>Task of EmploymentType</returns>
-        public async System.Threading.Tasks.Task<EmploymentType> EmploymentTypeByIdAsync (Guid id)
-        {
-             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = await EmploymentTypeByIdAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get a specific Employment Type from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Employment Type</param>
-        /// <returns>Task of ApiResponse (EmploymentType)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<EmploymentType>> EmploymentTypeByIdAsyncWithHttpInfo (Guid id)
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<EmploymentType>("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("EmploymentTypeById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Employment Types within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;EmploymentType&gt;</returns>
-        public List<EmploymentType> V1EmploymentTypeGet ()
-        {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = V1EmploymentTypeGetWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all Employment Types within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        public Workforce.Client.ApiResponse< List<EmploymentType> > V1EmploymentTypeGetWithHttpInfo ()
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< List<EmploymentType> >("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1EmploymentTypeGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Employment Types within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EmploymentType>> V1EmploymentTypeGetAsync ()
-        {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = await V1EmploymentTypeGetAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all Employment Types within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<EmploymentType>>> V1EmploymentTypeGetAsyncWithHttpInfo ()
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmploymentType>>("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1EmploymentTypeGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Add a new Employment Type to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns></returns>
-        public void V1EmploymentTypePost (EmploymentType employmentType = default(EmploymentType))
+        public void CreateOrUpdateEmploymentType (EmploymentType employmentType = default(EmploymentType))
         {
-             V1EmploymentTypePostWithHttpInfo(employmentType);
+             CreateOrUpdateEmploymentTypeWithHttpInfo(employmentType);
         }
 
         /// <summary>
@@ -523,7 +295,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> V1EmploymentTypePostWithHttpInfo (EmploymentType employmentType = default(EmploymentType))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateEmploymentTypeWithHttpInfo (EmploymentType employmentType = default(EmploymentType))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -559,7 +331,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1EmploymentTypePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateEmploymentType", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -572,9 +344,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V1EmploymentTypePostAsync (EmploymentType employmentType = default(EmploymentType))
+        public async System.Threading.Tasks.Task CreateOrUpdateEmploymentTypeAsync (EmploymentType employmentType = default(EmploymentType))
         {
-             await V1EmploymentTypePostAsyncWithHttpInfo(employmentType);
+             await CreateOrUpdateEmploymentTypeAsyncWithHttpInfo(employmentType);
 
         }
 
@@ -584,7 +356,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> V1EmploymentTypePostAsyncWithHttpInfo (EmploymentType employmentType = default(EmploymentType))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateEmploymentTypeAsyncWithHttpInfo (EmploymentType employmentType = default(EmploymentType))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -622,7 +394,235 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1EmploymentTypePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateEmploymentType", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Employment Type from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>EmploymentType</returns>
+        public EmploymentType GetEmploymentTypeById (Guid id)
+        {
+             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = GetEmploymentTypeByIdWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a specific Employment Type from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>ApiResponse of EmploymentType</returns>
+        public Workforce.Client.ApiResponse< EmploymentType > GetEmploymentTypeByIdWithHttpInfo (Guid id)
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< EmploymentType >("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmploymentTypeById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Employment Type from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>Task of EmploymentType</returns>
+        public async System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeByIdAsync (Guid id)
+        {
+             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = await GetEmploymentTypeByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a specific Employment Type from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Employment Type</param>
+        /// <returns>Task of ApiResponse (EmploymentType)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<EmploymentType>> GetEmploymentTypeByIdAsyncWithHttpInfo (Guid id)
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<EmploymentType>("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmploymentTypeById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Employment Types within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;EmploymentType&gt;</returns>
+        public List<EmploymentType> GetEmploymentTypes ()
+        {
+             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = GetEmploymentTypesWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all Employment Types within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
+        public Workforce.Client.ApiResponse< List<EmploymentType> > GetEmploymentTypesWithHttpInfo ()
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< List<EmploymentType> >("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmploymentTypes", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Employment Types within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
+        public async System.Threading.Tasks.Task<List<EmploymentType>> GetEmploymentTypesAsync ()
+        {
+             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = await GetEmploymentTypesAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all Employment Types within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<EmploymentType>>> GetEmploymentTypesAsyncWithHttpInfo ()
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmploymentType>>("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmploymentTypes", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

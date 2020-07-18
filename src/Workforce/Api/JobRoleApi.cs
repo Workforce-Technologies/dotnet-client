@@ -28,46 +28,6 @@ namespace Workforce.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a specific Job Role from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>JobRole</returns>
-        JobRole JobRoleById (Guid id);
-
-        /// <summary>
-        /// Get a specific Job Role from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>ApiResponse of JobRole</returns>
-        ApiResponse<JobRole> JobRoleByIdWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Job Roles within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;JobRole&gt;</returns>
-        List<JobRole> V1JobRoleGet ();
-
-        /// <summary>
-        /// Get all Job Roles within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;JobRole&gt;</returns>
-        ApiResponse<List<JobRole>> V1JobRoleGetWithHttpInfo ();
-        /// <summary>
         /// Add a new Job Role to the Workforce system
         /// </summary>
         /// <remarks>
@@ -76,7 +36,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns></returns>
-        void V1JobRolePost (JobRole jobRole = default(JobRole));
+        void CreateOrUpdateJobRole (JobRole jobRole = default(JobRole));
 
         /// <summary>
         /// Add a new Job Role to the Workforce system
@@ -87,7 +47,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V1JobRolePostWithHttpInfo (JobRole jobRole = default(JobRole));
+        ApiResponse<Object> CreateOrUpdateJobRoleWithHttpInfo (JobRole jobRole = default(JobRole));
+        /// <summary>
+        /// Get a specific Job Role from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>JobRole</returns>
+        JobRole GetJobRoleById (Guid id);
+
+        /// <summary>
+        /// Get a specific Job Role from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>ApiResponse of JobRole</returns>
+        ApiResponse<JobRole> GetJobRoleByIdWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Job Roles within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;JobRole&gt;</returns>
+        List<JobRole> GetJobRoles ();
+
+        /// <summary>
+        /// Get all Job Roles within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;JobRole&gt;</returns>
+        ApiResponse<List<JobRole>> GetJobRolesWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -98,46 +98,6 @@ namespace Workforce.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a specific Job Role from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>Task of JobRole</returns>
-        System.Threading.Tasks.Task<JobRole> JobRoleByIdAsync (Guid id);
-
-        /// <summary>
-        /// Get a specific Job Role from Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>Task of ApiResponse (JobRole)</returns>
-        System.Threading.Tasks.Task<ApiResponse<JobRole>> JobRoleByIdAsyncWithHttpInfo (Guid id);
-        /// <summary>
-        /// Get all Job Roles within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;JobRole&gt;</returns>
-        System.Threading.Tasks.Task<List<JobRole>> V1JobRoleGetAsync ();
-
-        /// <summary>
-        /// Get all Job Roles within Workforce
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;JobRole&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<JobRole>>> V1JobRoleGetAsyncWithHttpInfo ();
-        /// <summary>
         /// Add a new Job Role to the Workforce system
         /// </summary>
         /// <remarks>
@@ -146,7 +106,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V1JobRolePostAsync (JobRole jobRole = default(JobRole));
+        System.Threading.Tasks.Task CreateOrUpdateJobRoleAsync (JobRole jobRole = default(JobRole));
 
         /// <summary>
         /// Add a new Job Role to the Workforce system
@@ -157,7 +117,47 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V1JobRolePostAsyncWithHttpInfo (JobRole jobRole = default(JobRole));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateJobRoleAsyncWithHttpInfo (JobRole jobRole = default(JobRole));
+        /// <summary>
+        /// Get a specific Job Role from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>Task of JobRole</returns>
+        System.Threading.Tasks.Task<JobRole> GetJobRoleByIdAsync (Guid id);
+
+        /// <summary>
+        /// Get a specific Job Role from Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>Task of ApiResponse (JobRole)</returns>
+        System.Threading.Tasks.Task<ApiResponse<JobRole>> GetJobRoleByIdAsyncWithHttpInfo (Guid id);
+        /// <summary>
+        /// Get all Job Roles within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;JobRole&gt;</returns>
+        System.Threading.Tasks.Task<List<JobRole>> GetJobRolesAsync ();
+
+        /// <summary>
+        /// Get all Job Roles within Workforce
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;JobRole&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<JobRole>>> GetJobRolesAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -279,242 +279,14 @@ namespace Workforce.Api
         }
 
         /// <summary>
-        /// Get a specific Job Role from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>JobRole</returns>
-        public JobRole JobRoleById (Guid id)
-        {
-             Workforce.Client.ApiResponse<JobRole> localVarResponse = JobRoleByIdWithHttpInfo(id);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get a specific Job Role from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>ApiResponse of JobRole</returns>
-        public Workforce.Client.ApiResponse< JobRole > JobRoleByIdWithHttpInfo (Guid id)
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< JobRole >("/v1/JobRole/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("JobRoleById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a specific Job Role from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>Task of JobRole</returns>
-        public async System.Threading.Tasks.Task<JobRole> JobRoleByIdAsync (Guid id)
-        {
-             Workforce.Client.ApiResponse<JobRole> localVarResponse = await JobRoleByIdAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get a specific Job Role from Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Unique ID of the Job Role</param>
-        /// <returns>Task of ApiResponse (JobRole)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<JobRole>> JobRoleByIdAsyncWithHttpInfo (Guid id)
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<JobRole>("/v1/JobRole/{id}", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("JobRoleById", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Job Roles within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;JobRole&gt;</returns>
-        public List<JobRole> V1JobRoleGet ()
-        {
-             Workforce.Client.ApiResponse<List<JobRole>> localVarResponse = V1JobRoleGetWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all Job Roles within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;JobRole&gt;</returns>
-        public Workforce.Client.ApiResponse< List<JobRole> > V1JobRoleGetWithHttpInfo ()
-        {
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get< List<JobRole> >("/v1/JobRole", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1JobRoleGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get all Job Roles within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;JobRole&gt;</returns>
-        public async System.Threading.Tasks.Task<List<JobRole>> V1JobRoleGetAsync ()
-        {
-             Workforce.Client.ApiResponse<List<JobRole>> localVarResponse = await V1JobRoleGetAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all Job Roles within Workforce 
-        /// </summary>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;JobRole&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<JobRole>>> V1JobRoleGetAsyncWithHttpInfo ()
-        {
-
-            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-
-            // authentication (Bearer) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<JobRole>>("/v1/JobRole", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1JobRoleGet", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Add a new Job Role to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns></returns>
-        public void V1JobRolePost (JobRole jobRole = default(JobRole))
+        public void CreateOrUpdateJobRole (JobRole jobRole = default(JobRole))
         {
-             V1JobRolePostWithHttpInfo(jobRole);
+             CreateOrUpdateJobRoleWithHttpInfo(jobRole);
         }
 
         /// <summary>
@@ -523,7 +295,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> V1JobRolePostWithHttpInfo (JobRole jobRole = default(JobRole))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateJobRoleWithHttpInfo (JobRole jobRole = default(JobRole))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -559,7 +331,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1JobRolePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateJobRole", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -572,9 +344,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V1JobRolePostAsync (JobRole jobRole = default(JobRole))
+        public async System.Threading.Tasks.Task CreateOrUpdateJobRoleAsync (JobRole jobRole = default(JobRole))
         {
-             await V1JobRolePostAsyncWithHttpInfo(jobRole);
+             await CreateOrUpdateJobRoleAsyncWithHttpInfo(jobRole);
 
         }
 
@@ -584,7 +356,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobRole"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> V1JobRolePostAsyncWithHttpInfo (JobRole jobRole = default(JobRole))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateJobRoleAsyncWithHttpInfo (JobRole jobRole = default(JobRole))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -622,7 +394,235 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1JobRolePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("CreateOrUpdateJobRole", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Job Role from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>JobRole</returns>
+        public JobRole GetJobRoleById (Guid id)
+        {
+             Workforce.Client.ApiResponse<JobRole> localVarResponse = GetJobRoleByIdWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a specific Job Role from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>ApiResponse of JobRole</returns>
+        public Workforce.Client.ApiResponse< JobRole > GetJobRoleByIdWithHttpInfo (Guid id)
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< JobRole >("/v1/JobRole/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetJobRoleById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a specific Job Role from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>Task of JobRole</returns>
+        public async System.Threading.Tasks.Task<JobRole> GetJobRoleByIdAsync (Guid id)
+        {
+             Workforce.Client.ApiResponse<JobRole> localVarResponse = await GetJobRoleByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a specific Job Role from Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Unique ID of the Job Role</param>
+        /// <returns>Task of ApiResponse (JobRole)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<JobRole>> GetJobRoleByIdAsyncWithHttpInfo (Guid id)
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<JobRole>("/v1/JobRole/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetJobRoleById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Job Roles within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;JobRole&gt;</returns>
+        public List<JobRole> GetJobRoles ()
+        {
+             Workforce.Client.ApiResponse<List<JobRole>> localVarResponse = GetJobRolesWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all Job Roles within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;JobRole&gt;</returns>
+        public Workforce.Client.ApiResponse< List<JobRole> > GetJobRolesWithHttpInfo ()
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< List<JobRole> >("/v1/JobRole", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetJobRoles", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all Job Roles within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;JobRole&gt;</returns>
+        public async System.Threading.Tasks.Task<List<JobRole>> GetJobRolesAsync ()
+        {
+             Workforce.Client.ApiResponse<List<JobRole>> localVarResponse = await GetJobRolesAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all Job Roles within Workforce 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;JobRole&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<JobRole>>> GetJobRolesAsyncWithHttpInfo ()
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<JobRole>>("/v1/JobRole", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetJobRoles", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
