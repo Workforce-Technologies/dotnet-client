@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**CreateOrUpdateCountry**](CountryApi.md#createorupdatecountry) | **POST** /v1/Country | Add a new Nationality to the Workforce system
 [**GetCountries**](CountryApi.md#getcountries) | **GET** /v1/Country | Get all Countries within Workforce
 [**GetCountriesWithRegions**](CountryApi.md#getcountrieswithregions) | **GET** /v1/Country/full | Get all Countries within Workforce and the assoicated regions
-[**GetCountryById**](CountryApi.md#getcountrybyid) | **GET** /v1/Country/{id} | Get a specific Country from Workforce
+[**GetCountry**](CountryApi.md#getcountry) | **GET** /v1/Country/{id} | Get a specific Country from Workforce
 
 
 <a name="createorupdatecountry"></a>
@@ -215,9 +215,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcountrybyid"></a>
-# **GetCountryById**
-> Country GetCountryById (Guid id)
+<a name="getcountry"></a>
+# **GetCountry**
+> Country GetCountry (Guid id)
 
 Get a specific Country from Workforce
 
@@ -231,7 +231,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetCountryByIdExample
+    public class GetCountryExample
     {
         public static void Main()
         {
@@ -246,12 +246,12 @@ namespace Example
             try
             {
                 // Get a specific Country from Workforce
-                Country result = apiInstance.GetCountryById(id);
+                Country result = apiInstance.GetCountry(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CountryApi.GetCountryById: " + e.Message );
+                Debug.Print("Exception when calling CountryApi.GetCountry: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

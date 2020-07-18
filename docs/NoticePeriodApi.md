@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateNoticePeriod**](NoticePeriodApi.md#createorupdatenoticeperiod) | **POST** /v1/NoticePeriod | Add a new Notice Period to the Workforce system
-[**GetNoticePeriodById**](NoticePeriodApi.md#getnoticeperiodbyid) | **GET** /v1/NoticePeriod/{id} | Get a specific Notice Period from Workforce
+[**GetNoticePeriod**](NoticePeriodApi.md#getnoticeperiod) | **GET** /v1/NoticePeriod/{id} | Get a specific Notice Period from Workforce
 [**GetNoticePeriods**](NoticePeriodApi.md#getnoticeperiods) | **GET** /v1/NoticePeriod | Get all Notice Periods within Workforce
 
 
@@ -80,9 +80,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getnoticeperiodbyid"></a>
-# **GetNoticePeriodById**
-> NoticePeriod GetNoticePeriodById (Guid id)
+<a name="getnoticeperiod"></a>
+# **GetNoticePeriod**
+> NoticePeriod GetNoticePeriod (Guid id)
 
 Get a specific Notice Period from Workforce
 
@@ -96,7 +96,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetNoticePeriodByIdExample
+    public class GetNoticePeriodExample
     {
         public static void Main()
         {
@@ -111,12 +111,12 @@ namespace Example
             try
             {
                 // Get a specific Notice Period from Workforce
-                NoticePeriod result = apiInstance.GetNoticePeriodById(id);
+                NoticePeriod result = apiInstance.GetNoticePeriod(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NoticePeriodApi.GetNoticePeriodById: " + e.Message );
+                Debug.Print("Exception when calling NoticePeriodApi.GetNoticePeriod: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

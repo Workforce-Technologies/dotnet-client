@@ -57,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Employee</returns>
-        Employee GetEmployeeById (Guid id);
+        Employee GetEmployee (Guid id);
 
         /// <summary>
         /// Get a specific Employee from Workforce
@@ -68,7 +68,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>ApiResponse of Employee</returns>
-        ApiResponse<Employee> GetEmployeeByIdWithHttpInfo (Guid id);
+        ApiResponse<Employee> GetEmployeeWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Employees within Workforce
         /// </summary>
@@ -150,7 +150,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of Employee</returns>
-        System.Threading.Tasks.Task<Employee> GetEmployeeByIdAsync (Guid id);
+        System.Threading.Tasks.Task<Employee> GetEmployeeAsync (Guid id);
 
         /// <summary>
         /// Get a specific Employee from Workforce
@@ -161,7 +161,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of ApiResponse (Employee)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Employee>> GetEmployeeByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Employee>> GetEmployeeAsyncWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Employees within Workforce
         /// </summary>
@@ -453,9 +453,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Employee</returns>
-        public Employee GetEmployeeById (Guid id)
+        public Employee GetEmployee (Guid id)
         {
-             Workforce.Client.ApiResponse<Employee> localVarResponse = GetEmployeeByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Employee> localVarResponse = GetEmployeeWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -465,7 +465,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>ApiResponse of Employee</returns>
-        public Workforce.Client.ApiResponse< Employee > GetEmployeeByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< Employee > GetEmployeeWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -497,7 +497,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetEmployeeById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetEmployee", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -510,9 +510,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of Employee</returns>
-        public async System.Threading.Tasks.Task<Employee> GetEmployeeByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<Employee> GetEmployeeAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<Employee> localVarResponse = await GetEmployeeByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Employee> localVarResponse = await GetEmployeeAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -523,7 +523,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>Task of ApiResponse (Employee)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Employee>> GetEmployeeByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Employee>> GetEmployeeAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -557,7 +557,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetEmployeeById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetEmployee", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

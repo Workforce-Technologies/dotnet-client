@@ -93,33 +93,33 @@ All URIs are relative to *http://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BranchApi* | [**CreateOrUpdateBranch**](docs/BranchApi.md#createorupdatebranch) | **POST** /v1/Branch | Add a new Branch to the Workforce system
-*BranchApi* | [**GetBranchById**](docs/BranchApi.md#getbranchbyid) | **GET** /v1/Branch/{id} | Get a specific Branch from Workforce
+*BranchApi* | [**GetBranch**](docs/BranchApi.md#getbranch) | **GET** /v1/Branch/{id} | Get a specific Branch from Workforce
 *BranchApi* | [**GetBranches**](docs/BranchApi.md#getbranches) | **GET** /v1/Branch | Get all Branches within Workforce
 *CountryApi* | [**CreateOrUpdateCountry**](docs/CountryApi.md#createorupdatecountry) | **POST** /v1/Country | Add a new Nationality to the Workforce system
 *CountryApi* | [**GetCountries**](docs/CountryApi.md#getcountries) | **GET** /v1/Country | Get all Countries within Workforce
 *CountryApi* | [**GetCountriesWithRegions**](docs/CountryApi.md#getcountrieswithregions) | **GET** /v1/Country/full | Get all Countries within Workforce and the assoicated regions
-*CountryApi* | [**GetCountryById**](docs/CountryApi.md#getcountrybyid) | **GET** /v1/Country/{id} | Get a specific Country from Workforce
+*CountryApi* | [**GetCountry**](docs/CountryApi.md#getcountry) | **GET** /v1/Country/{id} | Get a specific Country from Workforce
 *DepartmentApi* | [**CreateOrUpdateDepartment**](docs/DepartmentApi.md#createorupdatedepartment) | **POST** /v1/Department | Add a new Department to the Workforce system
-*DepartmentApi* | [**GetDepartmentById**](docs/DepartmentApi.md#getdepartmentbyid) | **GET** /v1/Department/{id} | Get a specific Department from Workforce
+*DepartmentApi* | [**GetDepartment**](docs/DepartmentApi.md#getdepartment) | **GET** /v1/Department/{id} | Get a specific Department from Workforce
 *DepartmentApi* | [**GetDepartments**](docs/DepartmentApi.md#getdepartments) | **GET** /v1/Department | Get all Departments within Workforce
 *EmployeeApi* | [**CreateOrUpdateEmployee**](docs/EmployeeApi.md#createorupdateemployee) | **POST** /v1/Employee | Add a new Employee to the Workforce system
-*EmployeeApi* | [**GetEmployeeById**](docs/EmployeeApi.md#getemployeebyid) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
+*EmployeeApi* | [**GetEmployee**](docs/EmployeeApi.md#getemployee) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
 *EmployeeApi* | [**GetEmployees**](docs/EmployeeApi.md#getemployees) | **GET** /v1/Employee | Get all Employees within Workforce
 *EmployeeApi* | [**SearchEmployees**](docs/EmployeeApi.md#searchemployees) | **GET** /v1/Employee/search | Search for Employees within Workforce
 *EmploymentTypeApi* | [**CreateOrUpdateEmploymentType**](docs/EmploymentTypeApi.md#createorupdateemploymenttype) | **POST** /v1/EmploymentType | Add a new Employment Type to the Workforce system
-*EmploymentTypeApi* | [**GetEmploymentTypeById**](docs/EmploymentTypeApi.md#getemploymenttypebyid) | **GET** /v1/EmploymentType/{id} | Get a specific Employment Type from Workforce
+*EmploymentTypeApi* | [**GetEmploymentType**](docs/EmploymentTypeApi.md#getemploymenttype) | **GET** /v1/EmploymentType/{id} | Get a specific Employment Type from Workforce
 *EmploymentTypeApi* | [**GetEmploymentTypes**](docs/EmploymentTypeApi.md#getemploymenttypes) | **GET** /v1/EmploymentType | Get all Employment Types within Workforce
 *JobRoleApi* | [**CreateOrUpdateJobRole**](docs/JobRoleApi.md#createorupdatejobrole) | **POST** /v1/JobRole | Add a new Job Role to the Workforce system
-*JobRoleApi* | [**GetJobRoleById**](docs/JobRoleApi.md#getjobrolebyid) | **GET** /v1/JobRole/{id} | Get a specific Job Role from Workforce
+*JobRoleApi* | [**GetJobRole**](docs/JobRoleApi.md#getjobrole) | **GET** /v1/JobRole/{id} | Get a specific Job Role from Workforce
 *JobRoleApi* | [**GetJobRoles**](docs/JobRoleApi.md#getjobroles) | **GET** /v1/JobRole | Get all Job Roles within Workforce
 *LocationApi* | [**CreateOrUpdateLocation**](docs/LocationApi.md#createorupdatelocation) | **POST** /v1/Location | Add a new Location to the Workforce system
 *LocationApi* | [**GetLocationById**](docs/LocationApi.md#getlocationbyid) | **GET** /v1/Location/{id} | Get a specific Location from Workforce
 *LocationApi* | [**GetLocations**](docs/LocationApi.md#getlocations) | **GET** /v1/Location | Get all Locations within Workforce
 *NationalityApi* | [**CreateOrUpdateNationality**](docs/NationalityApi.md#createorupdatenationality) | **POST** /v1/Nationality | Add a new Nationality to the Workforce system
 *NationalityApi* | [**GetNationalities**](docs/NationalityApi.md#getnationalities) | **GET** /v1/Nationality | Get all Nationalities within Workforce
-*NationalityApi* | [**GetNationalityById**](docs/NationalityApi.md#getnationalitybyid) | **GET** /v1/Nationality/{id} | Get a specific Nationality from Workforce
+*NationalityApi* | [**GetNationality**](docs/NationalityApi.md#getnationality) | **GET** /v1/Nationality/{id} | Get a specific Nationality from Workforce
 *NoticePeriodApi* | [**CreateOrUpdateNoticePeriod**](docs/NoticePeriodApi.md#createorupdatenoticeperiod) | **POST** /v1/NoticePeriod | Add a new Notice Period to the Workforce system
-*NoticePeriodApi* | [**GetNoticePeriodById**](docs/NoticePeriodApi.md#getnoticeperiodbyid) | **GET** /v1/NoticePeriod/{id} | Get a specific Notice Period from Workforce
+*NoticePeriodApi* | [**GetNoticePeriod**](docs/NoticePeriodApi.md#getnoticeperiod) | **GET** /v1/NoticePeriod/{id} | Get a specific Notice Period from Workforce
 *NoticePeriodApi* | [**GetNoticePeriods**](docs/NoticePeriodApi.md#getnoticeperiods) | **GET** /v1/NoticePeriod | Get all Notice Periods within Workforce
 
 

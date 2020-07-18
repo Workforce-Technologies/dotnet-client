@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateBranch**](BranchApi.md#createorupdatebranch) | **POST** /v1/Branch | Add a new Branch to the Workforce system
-[**GetBranchById**](BranchApi.md#getbranchbyid) | **GET** /v1/Branch/{id} | Get a specific Branch from Workforce
+[**GetBranch**](BranchApi.md#getbranch) | **GET** /v1/Branch/{id} | Get a specific Branch from Workforce
 [**GetBranches**](BranchApi.md#getbranches) | **GET** /v1/Branch | Get all Branches within Workforce
 
 
@@ -80,9 +80,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbranchbyid"></a>
-# **GetBranchById**
-> Branch GetBranchById (Guid id)
+<a name="getbranch"></a>
+# **GetBranch**
+> Branch GetBranch (Guid id)
 
 Get a specific Branch from Workforce
 
@@ -96,7 +96,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetBranchByIdExample
+    public class GetBranchExample
     {
         public static void Main()
         {
@@ -111,12 +111,12 @@ namespace Example
             try
             {
                 // Get a specific Branch from Workforce
-                Branch result = apiInstance.GetBranchById(id);
+                Branch result = apiInstance.GetBranch(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BranchApi.GetBranchById: " + e.Message );
+                Debug.Print("Exception when calling BranchApi.GetBranch: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

@@ -57,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>JobRole</returns>
-        JobRole GetJobRoleById (Guid id);
+        JobRole GetJobRole (Guid id);
 
         /// <summary>
         /// Get a specific Job Role from Workforce
@@ -68,7 +68,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>ApiResponse of JobRole</returns>
-        ApiResponse<JobRole> GetJobRoleByIdWithHttpInfo (Guid id);
+        ApiResponse<JobRole> GetJobRoleWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Job Roles within Workforce
         /// </summary>
@@ -127,7 +127,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>Task of JobRole</returns>
-        System.Threading.Tasks.Task<JobRole> GetJobRoleByIdAsync (Guid id);
+        System.Threading.Tasks.Task<JobRole> GetJobRoleAsync (Guid id);
 
         /// <summary>
         /// Get a specific Job Role from Workforce
@@ -138,7 +138,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>Task of ApiResponse (JobRole)</returns>
-        System.Threading.Tasks.Task<ApiResponse<JobRole>> GetJobRoleByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<JobRole>> GetJobRoleAsyncWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Job Roles within Workforce
         /// </summary>
@@ -407,9 +407,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>JobRole</returns>
-        public JobRole GetJobRoleById (Guid id)
+        public JobRole GetJobRole (Guid id)
         {
-             Workforce.Client.ApiResponse<JobRole> localVarResponse = GetJobRoleByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<JobRole> localVarResponse = GetJobRoleWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -419,7 +419,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>ApiResponse of JobRole</returns>
-        public Workforce.Client.ApiResponse< JobRole > GetJobRoleByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< JobRole > GetJobRoleWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetJobRoleById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetJobRole", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -464,9 +464,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>Task of JobRole</returns>
-        public async System.Threading.Tasks.Task<JobRole> GetJobRoleByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<JobRole> GetJobRoleAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<JobRole> localVarResponse = await GetJobRoleByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<JobRole> localVarResponse = await GetJobRoleAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -477,7 +477,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Job Role</param>
         /// <returns>Task of ApiResponse (JobRole)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<JobRole>> GetJobRoleByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<JobRole>> GetJobRoleAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -511,7 +511,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetJobRoleById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetJobRole", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

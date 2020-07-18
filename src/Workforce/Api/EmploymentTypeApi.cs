@@ -57,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>EmploymentType</returns>
-        EmploymentType GetEmploymentTypeById (Guid id);
+        EmploymentType GetEmploymentType (Guid id);
 
         /// <summary>
         /// Get a specific Employment Type from Workforce
@@ -68,7 +68,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>ApiResponse of EmploymentType</returns>
-        ApiResponse<EmploymentType> GetEmploymentTypeByIdWithHttpInfo (Guid id);
+        ApiResponse<EmploymentType> GetEmploymentTypeWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Employment Types within Workforce
         /// </summary>
@@ -127,7 +127,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>Task of EmploymentType</returns>
-        System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeByIdAsync (Guid id);
+        System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeAsync (Guid id);
 
         /// <summary>
         /// Get a specific Employment Type from Workforce
@@ -138,7 +138,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>Task of ApiResponse (EmploymentType)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmploymentType>> GetEmploymentTypeByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<EmploymentType>> GetEmploymentTypeAsyncWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Employment Types within Workforce
         /// </summary>
@@ -407,9 +407,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>EmploymentType</returns>
-        public EmploymentType GetEmploymentTypeById (Guid id)
+        public EmploymentType GetEmploymentType (Guid id)
         {
-             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = GetEmploymentTypeByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = GetEmploymentTypeWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -419,7 +419,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>ApiResponse of EmploymentType</returns>
-        public Workforce.Client.ApiResponse< EmploymentType > GetEmploymentTypeByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< EmploymentType > GetEmploymentTypeWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetEmploymentTypeById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetEmploymentType", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -464,9 +464,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>Task of EmploymentType</returns>
-        public async System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = await GetEmploymentTypeByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = await GetEmploymentTypeAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -477,7 +477,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>Task of ApiResponse (EmploymentType)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<EmploymentType>> GetEmploymentTypeByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<EmploymentType>> GetEmploymentTypeAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -511,7 +511,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetEmploymentTypeById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetEmploymentType", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

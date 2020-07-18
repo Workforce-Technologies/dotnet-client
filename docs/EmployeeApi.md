@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateEmployee**](EmployeeApi.md#createorupdateemployee) | **POST** /v1/Employee | Add a new Employee to the Workforce system
-[**GetEmployeeById**](EmployeeApi.md#getemployeebyid) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
+[**GetEmployee**](EmployeeApi.md#getemployee) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
 [**GetEmployees**](EmployeeApi.md#getemployees) | **GET** /v1/Employee | Get all Employees within Workforce
 [**SearchEmployees**](EmployeeApi.md#searchemployees) | **GET** /v1/Employee/search | Search for Employees within Workforce
 
@@ -81,9 +81,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getemployeebyid"></a>
-# **GetEmployeeById**
-> Employee GetEmployeeById (Guid id)
+<a name="getemployee"></a>
+# **GetEmployee**
+> Employee GetEmployee (Guid id)
 
 Get a specific Employee from Workforce
 
@@ -97,7 +97,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetEmployeeByIdExample
+    public class GetEmployeeExample
     {
         public static void Main()
         {
@@ -112,12 +112,12 @@ namespace Example
             try
             {
                 // Get a specific Employee from Workforce
-                Employee result = apiInstance.GetEmployeeById(id);
+                Employee result = apiInstance.GetEmployee(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmployeeApi.GetEmployeeById: " + e.Message );
+                Debug.Print("Exception when calling EmployeeApi.GetEmployee: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

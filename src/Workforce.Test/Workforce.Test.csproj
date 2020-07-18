@@ -24,7 +24,7 @@ Contact: adamlonsdale@me.com
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Workforce\Workforce.csproj">
-      <Project>{598DDCC1-01A0-4D1A-8B6F-ECE79955F97C}</Project>
+      <Project>{4418A61F-0B5D-425E-A49A-85194D5B70F2}</Project>
       <Name>Workforce</Name>
     </ProjectReference>
   </ItemGroup>

@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateJobRole**](JobRoleApi.md#createorupdatejobrole) | **POST** /v1/JobRole | Add a new Job Role to the Workforce system
-[**GetJobRoleById**](JobRoleApi.md#getjobrolebyid) | **GET** /v1/JobRole/{id} | Get a specific Job Role from Workforce
+[**GetJobRole**](JobRoleApi.md#getjobrole) | **GET** /v1/JobRole/{id} | Get a specific Job Role from Workforce
 [**GetJobRoles**](JobRoleApi.md#getjobroles) | **GET** /v1/JobRole | Get all Job Roles within Workforce
 
 
@@ -80,9 +80,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getjobrolebyid"></a>
-# **GetJobRoleById**
-> JobRole GetJobRoleById (Guid id)
+<a name="getjobrole"></a>
+# **GetJobRole**
+> JobRole GetJobRole (Guid id)
 
 Get a specific Job Role from Workforce
 
@@ -96,7 +96,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetJobRoleByIdExample
+    public class GetJobRoleExample
     {
         public static void Main()
         {
@@ -111,12 +111,12 @@ namespace Example
             try
             {
                 // Get a specific Job Role from Workforce
-                JobRole result = apiInstance.GetJobRoleById(id);
+                JobRole result = apiInstance.GetJobRole(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling JobRoleApi.GetJobRoleById: " + e.Message );
+                Debug.Print("Exception when calling JobRoleApi.GetJobRole: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

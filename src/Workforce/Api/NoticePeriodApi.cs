@@ -57,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>NoticePeriod</returns>
-        NoticePeriod GetNoticePeriodById (Guid id);
+        NoticePeriod GetNoticePeriod (Guid id);
 
         /// <summary>
         /// Get a specific Notice Period from Workforce
@@ -68,7 +68,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>ApiResponse of NoticePeriod</returns>
-        ApiResponse<NoticePeriod> GetNoticePeriodByIdWithHttpInfo (Guid id);
+        ApiResponse<NoticePeriod> GetNoticePeriodWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Notice Periods within Workforce
         /// </summary>
@@ -127,7 +127,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>Task of NoticePeriod</returns>
-        System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodByIdAsync (Guid id);
+        System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodAsync (Guid id);
 
         /// <summary>
         /// Get a specific Notice Period from Workforce
@@ -138,7 +138,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>Task of ApiResponse (NoticePeriod)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NoticePeriod>> GetNoticePeriodByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<NoticePeriod>> GetNoticePeriodAsyncWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Notice Periods within Workforce
         /// </summary>
@@ -407,9 +407,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>NoticePeriod</returns>
-        public NoticePeriod GetNoticePeriodById (Guid id)
+        public NoticePeriod GetNoticePeriod (Guid id)
         {
-             Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = GetNoticePeriodByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = GetNoticePeriodWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -419,7 +419,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>ApiResponse of NoticePeriod</returns>
-        public Workforce.Client.ApiResponse< NoticePeriod > GetNoticePeriodByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< NoticePeriod > GetNoticePeriodWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetNoticePeriodById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetNoticePeriod", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -464,9 +464,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>Task of NoticePeriod</returns>
-        public async System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = await GetNoticePeriodByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = await GetNoticePeriodAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -477,7 +477,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>Task of ApiResponse (NoticePeriod)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<NoticePeriod>> GetNoticePeriodByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<NoticePeriod>> GetNoticePeriodAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -511,7 +511,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetNoticePeriodById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetNoticePeriod", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

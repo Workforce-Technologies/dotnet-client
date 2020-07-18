@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateEmploymentType**](EmploymentTypeApi.md#createorupdateemploymenttype) | **POST** /v1/EmploymentType | Add a new Employment Type to the Workforce system
-[**GetEmploymentTypeById**](EmploymentTypeApi.md#getemploymenttypebyid) | **GET** /v1/EmploymentType/{id} | Get a specific Employment Type from Workforce
+[**GetEmploymentType**](EmploymentTypeApi.md#getemploymenttype) | **GET** /v1/EmploymentType/{id} | Get a specific Employment Type from Workforce
 [**GetEmploymentTypes**](EmploymentTypeApi.md#getemploymenttypes) | **GET** /v1/EmploymentType | Get all Employment Types within Workforce
 
 
@@ -80,9 +80,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getemploymenttypebyid"></a>
-# **GetEmploymentTypeById**
-> EmploymentType GetEmploymentTypeById (Guid id)
+<a name="getemploymenttype"></a>
+# **GetEmploymentType**
+> EmploymentType GetEmploymentType (Guid id)
 
 Get a specific Employment Type from Workforce
 
@@ -96,7 +96,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetEmploymentTypeByIdExample
+    public class GetEmploymentTypeExample
     {
         public static void Main()
         {
@@ -111,12 +111,12 @@ namespace Example
             try
             {
                 // Get a specific Employment Type from Workforce
-                EmploymentType result = apiInstance.GetEmploymentTypeById(id);
+                EmploymentType result = apiInstance.GetEmploymentType(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EmploymentTypeApi.GetEmploymentTypeById: " + e.Message );
+                Debug.Print("Exception when calling EmploymentTypeApi.GetEmploymentType: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

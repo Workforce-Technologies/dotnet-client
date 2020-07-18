@@ -57,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>Branch</returns>
-        Branch GetBranchById (Guid id);
+        Branch GetBranch (Guid id);
 
         /// <summary>
         /// Get a specific Branch from Workforce
@@ -68,7 +68,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>ApiResponse of Branch</returns>
-        ApiResponse<Branch> GetBranchByIdWithHttpInfo (Guid id);
+        ApiResponse<Branch> GetBranchWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Branches within Workforce
         /// </summary>
@@ -127,7 +127,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>Task of Branch</returns>
-        System.Threading.Tasks.Task<Branch> GetBranchByIdAsync (Guid id);
+        System.Threading.Tasks.Task<Branch> GetBranchAsync (Guid id);
 
         /// <summary>
         /// Get a specific Branch from Workforce
@@ -138,7 +138,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>Task of ApiResponse (Branch)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Branch>> GetBranchByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Branch>> GetBranchAsyncWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Branches within Workforce
         /// </summary>
@@ -407,9 +407,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>Branch</returns>
-        public Branch GetBranchById (Guid id)
+        public Branch GetBranch (Guid id)
         {
-             Workforce.Client.ApiResponse<Branch> localVarResponse = GetBranchByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Branch> localVarResponse = GetBranchWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -419,7 +419,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>ApiResponse of Branch</returns>
-        public Workforce.Client.ApiResponse< Branch > GetBranchByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< Branch > GetBranchWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBranchById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetBranch", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -464,9 +464,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>Task of Branch</returns>
-        public async System.Threading.Tasks.Task<Branch> GetBranchByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<Branch> GetBranchAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<Branch> localVarResponse = await GetBranchByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Branch> localVarResponse = await GetBranchAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -477,7 +477,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Branch</param>
         /// <returns>Task of ApiResponse (Branch)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Branch>> GetBranchByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Branch>> GetBranchAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -511,7 +511,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetBranchById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetBranch", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

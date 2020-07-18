@@ -13,7 +13,7 @@ Contact: adamlonsdale@me.com
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{598DDCC1-01A0-4D1A-8B6F-ECE79955F97C}</ProjectGuid>
+    <ProjectGuid>{4418A61F-0B5D-425E-A49A-85194D5B70F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Workforce</RootNamespace>

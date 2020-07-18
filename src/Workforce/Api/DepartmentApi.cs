@@ -57,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Department</returns>
-        Department GetDepartmentById (Guid id);
+        Department GetDepartment (Guid id);
 
         /// <summary>
         /// Get a specific Department from Workforce
@@ -68,7 +68,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>ApiResponse of Department</returns>
-        ApiResponse<Department> GetDepartmentByIdWithHttpInfo (Guid id);
+        ApiResponse<Department> GetDepartmentWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Departments within Workforce
         /// </summary>
@@ -127,7 +127,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Task of Department</returns>
-        System.Threading.Tasks.Task<Department> GetDepartmentByIdAsync (Guid id);
+        System.Threading.Tasks.Task<Department> GetDepartmentAsync (Guid id);
 
         /// <summary>
         /// Get a specific Department from Workforce
@@ -138,7 +138,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Task of ApiResponse (Department)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Department>> GetDepartmentByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Department>> GetDepartmentAsyncWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Departments within Workforce
         /// </summary>
@@ -407,9 +407,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Department</returns>
-        public Department GetDepartmentById (Guid id)
+        public Department GetDepartment (Guid id)
         {
-             Workforce.Client.ApiResponse<Department> localVarResponse = GetDepartmentByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Department> localVarResponse = GetDepartmentWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -419,7 +419,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>ApiResponse of Department</returns>
-        public Workforce.Client.ApiResponse< Department > GetDepartmentByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< Department > GetDepartmentWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDepartmentById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetDepartment", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -464,9 +464,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Task of Department</returns>
-        public async System.Threading.Tasks.Task<Department> GetDepartmentByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<Department> GetDepartmentAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<Department> localVarResponse = await GetDepartmentByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Department> localVarResponse = await GetDepartmentAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -477,7 +477,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Task of ApiResponse (Department)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Department>> GetDepartmentByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Department>> GetDepartmentAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -511,7 +511,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDepartmentById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetDepartment", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -95,7 +95,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Country</returns>
-        Country GetCountryById (Guid id);
+        Country GetCountry (Guid id);
 
         /// <summary>
         /// Get a specific Country from Workforce
@@ -106,7 +106,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>ApiResponse of Country</returns>
-        ApiResponse<Country> GetCountryByIdWithHttpInfo (Guid id);
+        ApiResponse<Country> GetCountryWithHttpInfo (Guid id);
         #endregion Synchronous Operations
     }
 
@@ -184,7 +184,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Task of Country</returns>
-        System.Threading.Tasks.Task<Country> GetCountryByIdAsync (Guid id);
+        System.Threading.Tasks.Task<Country> GetCountryAsync (Guid id);
 
         /// <summary>
         /// Get a specific Country from Workforce
@@ -195,7 +195,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Task of ApiResponse (Country)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Country>> GetCountryByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Country>> GetCountryAsyncWithHttpInfo (Guid id);
         #endregion Asynchronous Operations
     }
 
@@ -667,9 +667,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Country</returns>
-        public Country GetCountryById (Guid id)
+        public Country GetCountry (Guid id)
         {
-             Workforce.Client.ApiResponse<Country> localVarResponse = GetCountryByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Country> localVarResponse = GetCountryWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -679,7 +679,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>ApiResponse of Country</returns>
-        public Workforce.Client.ApiResponse< Country > GetCountryByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< Country > GetCountryWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -711,7 +711,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetCountryById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetCountry", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -724,9 +724,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Task of Country</returns>
-        public async System.Threading.Tasks.Task<Country> GetCountryByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<Country> GetCountryAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<Country> localVarResponse = await GetCountryByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Country> localVarResponse = await GetCountryAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -737,7 +737,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Task of ApiResponse (Country)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Country>> GetCountryByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Country>> GetCountryAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -771,7 +771,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetCountryById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetCountry", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateDepartment**](DepartmentApi.md#createorupdatedepartment) | **POST** /v1/Department | Add a new Department to the Workforce system
-[**GetDepartmentById**](DepartmentApi.md#getdepartmentbyid) | **GET** /v1/Department/{id} | Get a specific Department from Workforce
+[**GetDepartment**](DepartmentApi.md#getdepartment) | **GET** /v1/Department/{id} | Get a specific Department from Workforce
 [**GetDepartments**](DepartmentApi.md#getdepartments) | **GET** /v1/Department | Get all Departments within Workforce
 
 
@@ -80,9 +80,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getdepartmentbyid"></a>
-# **GetDepartmentById**
-> Department GetDepartmentById (Guid id)
+<a name="getdepartment"></a>
+# **GetDepartment**
+> Department GetDepartment (Guid id)
 
 Get a specific Department from Workforce
 
@@ -96,7 +96,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetDepartmentByIdExample
+    public class GetDepartmentExample
     {
         public static void Main()
         {
@@ -111,12 +111,12 @@ namespace Example
             try
             {
                 // Get a specific Department from Workforce
-                Department result = apiInstance.GetDepartmentById(id);
+                Department result = apiInstance.GetDepartment(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DepartmentApi.GetDepartmentById: " + e.Message );
+                Debug.Print("Exception when calling DepartmentApi.GetDepartment: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateNationality**](NationalityApi.md#createorupdatenationality) | **POST** /v1/Nationality | Add a new Nationality to the Workforce system
 [**GetNationalities**](NationalityApi.md#getnationalities) | **GET** /v1/Nationality | Get all Nationalities within Workforce
-[**GetNationalityById**](NationalityApi.md#getnationalitybyid) | **GET** /v1/Nationality/{id} | Get a specific Nationality from Workforce
+[**GetNationality**](NationalityApi.md#getnationality) | **GET** /v1/Nationality/{id} | Get a specific Nationality from Workforce
 
 
 <a name="createorupdatenationality"></a>
@@ -147,9 +147,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getnationalitybyid"></a>
-# **GetNationalityById**
-> Nationality GetNationalityById (Guid id)
+<a name="getnationality"></a>
+# **GetNationality**
+> Nationality GetNationality (Guid id)
 
 Get a specific Nationality from Workforce
 
@@ -163,7 +163,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetNationalityByIdExample
+    public class GetNationalityExample
     {
         public static void Main()
         {
@@ -178,12 +178,12 @@ namespace Example
             try
             {
                 // Get a specific Nationality from Workforce
-                Nationality result = apiInstance.GetNationalityById(id);
+                Nationality result = apiInstance.GetNationality(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NationalityApi.GetNationalityById: " + e.Message );
+                Debug.Print("Exception when calling NationalityApi.GetNationality: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
