@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateLocation**](LocationApi.md#createorupdatelocation) | **POST** /v1/Location | Add a new Location to the Workforce system
-[**GetLocationById**](LocationApi.md#getlocationbyid) | **GET** /v1/Location/{id} | Get a specific Location from Workforce
+[**GetLocation**](LocationApi.md#getlocation) | **GET** /v1/Location/{id} | Get a specific Location from Workforce
 [**GetLocations**](LocationApi.md#getlocations) | **GET** /v1/Location | Get all Locations within Workforce
 
 
@@ -80,9 +80,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getlocationbyid"></a>
-# **GetLocationById**
-> Location GetLocationById (Guid id)
+<a name="getlocation"></a>
+# **GetLocation**
+> Location GetLocation (Guid id)
 
 Get a specific Location from Workforce
 
@@ -96,7 +96,7 @@ using Workforce.Model;
 
 namespace Example
 {
-    public class GetLocationByIdExample
+    public class GetLocationExample
     {
         public static void Main()
         {
@@ -111,12 +111,12 @@ namespace Example
             try
             {
                 // Get a specific Location from Workforce
-                Location result = apiInstance.GetLocationById(id);
+                Location result = apiInstance.GetLocation(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LocationApi.GetLocationById: " + e.Message );
+                Debug.Print("Exception when calling LocationApi.GetLocation: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 <a name="getlocations"></a>
 # **GetLocations**
-> List&lt;EmploymentType&gt; GetLocations ()
+> List&lt;Location&gt; GetLocations ()
 
 Get all Locations within Workforce
 
@@ -182,7 +182,7 @@ namespace Example
             try
             {
                 // Get all Locations within Workforce
-                List<EmploymentType> result = apiInstance.GetLocations();
+                List<Location> result = apiInstance.GetLocations();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -201,7 +201,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;EmploymentType&gt;**](EmploymentType.md)
+[**List&lt;Location&gt;**](Location.md)
 
 ### Authorization
 

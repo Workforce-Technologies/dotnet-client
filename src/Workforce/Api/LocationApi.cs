@@ -57,7 +57,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>Location</returns>
-        Location GetLocationById (Guid id);
+        Location GetLocation (Guid id);
 
         /// <summary>
         /// Get a specific Location from Workforce
@@ -68,7 +68,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>ApiResponse of Location</returns>
-        ApiResponse<Location> GetLocationByIdWithHttpInfo (Guid id);
+        ApiResponse<Location> GetLocationWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Locations within Workforce
         /// </summary>
@@ -76,8 +76,8 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;EmploymentType&gt;</returns>
-        List<EmploymentType> GetLocations ();
+        /// <returns>List&lt;Location&gt;</returns>
+        List<Location> GetLocations ();
 
         /// <summary>
         /// Get all Locations within Workforce
@@ -86,8 +86,8 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        ApiResponse<List<EmploymentType>> GetLocationsWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;Location&gt;</returns>
+        ApiResponse<List<Location>> GetLocationsWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -127,7 +127,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>Task of Location</returns>
-        System.Threading.Tasks.Task<Location> GetLocationByIdAsync (Guid id);
+        System.Threading.Tasks.Task<Location> GetLocationAsync (Guid id);
 
         /// <summary>
         /// Get a specific Location from Workforce
@@ -138,7 +138,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>Task of ApiResponse (Location)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Location>> GetLocationByIdAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Location>> GetLocationAsyncWithHttpInfo (Guid id);
         /// <summary>
         /// Get all Locations within Workforce
         /// </summary>
@@ -146,8 +146,8 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        System.Threading.Tasks.Task<List<EmploymentType>> GetLocationsAsync ();
+        /// <returns>Task of List&lt;Location&gt;</returns>
+        System.Threading.Tasks.Task<List<Location>> GetLocationsAsync ();
 
         /// <summary>
         /// Get all Locations within Workforce
@@ -156,8 +156,8 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EmploymentType>>> GetLocationsAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;Location&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Location>>> GetLocationsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -407,9 +407,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>Location</returns>
-        public Location GetLocationById (Guid id)
+        public Location GetLocation (Guid id)
         {
-             Workforce.Client.ApiResponse<Location> localVarResponse = GetLocationByIdWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Location> localVarResponse = GetLocationWithHttpInfo(id);
              return localVarResponse.Data;
         }
 
@@ -419,7 +419,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>ApiResponse of Location</returns>
-        public Workforce.Client.ApiResponse< Location > GetLocationByIdWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse< Location > GetLocationWithHttpInfo (Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetLocationById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetLocation", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -464,9 +464,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>Task of Location</returns>
-        public async System.Threading.Tasks.Task<Location> GetLocationByIdAsync (Guid id)
+        public async System.Threading.Tasks.Task<Location> GetLocationAsync (Guid id)
         {
-             Workforce.Client.ApiResponse<Location> localVarResponse = await GetLocationByIdAsyncWithHttpInfo(id);
+             Workforce.Client.ApiResponse<Location> localVarResponse = await GetLocationAsyncWithHttpInfo(id);
              return localVarResponse.Data;
 
         }
@@ -477,7 +477,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Location</param>
         /// <returns>Task of ApiResponse (Location)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Location>> GetLocationByIdAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Location>> GetLocationAsyncWithHttpInfo (Guid id)
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -511,7 +511,7 @@ namespace Workforce.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetLocationById", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetLocation", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -522,10 +522,10 @@ namespace Workforce.Api
         /// Get all Locations within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;EmploymentType&gt;</returns>
-        public List<EmploymentType> GetLocations ()
+        /// <returns>List&lt;Location&gt;</returns>
+        public List<Location> GetLocations ()
         {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = GetLocationsWithHttpInfo();
+             Workforce.Client.ApiResponse<List<Location>> localVarResponse = GetLocationsWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -533,8 +533,8 @@ namespace Workforce.Api
         /// Get all Locations within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        public Workforce.Client.ApiResponse< List<EmploymentType> > GetLocationsWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;Location&gt;</returns>
+        public Workforce.Client.ApiResponse< List<Location> > GetLocationsWithHttpInfo ()
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -561,7 +561,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<EmploymentType> >("/v1/Location", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get< List<Location> >("/v1/Location", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -576,10 +576,10 @@ namespace Workforce.Api
         /// Get all Locations within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EmploymentType>> GetLocationsAsync ()
+        /// <returns>Task of List&lt;Location&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Location>> GetLocationsAsync ()
         {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = await GetLocationsAsyncWithHttpInfo();
+             Workforce.Client.ApiResponse<List<Location>> localVarResponse = await GetLocationsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -588,8 +588,8 @@ namespace Workforce.Api
         /// Get all Locations within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<EmploymentType>>> GetLocationsAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;Location&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Location>>> GetLocationsAsyncWithHttpInfo ()
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -618,7 +618,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmploymentType>>("/v1/Location", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Location>>("/v1/Location", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
