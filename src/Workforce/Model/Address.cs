@@ -51,9 +51,9 @@ namespace Workforce.Model
         {
             this.ValidFrom = validFrom;
             // to ensure "addressLine1" is required (not null)
-            this.AddressLine1 = addressLine1 ?? throw new ArgumentNullException("addressLine1 is a required property for Address and cannot be null");
+            this.AddressLine1 = addressLine1;
             // to ensure "postCode" is required (not null)
-            this.PostCode = postCode ?? throw new ArgumentNullException("postCode is a required property for Address and cannot be null");
+            this.PostCode = postCode;
             this.Id = id;
             this.AddressLine2 = addressLine2;
             this.TownCity = townCity;

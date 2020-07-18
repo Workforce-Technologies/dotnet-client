@@ -86,17 +86,12 @@ namespace Workforce.Model
         /// <param name="photo">photo.</param>
         public Employee(Guid id = default(Guid), string title = default(string), string firstName = default(string), string lastName = default(string), DateTime? dateOfBirth = default(DateTime?), string gender = default(string), string nationality = default(string), string employmentType = default(string), string nationalInsuranceNumber = default(string), string noticePeriod = default(string), string recruitmentDetails = default(string), double recruitmentCost = default(double), DateTime? probationEndDate = default(DateTime?), int workDays = default(int), string bankName = default(string), string bankSortCode = default(string), string bankAccountNo = default(string), string bankNotes = default(string), bool isPensionOptedIn = default(bool), DateTime? pensionStartDate = default(DateTime?), string taxCode = default(string), List<Salary> salaries = default(List<Salary>), List<EmployeeCommunicationXref> communications = default(List<EmployeeCommunicationXref>), List<EmployeeWorkTime> workTimes = default(List<EmployeeWorkTime>), List<PensionContribution> contributions = default(List<PensionContribution>), List<EmployeeAddressXref> addresses = default(List<EmployeeAddressXref>), string nextOfKinTitle = default(string), string nextOfKinFirstName = default(string), string nextOfKinLastName = default(string), string nextOfKinOtherNames = default(string), string nextOfKinGender = default(string), DateTime? nextOfKinDateOfBirth = default(DateTime?), Guid? nextOfKinAddressId = default(Guid?), Address nextOfKinAddress = default(Address), Guid? managerId = default(Guid?), Employee manager = default(Employee), Guid? departmentId = default(Guid?), Department department = default(Department), Guid? branchId = default(Guid?), Branch branch = default(Branch), Guid? jobRoleId = default(Guid?), JobRole jobRole = default(JobRole), DateTime? startDate = default(DateTime?), DateTime? leftDate = default(DateTime?), EmployeePhoto photo = default(EmployeePhoto))
         {
-            // to ensure "firstName" is required (not null)
-            this.FirstName = firstName ?? throw new ArgumentNullException("firstName is a required property for Employee and cannot be null");
-            // to ensure "lastName" is required (not null)
-            this.LastName = lastName ?? throw new ArgumentNullException("lastName is a required property for Employee and cannot be null");
+            this.FirstName = firstName;
+            this.LastName = lastName;
             this.RecruitmentCost = recruitmentCost;
-            // to ensure "department" is required (not null)
-            this.Department = department ?? throw new ArgumentNullException("department is a required property for Employee and cannot be null");
-            // to ensure "branch" is required (not null)
-            this.Branch = branch ?? throw new ArgumentNullException("branch is a required property for Employee and cannot be null");
-            // to ensure "jobRole" is required (not null)
-            this.JobRole = jobRole ?? throw new ArgumentNullException("jobRole is a required property for Employee and cannot be null");
+            this.Department = department;
+            this.Branch = branch;
+            this.JobRole = jobRole;
             this.Id = id;
             this.Title = title;
             this.DateOfBirth = dateOfBirth;
