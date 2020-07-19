@@ -49,6 +49,27 @@ namespace Workforce.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateOrUpdateJobRoleWithHttpInfo (JobRole jobRole = default(JobRole));
         /// <summary>
+        /// Delete a Job Role from the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns></returns>
+        void DeleteJobRole (Guid? id = default(Guid?));
+
+        /// <summary>
+        /// Delete a Job Role from the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteJobRoleWithHttpInfo (Guid? id = default(Guid?));
+        /// <summary>
         /// Get a specific Job Role from Workforce
         /// </summary>
         /// <remarks>
@@ -118,6 +139,27 @@ namespace Workforce.Api
         /// <param name="jobRole"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateJobRoleAsyncWithHttpInfo (JobRole jobRole = default(JobRole));
+        /// <summary>
+        /// Delete a Job Role from the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteJobRoleAsync (Guid? id = default(Guid?));
+
+        /// <summary>
+        /// Delete a Job Role from the Workforce system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteJobRoleAsyncWithHttpInfo (Guid? id = default(Guid?));
         /// <summary>
         /// Get a specific Job Role from Workforce
         /// </summary>
@@ -395,6 +437,127 @@ namespace Workforce.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateOrUpdateJobRole", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a Job Role from the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns></returns>
+        public void DeleteJobRole (Guid? id = default(Guid?))
+        {
+             DeleteJobRoleWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// Delete a Job Role from the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Workforce.Client.ApiResponse<Object> DeleteJobRoleWithHttpInfo (Guid? id = default(Guid?))
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/v1/JobRole", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteJobRole", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a Job Role from the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteJobRoleAsync (Guid? id = default(Guid?))
+        {
+             await DeleteJobRoleAsyncWithHttpInfo(id);
+
+        }
+
+        /// <summary>
+        /// Delete a Job Role from the Workforce system 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteJobRoleAsyncWithHttpInfo (Guid? id = default(Guid?))
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/JobRole", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteJobRole", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

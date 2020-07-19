@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateEmployee**](EmployeeApi.md#createorupdateemployee) | **POST** /v1/Employee | Add a new Employee to the Workforce system
+[**DeleteEmployee**](EmployeeApi.md#deleteemployee) | **DELETE** /v1/Employee | Delete an Employee from the Workforce system
 [**GetEmployee**](EmployeeApi.md#getemployee) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
 [**GetEmployees**](EmployeeApi.md#getemployees) | **GET** /v1/Employee | Get all Employees within Workforce
 [**SearchEmployees**](EmployeeApi.md#searchemployees) | **GET** /v1/Employee/search | Search for Employees within Workforce
@@ -78,6 +79,77 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **201** | Returns the newly created Employee |  -  |
 | **400** | If the Employee is null |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deleteemployee"></a>
+# **DeleteEmployee**
+> void DeleteEmployee (Guid? id = null)
+
+Delete an Employee from the Workforce system
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Workforce.Api;
+using Workforce.Client;
+using Workforce.Model;
+
+namespace Example
+{
+    public class DeleteEmployeeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure OAuth2 access token for authorization: Bearer
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new EmployeeApi(config);
+            var id = new Guid?(); // Guid? | The Id of the entity to delete (optional) 
+
+            try
+            {
+                // Delete an Employee from the Workforce system
+                apiInstance.DeleteEmployee(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling EmployeeApi.DeleteEmployee: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid?**](Guid?.md)| The Id of the entity to delete | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | If the Employee was deleted |  -  |
+| **400** | If the Id is null |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

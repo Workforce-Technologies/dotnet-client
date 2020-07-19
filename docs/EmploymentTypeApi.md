@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateEmploymentType**](EmploymentTypeApi.md#createorupdateemploymenttype) | **POST** /v1/EmploymentType | Add a new Employment Type to the Workforce system
+[**DeleteEmploymentType**](EmploymentTypeApi.md#deleteemploymenttype) | **DELETE** /v1/EmploymentType | Delete an Employment Type from the Workforce system
 [**GetEmploymentType**](EmploymentTypeApi.md#getemploymenttype) | **GET** /v1/EmploymentType/{id} | Get a specific Employment Type from Workforce
 [**GetEmploymentTypes**](EmploymentTypeApi.md#getemploymenttypes) | **GET** /v1/EmploymentType | Get all Employment Types within Workforce
 
@@ -77,6 +78,77 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **201** | Returns the newly created Employment Type |  -  |
 | **400** | If the Employment Type is null |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deleteemploymenttype"></a>
+# **DeleteEmploymentType**
+> void DeleteEmploymentType (Guid? id = null)
+
+Delete an Employment Type from the Workforce system
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Workforce.Api;
+using Workforce.Client;
+using Workforce.Model;
+
+namespace Example
+{
+    public class DeleteEmploymentTypeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure OAuth2 access token for authorization: Bearer
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new EmploymentTypeApi(config);
+            var id = new Guid?(); // Guid? | The Id of the entity to delete (optional) 
+
+            try
+            {
+                // Delete an Employment Type from the Workforce system
+                apiInstance.DeleteEmploymentType(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling EmploymentTypeApi.DeleteEmploymentType: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid?**](Guid?.md)| The Id of the entity to delete | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | If the Employment Type was deleted |  -  |
+| **400** | If the Id is null |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

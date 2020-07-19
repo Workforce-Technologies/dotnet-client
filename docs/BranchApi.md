@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateBranch**](BranchApi.md#createorupdatebranch) | **POST** /v1/Branch | Add a new Branch to the Workforce system
+[**DeleteBranch**](BranchApi.md#deletebranch) | **DELETE** /v1/Branch | Delete a Branch from the Workforce system
 [**GetBranch**](BranchApi.md#getbranch) | **GET** /v1/Branch/{id} | Get a specific Branch from Workforce
 [**GetBranches**](BranchApi.md#getbranches) | **GET** /v1/Branch | Get all Branches within Workforce
 
@@ -77,6 +78,77 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **201** | Returns the newly created Branch |  -  |
 | **400** | If the Branch is null |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletebranch"></a>
+# **DeleteBranch**
+> void DeleteBranch (Guid? id = null)
+
+Delete a Branch from the Workforce system
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Workforce.Api;
+using Workforce.Client;
+using Workforce.Model;
+
+namespace Example
+{
+    public class DeleteBranchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure OAuth2 access token for authorization: Bearer
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new BranchApi(config);
+            var id = new Guid?(); // Guid? | The Id of the entity to delete (optional) 
+
+            try
+            {
+                // Delete a Branch from the Workforce system
+                apiInstance.DeleteBranch(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling BranchApi.DeleteBranch: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid?**](Guid?.md)| The Id of the entity to delete | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | If the Branch was deleted |  -  |
+| **400** | If the Id is null |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

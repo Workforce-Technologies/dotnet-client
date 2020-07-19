@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateNationality**](NationalityApi.md#createorupdatenationality) | **POST** /v1/Nationality | Add a new Nationality to the Workforce system
+[**DeleteNationality**](NationalityApi.md#deletenationality) | **DELETE** /v1/Nationality | Delete a Nationality from the Workforce system
 [**GetNationalities**](NationalityApi.md#getnationalities) | **GET** /v1/Nationality | Get all Nationalities within Workforce
 [**GetNationality**](NationalityApi.md#getnationality) | **GET** /v1/Nationality/{id} | Get a specific Nationality from Workforce
 
@@ -77,6 +78,77 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **201** | Returns the newly created Nationality |  -  |
 | **400** | If the Nationality is null |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletenationality"></a>
+# **DeleteNationality**
+> void DeleteNationality (Guid? id = null)
+
+Delete a Nationality from the Workforce system
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Workforce.Api;
+using Workforce.Client;
+using Workforce.Model;
+
+namespace Example
+{
+    public class DeleteNationalityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure OAuth2 access token for authorization: Bearer
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new NationalityApi(config);
+            var id = new Guid?(); // Guid? | The Id of the entity to delete (optional) 
+
+            try
+            {
+                // Delete a Nationality from the Workforce system
+                apiInstance.DeleteNationality(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NationalityApi.DeleteNationality: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid?**](Guid?.md)| The Id of the entity to delete | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | If the Nationality was deleted |  -  |
+| **400** | If the Id is null |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

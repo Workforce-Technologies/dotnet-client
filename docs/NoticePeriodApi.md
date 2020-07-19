@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateOrUpdateNoticePeriod**](NoticePeriodApi.md#createorupdatenoticeperiod) | **POST** /v1/NoticePeriod | Add a new Notice Period to the Workforce system
+[**DeleteNoticePeriod**](NoticePeriodApi.md#deletenoticeperiod) | **DELETE** /v1/NoticePeriod | Delete a Notice Period from the Workforce system
 [**GetNoticePeriod**](NoticePeriodApi.md#getnoticeperiod) | **GET** /v1/NoticePeriod/{id} | Get a specific Notice Period from Workforce
 [**GetNoticePeriods**](NoticePeriodApi.md#getnoticeperiods) | **GET** /v1/NoticePeriod | Get all Notice Periods within Workforce
 
@@ -77,6 +78,77 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **201** | Returns the newly created Notice Period |  -  |
 | **400** | If the Notice Period is null |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletenoticeperiod"></a>
+# **DeleteNoticePeriod**
+> void DeleteNoticePeriod (Guid? id = null)
+
+Delete a Notice Period from the Workforce system
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Workforce.Api;
+using Workforce.Client;
+using Workforce.Model;
+
+namespace Example
+{
+    public class DeleteNoticePeriodExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure OAuth2 access token for authorization: Bearer
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new NoticePeriodApi(config);
+            var id = new Guid?(); // Guid? | The Id of the entity to delete (optional) 
+
+            try
+            {
+                // Delete a Notice Period from the Workforce system
+                apiInstance.DeleteNoticePeriod(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NoticePeriodApi.DeleteNoticePeriod: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**Guid?**](Guid?.md)| The Id of the entity to delete | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | If the Notice Period was deleted |  -  |
+| **400** | If the Id is null |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
