@@ -65,17 +65,17 @@ namespace Example
             // Configure OAuth2 access token for authorization: Bearer
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new BranchApi(config);
-            var branch = new Branch(); // Branch |  (optional) 
+            var apiInstance = new AbsenceApi(config);
+            var absence = new Absence(); // Absence |  (optional) 
 
             try
             {
-                // Add a new Branch to the Workforce system
-                apiInstance.CreateOrUpdateBranch(branch);
+                // Add a new Absence to the Workforce system
+                apiInstance.CreateOrUpdateAbsence(absence);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling BranchApi.CreateOrUpdateBranch: " + e.Message );
+                Debug.Print("Exception when calling AbsenceApi.CreateOrUpdateAbsence: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -92,6 +92,12 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AbsenceApi* | [**CreateOrUpdateAbsence**](docs/AbsenceApi.md#createorupdateabsence) | **POST** /v1/Absence | Add a new Absence to the Workforce system
+*AbsenceApi* | [**DeleteAbsence**](docs/AbsenceApi.md#deleteabsence) | **DELETE** /v1/Absence | Delete an Absence from the Workforce system
+*AbsenceApi* | [**GetAbsence**](docs/AbsenceApi.md#getabsence) | **GET** /v1/Absence/{id} | Get a specific Absence from Workforce
+*AbsenceApi* | [**GetAbsences**](docs/AbsenceApi.md#getabsences) | **GET** /v1/Absence | Get all Absences within Workforce
+*AbsenceApi* | [**GetAbsencesForEmployee**](docs/AbsenceApi.md#getabsencesforemployee) | **GET** /v1/Absence/Employee/{id} | Get a list of Absences from workforce for a specific Employee
+*AbsenceApi* | [**SearchAbsences**](docs/AbsenceApi.md#searchabsences) | **GET** /v1/Absence/Search | Get a list of Absences from workforce that match the specified criteria
 *BranchApi* | [**CreateOrUpdateBranch**](docs/BranchApi.md#createorupdatebranch) | **POST** /v1/Branch | Add a new Branch to the Workforce system
 *BranchApi* | [**DeleteBranch**](docs/BranchApi.md#deletebranch) | **DELETE** /v1/Branch | Delete a Branch from the Workforce system
 *BranchApi* | [**GetBranch**](docs/BranchApi.md#getbranch) | **GET** /v1/Branch/{id} | Get a specific Branch from Workforce
@@ -135,6 +141,7 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
+ - [Model.Absence](docs/Absence.md)
  - [Model.Address](docs/Address.md)
  - [Model.Branch](docs/Branch.md)
  - [Model.Communication](docs/Communication.md)
