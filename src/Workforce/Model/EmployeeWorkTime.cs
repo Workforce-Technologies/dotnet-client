@@ -48,10 +48,8 @@ namespace Workforce.Model
         {
             this.EmployeeId = employeeId;
             this.DayOfWeek = dayOfWeek;
-            // to ensure "startTime" is required (not null)
-            this.StartTime = startTime ?? throw new ArgumentNullException("startTime is a required property for EmployeeWorkTime and cannot be null");
-            // to ensure "endTime" is required (not null)
-            this.EndTime = endTime ?? throw new ArgumentNullException("endTime is a required property for EmployeeWorkTime and cannot be null");
+            this.StartTime = startTime;
+            this.EndTime = endTime;
             this.Id = id;
         }
         

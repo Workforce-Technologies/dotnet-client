@@ -48,8 +48,7 @@ namespace Workforce.Model
         {
             this.EmployeeId = employeeId;
             this.ValidFrom = validFrom;
-            // to ensure "frequency" is required (not null)
-            this.Frequency = frequency ?? throw new ArgumentNullException("frequency is a required property for Salary and cannot be null");
+            this.Frequency = frequency;
             this.Id = id;
             this.Value = value;
         }
