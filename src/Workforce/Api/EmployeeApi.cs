@@ -35,8 +35,8 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns></returns>
-        void CreateOrUpdateEmployee (Employee employee = default(Employee));
+        /// <returns>Employee</returns>
+        Employee CreateOrUpdateEmployee (Employee employee = default(Employee));
 
         /// <summary>
         /// Add a new Employee to the Workforce system
@@ -46,8 +46,8 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateOrUpdateEmployeeWithHttpInfo (Employee employee = default(Employee));
+        /// <returns>ApiResponse of Employee</returns>
+        ApiResponse<Employee> CreateOrUpdateEmployeeWithHttpInfo (Employee employee = default(Employee));
         /// <summary>
         /// Delete an Employee from the Workforce system
         /// </summary>
@@ -149,8 +149,8 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateOrUpdateEmployeeAsync (Employee employee = default(Employee));
+        /// <returns>Task of Employee</returns>
+        System.Threading.Tasks.Task<Employee> CreateOrUpdateEmployeeAsync (Employee employee = default(Employee));
 
         /// <summary>
         /// Add a new Employee to the Workforce system
@@ -160,8 +160,8 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateEmployeeAsyncWithHttpInfo (Employee employee = default(Employee));
+        /// <returns>Task of ApiResponse (Employee)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Employee>> CreateOrUpdateEmployeeAsyncWithHttpInfo (Employee employee = default(Employee));
         /// <summary>
         /// Delete an Employee from the Workforce system
         /// </summary>
@@ -371,10 +371,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns></returns>
-        public void CreateOrUpdateEmployee (Employee employee = default(Employee))
+        /// <returns>Employee</returns>
+        public Employee CreateOrUpdateEmployee (Employee employee = default(Employee))
         {
-             CreateOrUpdateEmployeeWithHttpInfo(employee);
+             Workforce.Client.ApiResponse<Employee> localVarResponse = CreateOrUpdateEmployeeWithHttpInfo(employee);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -382,16 +383,16 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> CreateOrUpdateEmployeeWithHttpInfo (Employee employee = default(Employee))
+        /// <returns>ApiResponse of Employee</returns>
+        public Workforce.Client.ApiResponse< Employee > CreateOrUpdateEmployeeWithHttpInfo (Employee employee = default(Employee))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
 
             // to determine the Accept header
@@ -415,7 +416,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/Employee", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post< Employee >("/v1/Employee", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -431,10 +432,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateOrUpdateEmployeeAsync (Employee employee = default(Employee))
+        /// <returns>Task of Employee</returns>
+        public async System.Threading.Tasks.Task<Employee> CreateOrUpdateEmployeeAsync (Employee employee = default(Employee))
         {
-             await CreateOrUpdateEmployeeAsyncWithHttpInfo(employee);
+             Workforce.Client.ApiResponse<Employee> localVarResponse = await CreateOrUpdateEmployeeAsyncWithHttpInfo(employee);
+             return localVarResponse.Data;
 
         }
 
@@ -443,17 +445,17 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employee"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateEmployeeAsyncWithHttpInfo (Employee employee = default(Employee))
+        /// <returns>Task of ApiResponse (Employee)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Employee>> CreateOrUpdateEmployeeAsyncWithHttpInfo (Employee employee = default(Employee))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
 
             // to determine the Accept header
@@ -478,7 +480,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Employee", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Employee>("/v1/Employee", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
