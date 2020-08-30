@@ -45,10 +45,10 @@ namespace Workforce.Model
         /// <param name="lastName">lastName (required).</param>
         /// <param name="dateOfBirth">dateOfBirth.</param>
         /// <param name="gender">gender.</param>
-        /// <param name="nationality">nationality.</param>
-        /// <param name="employmentType">employmentType.</param>
+        /// <param name="nationalityId">nationalityId.</param>
+        /// <param name="employmentTypeId">employmentTypeId.</param>
         /// <param name="nationalInsuranceNumber">nationalInsuranceNumber.</param>
-        /// <param name="noticePeriod">noticePeriod.</param>
+        /// <param name="noticePeriodId">noticePeriodId.</param>
         /// <param name="recruitmentDetails">recruitmentDetails.</param>
         /// <param name="recruitmentCost">recruitmentCost (required).</param>
         /// <param name="probationEndDate">probationEndDate.</param>
@@ -76,30 +76,27 @@ namespace Workforce.Model
         /// <param name="managerId">managerId.</param>
         /// <param name="manager">manager.</param>
         /// <param name="departmentId">departmentId.</param>
-        /// <param name="department">department (required).</param>
+        /// <param name="department">department.</param>
         /// <param name="branchId">branchId.</param>
-        /// <param name="branch">branch (required).</param>
+        /// <param name="branch">branch.</param>
         /// <param name="jobRoleId">jobRoleId.</param>
-        /// <param name="jobRole">jobRole (required).</param>
+        /// <param name="jobRole">jobRole.</param>
         /// <param name="startDate">startDate.</param>
         /// <param name="leftDate">leftDate.</param>
         /// <param name="photo">photo.</param>
-        public Employee(Guid id = default(Guid), string title = default(string), string firstName = default(string), string lastName = default(string), DateTime? dateOfBirth = default(DateTime?), string gender = default(string), string nationality = default(string), string employmentType = default(string), string nationalInsuranceNumber = default(string), string noticePeriod = default(string), string recruitmentDetails = default(string), double recruitmentCost = default(double), DateTime? probationEndDate = default(DateTime?), int workDays = default(int), string bankName = default(string), string bankSortCode = default(string), string bankAccountNo = default(string), string bankNotes = default(string), bool isPensionOptedIn = default(bool), DateTime? pensionStartDate = default(DateTime?), string taxCode = default(string), List<Salary> salaries = default(List<Salary>), List<EmployeeCommunicationXref> communications = default(List<EmployeeCommunicationXref>), List<EmployeeWorkTime> workTimes = default(List<EmployeeWorkTime>), List<PensionContribution> contributions = default(List<PensionContribution>), List<EmployeeAddressXref> addresses = default(List<EmployeeAddressXref>), string nextOfKinTitle = default(string), string nextOfKinFirstName = default(string), string nextOfKinLastName = default(string), string nextOfKinOtherNames = default(string), string nextOfKinGender = default(string), DateTime? nextOfKinDateOfBirth = default(DateTime?), Guid? nextOfKinAddressId = default(Guid?), Address nextOfKinAddress = default(Address), Guid? managerId = default(Guid?), Employee manager = default(Employee), Guid? departmentId = default(Guid?), Department department = default(Department), Guid? branchId = default(Guid?), Branch branch = default(Branch), Guid? jobRoleId = default(Guid?), JobRole jobRole = default(JobRole), DateTime? startDate = default(DateTime?), DateTime? leftDate = default(DateTime?), EmployeePhoto photo = default(EmployeePhoto))
+        public Employee(Guid id = default(Guid), string title = default(string), string firstName = default(string), string lastName = default(string), DateTime? dateOfBirth = default(DateTime?), string gender = default(string), Guid? nationalityId = default(Guid?), Guid? employmentTypeId = default(Guid?), string nationalInsuranceNumber = default(string), Guid? noticePeriodId = default(Guid?), string recruitmentDetails = default(string), double recruitmentCost = default(double), DateTime? probationEndDate = default(DateTime?), int workDays = default(int), string bankName = default(string), string bankSortCode = default(string), string bankAccountNo = default(string), string bankNotes = default(string), bool isPensionOptedIn = default(bool), DateTime? pensionStartDate = default(DateTime?), string taxCode = default(string), List<Salary> salaries = default(List<Salary>), List<EmployeeCommunicationXref> communications = default(List<EmployeeCommunicationXref>), List<EmployeeWorkTime> workTimes = default(List<EmployeeWorkTime>), List<PensionContribution> contributions = default(List<PensionContribution>), List<EmployeeAddressXref> addresses = default(List<EmployeeAddressXref>), string nextOfKinTitle = default(string), string nextOfKinFirstName = default(string), string nextOfKinLastName = default(string), string nextOfKinOtherNames = default(string), string nextOfKinGender = default(string), DateTime? nextOfKinDateOfBirth = default(DateTime?), Guid? nextOfKinAddressId = default(Guid?), Address nextOfKinAddress = default(Address), Guid? managerId = default(Guid?), Employee manager = default(Employee), Guid? departmentId = default(Guid?), Department department = default(Department), Guid? branchId = default(Guid?), Branch branch = default(Branch), Guid? jobRoleId = default(Guid?), JobRole jobRole = default(JobRole), DateTime? startDate = default(DateTime?), DateTime? leftDate = default(DateTime?), EmployeePhoto photo = default(EmployeePhoto))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.RecruitmentCost = recruitmentCost;
-            this.Department = department;
-            this.Branch = branch;
-            this.JobRole = jobRole;
             this.Id = id;
             this.Title = title;
             this.DateOfBirth = dateOfBirth;
             this.Gender = gender;
-            this.Nationality = nationality;
-            this.EmploymentType = employmentType;
+            this.NationalityId = nationalityId;
+            this.EmploymentTypeId = employmentTypeId;
             this.NationalInsuranceNumber = nationalInsuranceNumber;
-            this.NoticePeriod = noticePeriod;
+            this.NoticePeriodId = noticePeriodId;
             this.RecruitmentDetails = recruitmentDetails;
             this.ProbationEndDate = probationEndDate;
             this.WorkDays = workDays;
@@ -126,8 +123,11 @@ namespace Workforce.Model
             this.ManagerId = managerId;
             this.Manager = manager;
             this.DepartmentId = departmentId;
+            this.Department = department;
             this.BranchId = branchId;
+            this.Branch = branch;
             this.JobRoleId = jobRoleId;
+            this.JobRole = jobRole;
             this.StartDate = startDate;
             this.LeftDate = leftDate;
             this.Photo = photo;
@@ -170,16 +170,16 @@ namespace Workforce.Model
         public string Gender { get; set; }
 
         /// <summary>
-        /// Gets or Sets Nationality
+        /// Gets or Sets NationalityId
         /// </summary>
-        [DataMember(Name="nationality", EmitDefaultValue=false)]
-        public string Nationality { get; set; }
+        [DataMember(Name="nationalityId", EmitDefaultValue=true)]
+        public Guid? NationalityId { get; set; }
 
         /// <summary>
-        /// Gets or Sets EmploymentType
+        /// Gets or Sets EmploymentTypeId
         /// </summary>
-        [DataMember(Name="employmentType", EmitDefaultValue=false)]
-        public string EmploymentType { get; set; }
+        [DataMember(Name="employmentTypeId", EmitDefaultValue=true)]
+        public Guid? EmploymentTypeId { get; set; }
 
         /// <summary>
         /// Gets or Sets NationalInsuranceNumber
@@ -188,10 +188,10 @@ namespace Workforce.Model
         public string NationalInsuranceNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets NoticePeriod
+        /// Gets or Sets NoticePeriodId
         /// </summary>
-        [DataMember(Name="noticePeriod", EmitDefaultValue=false)]
-        public string NoticePeriod { get; set; }
+        [DataMember(Name="noticePeriodId", EmitDefaultValue=true)]
+        public Guid? NoticePeriodId { get; set; }
 
         /// <summary>
         /// Gets or Sets RecruitmentDetails
@@ -423,10 +423,10 @@ namespace Workforce.Model
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
             sb.Append("  Gender: ").Append(Gender).Append("\n");
-            sb.Append("  Nationality: ").Append(Nationality).Append("\n");
-            sb.Append("  EmploymentType: ").Append(EmploymentType).Append("\n");
+            sb.Append("  NationalityId: ").Append(NationalityId).Append("\n");
+            sb.Append("  EmploymentTypeId: ").Append(EmploymentTypeId).Append("\n");
             sb.Append("  NationalInsuranceNumber: ").Append(NationalInsuranceNumber).Append("\n");
-            sb.Append("  NoticePeriod: ").Append(NoticePeriod).Append("\n");
+            sb.Append("  NoticePeriodId: ").Append(NoticePeriodId).Append("\n");
             sb.Append("  RecruitmentDetails: ").Append(RecruitmentDetails).Append("\n");
             sb.Append("  RecruitmentCost: ").Append(RecruitmentCost).Append("\n");
             sb.Append("  ProbationEndDate: ").Append(ProbationEndDate).Append("\n");
@@ -528,14 +528,14 @@ namespace Workforce.Model
                     this.Gender.Equals(input.Gender))
                 ) && 
                 (
-                    this.Nationality == input.Nationality ||
-                    (this.Nationality != null &&
-                    this.Nationality.Equals(input.Nationality))
+                    this.NationalityId == input.NationalityId ||
+                    (this.NationalityId != null &&
+                    this.NationalityId.Equals(input.NationalityId))
                 ) && 
                 (
-                    this.EmploymentType == input.EmploymentType ||
-                    (this.EmploymentType != null &&
-                    this.EmploymentType.Equals(input.EmploymentType))
+                    this.EmploymentTypeId == input.EmploymentTypeId ||
+                    (this.EmploymentTypeId != null &&
+                    this.EmploymentTypeId.Equals(input.EmploymentTypeId))
                 ) && 
                 (
                     this.NationalInsuranceNumber == input.NationalInsuranceNumber ||
@@ -543,9 +543,9 @@ namespace Workforce.Model
                     this.NationalInsuranceNumber.Equals(input.NationalInsuranceNumber))
                 ) && 
                 (
-                    this.NoticePeriod == input.NoticePeriod ||
-                    (this.NoticePeriod != null &&
-                    this.NoticePeriod.Equals(input.NoticePeriod))
+                    this.NoticePeriodId == input.NoticePeriodId ||
+                    (this.NoticePeriodId != null &&
+                    this.NoticePeriodId.Equals(input.NoticePeriodId))
                 ) && 
                 (
                     this.RecruitmentDetails == input.RecruitmentDetails ||
@@ -752,14 +752,14 @@ namespace Workforce.Model
                     hashCode = hashCode * 59 + this.DateOfBirth.GetHashCode();
                 if (this.Gender != null)
                     hashCode = hashCode * 59 + this.Gender.GetHashCode();
-                if (this.Nationality != null)
-                    hashCode = hashCode * 59 + this.Nationality.GetHashCode();
-                if (this.EmploymentType != null)
-                    hashCode = hashCode * 59 + this.EmploymentType.GetHashCode();
+                if (this.NationalityId != null)
+                    hashCode = hashCode * 59 + this.NationalityId.GetHashCode();
+                if (this.EmploymentTypeId != null)
+                    hashCode = hashCode * 59 + this.EmploymentTypeId.GetHashCode();
                 if (this.NationalInsuranceNumber != null)
                     hashCode = hashCode * 59 + this.NationalInsuranceNumber.GetHashCode();
-                if (this.NoticePeriod != null)
-                    hashCode = hashCode * 59 + this.NoticePeriod.GetHashCode();
+                if (this.NoticePeriodId != null)
+                    hashCode = hashCode * 59 + this.NoticePeriodId.GetHashCode();
                 if (this.RecruitmentDetails != null)
                     hashCode = hashCode * 59 + this.RecruitmentDetails.GetHashCode();
                 hashCode = hashCode * 59 + this.RecruitmentCost.GetHashCode();
@@ -864,28 +864,10 @@ namespace Workforce.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Gender, length must be less than 1.", new [] { "Gender" });
             }
 
-            // Nationality (string) maxLength
-            if(this.Nationality != null && this.Nationality.Length > 12)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Nationality, length must be less than 12.", new [] { "Nationality" });
-            }
-
-            // EmploymentType (string) maxLength
-            if(this.EmploymentType != null && this.EmploymentType.Length > 12)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EmploymentType, length must be less than 12.", new [] { "EmploymentType" });
-            }
-
             // NationalInsuranceNumber (string) maxLength
             if(this.NationalInsuranceNumber != null && this.NationalInsuranceNumber.Length > 15)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NationalInsuranceNumber, length must be less than 15.", new [] { "NationalInsuranceNumber" });
-            }
-
-            // NoticePeriod (string) maxLength
-            if(this.NoticePeriod != null && this.NoticePeriod.Length > 30)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NoticePeriod, length must be less than 30.", new [] { "NoticePeriod" });
             }
 
             // BankName (string) maxLength

@@ -61,7 +61,7 @@ namespace Example
         {
 
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.workforcehr.org";
             // Configure OAuth2 access token for authorization: Bearer
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 

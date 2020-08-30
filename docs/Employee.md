@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **LastName** | **string** |  | 
 **DateOfBirth** | **DateTime?** |  | [optional] 
 **Gender** | **string** |  | [optional] 
-**Nationality** | **string** |  | [optional] 
-**EmploymentType** | **string** |  | [optional] 
+**NationalityId** | **Guid?** |  | [optional] 
+**EmploymentTypeId** | **Guid?** |  | [optional] 
 **NationalInsuranceNumber** | **string** |  | [optional] 
-**NoticePeriod** | **string** |  | [optional] 
+**NoticePeriodId** | **Guid?** |  | [optional] 
 **RecruitmentDetails** | **string** |  | [optional] 
 **RecruitmentCost** | **double** |  | 
 **ProbationEndDate** | **DateTime?** |  | [optional] 
@@ -40,11 +40,11 @@ Name | Type | Description | Notes
 **ManagerId** | **Guid?** |  | [optional] 
 **Manager** | [**Employee**](Employee.md) |  | [optional] 
 **DepartmentId** | **Guid?** |  | [optional] 
-**Department** | [**Department**](Department.md) |  | 
+**Department** | [**Department**](Department.md) |  | [optional] 
 **BranchId** | **Guid?** |  | [optional] 
-**Branch** | [**Branch**](Branch.md) |  | 
+**Branch** | [**Branch**](Branch.md) |  | [optional] 
 **JobRoleId** | **Guid?** |  | [optional] 
-**JobRole** | [**JobRole**](JobRole.md) |  | 
+**JobRole** | [**JobRole**](JobRole.md) |  | [optional] 
 **StartDate** | **DateTime?** |  | [optional] 
 **LeftDate** | **DateTime?** |  | [optional] 
 **Photo** | [**EmployeePhoto**](EmployeePhoto.md) |  | [optional] 
