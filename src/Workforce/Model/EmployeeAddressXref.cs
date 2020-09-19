@@ -34,14 +34,22 @@ namespace Workforce.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeAddressXref" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="addressId">addressId.</param>
         /// <param name="address">address.</param>
-        public EmployeeAddressXref(Guid addressId = default(Guid), Address address = default(Address))
+        public EmployeeAddressXref(Guid id = default(Guid), Guid addressId = default(Guid), Address address = default(Address))
         {
+            this.Id = id;
             this.AddressId = addressId;
             this.Address = address;
         }
         
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public Guid Id { get; set; }
+
         /// <summary>
         /// Gets or Sets AddressId
         /// </summary>
@@ -62,6 +70,7 @@ namespace Workforce.Model
         {
             var sb = new StringBuilder();
             sb.Append("class EmployeeAddressXref {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  AddressId: ").Append(AddressId).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("}\n");
@@ -99,6 +108,11 @@ namespace Workforce.Model
 
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.AddressId == input.AddressId ||
                     (this.AddressId != null &&
                     this.AddressId.Equals(input.AddressId))
@@ -119,6 +133,8 @@ namespace Workforce.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.AddressId != null)
                     hashCode = hashCode * 59 + this.AddressId.GetHashCode();
                 if (this.Address != null)

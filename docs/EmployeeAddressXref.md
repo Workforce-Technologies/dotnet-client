@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** |  | [optional] 
 **AddressId** | **Guid** |  | [optional] 
 **Address** | [**Address**](Address.md) |  | [optional] 
 
