@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -30,13 +30,10 @@ namespace Workforce.Api
         /// <summary>
         /// Add a new Employment Type to the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns></returns>
-        void CreateOrUpdateEmploymentType (EmploymentType employmentType = default(EmploymentType));
+        void CreateOrUpdateEmploymentType(EmploymentType employmentType = default(EmploymentType));
 
         /// <summary>
         /// Add a new Employment Type to the Workforce system
@@ -47,17 +44,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateOrUpdateEmploymentTypeWithHttpInfo (EmploymentType employmentType = default(EmploymentType));
+        ApiResponse<Object> CreateOrUpdateEmploymentTypeWithHttpInfo(EmploymentType employmentType = default(EmploymentType));
         /// <summary>
         /// Delete an Employment Type from the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        void DeleteEmploymentType (Guid? id = default(Guid?));
+        void DeleteEmploymentType(Guid? id = default(Guid?));
 
         /// <summary>
         /// Delete an Employment Type from the Workforce system
@@ -68,17 +62,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteEmploymentTypeWithHttpInfo (Guid? id = default(Guid?));
+        ApiResponse<Object> DeleteEmploymentTypeWithHttpInfo(Guid? id = default(Guid?));
         /// <summary>
         /// Get a specific Employment Type from Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>EmploymentType</returns>
-        EmploymentType GetEmploymentType (Guid id);
+        EmploymentType GetEmploymentType(Guid id);
 
         /// <summary>
         /// Get a specific Employment Type from Workforce
@@ -89,16 +80,13 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>ApiResponse of EmploymentType</returns>
-        ApiResponse<EmploymentType> GetEmploymentTypeWithHttpInfo (Guid id);
+        ApiResponse<EmploymentType> GetEmploymentTypeWithHttpInfo(Guid id);
         /// <summary>
         /// Get all Employment Types within Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;EmploymentType&gt;</returns>
-        List<EmploymentType> GetEmploymentTypes ();
+        List<EmploymentType> GetEmploymentTypes();
 
         /// <summary>
         /// Get all Employment Types within Workforce
@@ -108,7 +96,7 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        ApiResponse<List<EmploymentType>> GetEmploymentTypesWithHttpInfo ();
+        ApiResponse<List<EmploymentType>> GetEmploymentTypesWithHttpInfo();
         #endregion Synchronous Operations
     }
 
@@ -126,8 +114,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateOrUpdateEmploymentTypeAsync (EmploymentType employmentType = default(EmploymentType));
+        System.Threading.Tasks.Task CreateOrUpdateEmploymentTypeAsync(EmploymentType employmentType = default(EmploymentType), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a new Employment Type to the Workforce system
@@ -137,8 +126,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateEmploymentTypeAsyncWithHttpInfo (EmploymentType employmentType = default(EmploymentType));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateEmploymentTypeWithHttpInfoAsync(EmploymentType employmentType = default(EmploymentType), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete an Employment Type from the Workforce system
         /// </summary>
@@ -147,8 +137,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteEmploymentTypeAsync (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task DeleteEmploymentTypeAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete an Employment Type from the Workforce system
@@ -158,8 +149,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEmploymentTypeAsyncWithHttpInfo (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEmploymentTypeWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a specific Employment Type from Workforce
         /// </summary>
@@ -168,8 +160,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmploymentType</returns>
-        System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeAsync (Guid id);
+        System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a specific Employment Type from Workforce
@@ -179,8 +172,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmploymentType)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmploymentType>> GetEmploymentTypeAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<EmploymentType>> GetEmploymentTypeWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Employment Types within Workforce
         /// </summary>
@@ -188,8 +182,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        System.Threading.Tasks.Task<List<EmploymentType>> GetEmploymentTypesAsync ();
+        System.Threading.Tasks.Task<List<EmploymentType>> GetEmploymentTypesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Employment Types within Workforce
@@ -198,8 +193,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EmploymentType>>> GetEmploymentTypesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<EmploymentType>>> GetEmploymentTypesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -222,7 +218,7 @@ namespace Workforce.Api
         /// Initializes a new instance of the <see cref="EmploymentTypeApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public EmploymentTypeApi() : this((string) null)
+        public EmploymentTypeApi() : this((string)null)
         {
         }
 
@@ -267,11 +263,11 @@ namespace Workforce.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public EmploymentTypeApi(Workforce.Client.ISynchronousClient client,Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
+        public EmploymentTypeApi(Workforce.Client.ISynchronousClient client, Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -302,7 +298,7 @@ namespace Workforce.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Workforce.Client.IReadableConfiguration Configuration {get; set;}
+        public Workforce.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -326,9 +322,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns></returns>
-        public void CreateOrUpdateEmploymentType (EmploymentType employmentType = default(EmploymentType))
+        public void CreateOrUpdateEmploymentType(EmploymentType employmentType = default(EmploymentType))
         {
-             CreateOrUpdateEmploymentTypeWithHttpInfo(employmentType);
+            CreateOrUpdateEmploymentTypeWithHttpInfo(employmentType);
         }
 
         /// <summary>
@@ -337,15 +333,15 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> CreateOrUpdateEmploymentTypeWithHttpInfo (EmploymentType employmentType = default(EmploymentType))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateEmploymentTypeWithHttpInfo(EmploymentType employmentType = default(EmploymentType))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/_*+json"
             };
 
             // to determine the Accept header
@@ -385,11 +381,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateOrUpdateEmploymentTypeAsync (EmploymentType employmentType = default(EmploymentType))
+        public async System.Threading.Tasks.Task CreateOrUpdateEmploymentTypeAsync(EmploymentType employmentType = default(EmploymentType), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await CreateOrUpdateEmploymentTypeAsyncWithHttpInfo(employmentType);
-
+            await CreateOrUpdateEmploymentTypeWithHttpInfoAsync(employmentType, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -397,30 +393,32 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="employmentType"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateEmploymentTypeAsyncWithHttpInfo (EmploymentType employmentType = default(EmploymentType))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateEmploymentTypeWithHttpInfoAsync(EmploymentType employmentType = default(EmploymentType), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.Data = employmentType;
 
             // authentication (Bearer) required
@@ -432,7 +430,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/EmploymentType", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -449,9 +447,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        public void DeleteEmploymentType (Guid? id = default(Guid?))
+        public void DeleteEmploymentType(Guid? id = default(Guid?))
         {
-             DeleteEmploymentTypeWithHttpInfo(id);
+            DeleteEmploymentTypeWithHttpInfo(id);
         }
 
         /// <summary>
@@ -460,7 +458,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> DeleteEmploymentTypeWithHttpInfo (Guid? id = default(Guid?))
+        public Workforce.Client.ApiResponse<Object> DeleteEmploymentTypeWithHttpInfo(Guid? id = default(Guid?))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -507,11 +505,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteEmploymentTypeAsync (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task DeleteEmploymentTypeAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DeleteEmploymentTypeAsyncWithHttpInfo(id);
-
+            await DeleteEmploymentTypeWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -519,8 +517,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteEmploymentTypeAsyncWithHttpInfo (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteEmploymentTypeWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -532,13 +531,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             if (id != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "id", id));
@@ -553,7 +553,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/EmploymentType", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -570,10 +570,10 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>EmploymentType</returns>
-        public EmploymentType GetEmploymentType (Guid id)
+        public EmploymentType GetEmploymentType(Guid id)
         {
-             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = GetEmploymentTypeWithHttpInfo(id);
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<EmploymentType> localVarResponse = GetEmploymentTypeWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -582,7 +582,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
         /// <returns>ApiResponse of EmploymentType</returns>
-        public Workforce.Client.ApiResponse< EmploymentType > GetEmploymentTypeWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse<EmploymentType> GetEmploymentTypeWithHttpInfo(Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -610,7 +610,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< EmploymentType >("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<EmploymentType>("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -626,12 +626,12 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of EmploymentType</returns>
-        public async System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeAsync (Guid id)
+        public async System.Threading.Tasks.Task<EmploymentType> GetEmploymentTypeAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<EmploymentType> localVarResponse = await GetEmploymentTypeAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<EmploymentType> localVarResponse = await GetEmploymentTypeWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -639,8 +639,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employment Type</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (EmploymentType)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<EmploymentType>> GetEmploymentTypeAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<EmploymentType>> GetEmploymentTypeWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -652,13 +653,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
@@ -670,7 +672,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<EmploymentType>("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<EmploymentType>("/v1/EmploymentType/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -686,10 +688,10 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;EmploymentType&gt;</returns>
-        public List<EmploymentType> GetEmploymentTypes ()
+        public List<EmploymentType> GetEmploymentTypes()
         {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = GetEmploymentTypesWithHttpInfo();
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = GetEmploymentTypesWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -697,7 +699,7 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;EmploymentType&gt;</returns>
-        public Workforce.Client.ApiResponse< List<EmploymentType> > GetEmploymentTypesWithHttpInfo ()
+        public Workforce.Client.ApiResponse<List<EmploymentType>> GetEmploymentTypesWithHttpInfo()
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -724,7 +726,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<EmploymentType> >("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<EmploymentType>>("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -739,20 +741,21 @@ namespace Workforce.Api
         /// Get all Employment Types within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;EmploymentType&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EmploymentType>> GetEmploymentTypesAsync ()
+        public async System.Threading.Tasks.Task<List<EmploymentType>> GetEmploymentTypesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = await GetEmploymentTypesAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<EmploymentType>> localVarResponse = await GetEmploymentTypesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all Employment Types within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;EmploymentType&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<EmploymentType>>> GetEmploymentTypesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<EmploymentType>>> GetEmploymentTypesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -764,13 +767,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
 
             // authentication (Bearer) required
             // oauth required
@@ -781,7 +785,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmploymentType>>("/v1/EmploymentType", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<EmploymentType>>("/v1/EmploymentType", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

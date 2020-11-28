@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing DepartmentApi
@@ -50,46 +51,53 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' DepartmentApi
-            //Assert.IsType(typeof(DepartmentApi), instance, "instance is a DepartmentApi");
+            // TODO uncomment below to test 'IsType' DepartmentApi
+            //Assert.IsType<DepartmentApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test DepartmentById
+        /// Test CreateOrUpdateDepartment
         /// </summary>
         [Fact]
-        public void DepartmentByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.DepartmentById(id);
-            //Assert.IsType<Department> (response, "response is Department");
-        }
-        
-        /// <summary>
-        /// Test V1DepartmentGet
-        /// </summary>
-        [Fact]
-        public void V1DepartmentGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1DepartmentGet();
-            //Assert.IsType<List<Department>> (response, "response is List<Department>");
-        }
-        
-        /// <summary>
-        /// Test V1DepartmentPost
-        /// </summary>
-        [Fact]
-        public void V1DepartmentPostTest()
+        public void CreateOrUpdateDepartmentTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Department department = null;
-            //instance.V1DepartmentPost(department);
-            
+            //instance.CreateOrUpdateDepartment(department);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteDepartment
+        /// </summary>
+        [Fact]
+        public void DeleteDepartmentTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteDepartment(id);
+        }
+
+        /// <summary>
+        /// Test GetDepartment
+        /// </summary>
+        [Fact]
+        public void GetDepartmentTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetDepartment(id);
+            //Assert.IsType<Department>(response);
+        }
+
+        /// <summary>
+        /// Test GetDepartments
+        /// </summary>
+        [Fact]
+        public void GetDepartmentsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetDepartments();
+            //Assert.IsType<List<Department>>(response);
+        }
+    }
 }

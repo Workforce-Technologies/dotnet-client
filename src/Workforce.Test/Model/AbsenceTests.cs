@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing Absence
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void AbsenceInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Absence
-            //Assert.IsInstanceOfType<Absence> (instance, "variable 'instance' is a Absence");
+            // TODO uncomment below to test "IsType" Absence
+            //Assert.IsType<Absence>(instance);
         }
 
 

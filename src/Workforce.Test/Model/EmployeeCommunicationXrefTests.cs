@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing EmployeeCommunicationXref
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void EmployeeCommunicationXrefInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" EmployeeCommunicationXref
-            //Assert.IsInstanceOfType<EmployeeCommunicationXref> (instance, "variable 'instance' is a EmployeeCommunicationXref");
+            // TODO uncomment below to test "IsType" EmployeeCommunicationXref
+            //Assert.IsType<EmployeeCommunicationXref>(instance);
         }
 
 

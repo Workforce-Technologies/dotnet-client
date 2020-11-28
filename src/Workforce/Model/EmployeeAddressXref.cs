@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// EmployeeAddressXref
     /// </summary>
-    [DataContract]
-    public partial class EmployeeAddressXref :  IEquatable<EmployeeAddressXref>, IValidatableObject
+    [DataContract(Name = "EmployeeAddressXref")]
+    public partial class EmployeeAddressXref : IEquatable<EmployeeAddressXref>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeAddressXref" /> class.
@@ -43,23 +44,23 @@ namespace Workforce.Model
             this.AddressId = addressId;
             this.Address = address;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressId
         /// </summary>
-        [DataMember(Name="addressId", EmitDefaultValue=false)]
+        [DataMember(Name = "addressId", EmitDefaultValue = false)]
         public Guid AddressId { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public Address Address { get; set; }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

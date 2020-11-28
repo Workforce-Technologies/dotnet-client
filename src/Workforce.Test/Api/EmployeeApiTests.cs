@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing EmployeeApi
@@ -50,23 +51,56 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' EmployeeApi
-            //Assert.IsType(typeof(EmployeeApi), instance, "instance is a EmployeeApi");
+            // TODO uncomment below to test 'IsType' EmployeeApi
+            //Assert.IsType<EmployeeApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test EmployeeById
+        /// Test CreateOrUpdateEmployee
         /// </summary>
         [Fact]
-        public void EmployeeByIdTest()
+        public void CreateOrUpdateEmployeeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Employee employee = null;
+            //var response = instance.CreateOrUpdateEmployee(employee);
+            //Assert.IsType<Employee>(response);
+        }
+
+        /// <summary>
+        /// Test DeleteEmployee
+        /// </summary>
+        [Fact]
+        public void DeleteEmployeeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteEmployee(id);
+        }
+
+        /// <summary>
+        /// Test GetEmployee
+        /// </summary>
+        [Fact]
+        public void GetEmployeeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
-            //var response = instance.EmployeeById(id);
-            //Assert.IsType<Employee> (response, "response is Employee");
+            //var response = instance.GetEmployee(id);
+            //Assert.IsType<Employee>(response);
         }
-        
+
+        /// <summary>
+        /// Test GetEmployees
+        /// </summary>
+        [Fact]
+        public void GetEmployeesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetEmployees();
+            //Assert.IsType<List<Employee>>(response);
+        }
+
         /// <summary>
         /// Test SearchEmployees
         /// </summary>
@@ -77,32 +111,7 @@ namespace Workforce.Test
             //string firstName = null;
             //string lastName = null;
             //var response = instance.SearchEmployees(firstName, lastName);
-            //Assert.IsType<List<Employee>> (response, "response is List<Employee>");
+            //Assert.IsType<List<Employee>>(response);
         }
-        
-        /// <summary>
-        /// Test V1EmployeeGet
-        /// </summary>
-        [Fact]
-        public void V1EmployeeGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1EmployeeGet();
-            //Assert.IsType<List<Employee>> (response, "response is List<Employee>");
-        }
-        
-        /// <summary>
-        /// Test V1EmployeePost
-        /// </summary>
-        [Fact]
-        public void V1EmployeePostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Employee employee = null;
-            //instance.V1EmployeePost(employee);
-            
-        }
-        
     }
-
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// PensionContribution
     /// </summary>
-    [DataContract]
-    public partial class PensionContribution :  IEquatable<PensionContribution>, IValidatableObject
+    [DataContract(Name = "PensionContribution")]
+    public partial class PensionContribution : IEquatable<PensionContribution>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PensionContribution" /> class.
@@ -52,35 +53,35 @@ namespace Workforce.Model
             this.EmployeeContributionPercent = employeeContributionPercent;
             this.EmployerContributionPercent = employerContributionPercent;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EmployeeId
         /// </summary>
-        [DataMember(Name="employeeId", EmitDefaultValue=false)]
+        [DataMember(Name = "employeeId", IsRequired = true, EmitDefaultValue = false)]
         public Guid EmployeeId { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidFrom
         /// </summary>
-        [DataMember(Name="validFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "validFrom", IsRequired = true, EmitDefaultValue = false)]
         public DateTime ValidFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets EmployeeContributionPercent
         /// </summary>
-        [DataMember(Name="employeeContributionPercent", EmitDefaultValue=false)]
+        [DataMember(Name = "employeeContributionPercent", EmitDefaultValue = false)]
         public double EmployeeContributionPercent { get; set; }
 
         /// <summary>
         /// Gets or Sets EmployerContributionPercent
         /// </summary>
-        [DataMember(Name="employerContributionPercent", EmitDefaultValue=false)]
+        [DataMember(Name = "employerContributionPercent", EmitDefaultValue = false)]
         public double EmployerContributionPercent { get; set; }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

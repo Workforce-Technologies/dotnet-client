@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// EmployeeCommunicationXref
     /// </summary>
-    [DataContract]
-    public partial class EmployeeCommunicationXref :  IEquatable<EmployeeCommunicationXref>, IValidatableObject
+    [DataContract(Name = "EmployeeCommunicationXref")]
+    public partial class EmployeeCommunicationXref : IEquatable<EmployeeCommunicationXref>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeCommunicationXref" /> class.
@@ -43,23 +44,23 @@ namespace Workforce.Model
             this.Communication = communication;
             this.LinkType = linkType;
         }
-        
+
         /// <summary>
         /// Gets or Sets CommunicationId
         /// </summary>
-        [DataMember(Name="communicationId", EmitDefaultValue=false)]
+        [DataMember(Name = "communicationId", EmitDefaultValue = false)]
         public Guid CommunicationId { get; set; }
 
         /// <summary>
         /// Gets or Sets Communication
         /// </summary>
-        [DataMember(Name="communication", EmitDefaultValue=false)]
+        [DataMember(Name = "communication", EmitDefaultValue = false)]
         public Communication Communication { get; set; }
 
         /// <summary>
         /// Gets or Sets LinkType
         /// </summary>
-        [DataMember(Name="linkType", EmitDefaultValue=false)]
+        [DataMember(Name = "linkType", EmitDefaultValue = false)]
         public string LinkType { get; set; }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

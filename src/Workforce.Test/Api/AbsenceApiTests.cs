@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing AbsenceApi
@@ -50,11 +51,10 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' AbsenceApi
-            //Assert.IsType(typeof(AbsenceApi), instance, "instance is a AbsenceApi");
+            // TODO uncomment below to test 'IsType' AbsenceApi
+            //Assert.IsType<AbsenceApi>(instance);
         }
 
-        
         /// <summary>
         /// Test CreateOrUpdateAbsence
         /// </summary>
@@ -64,9 +64,8 @@ namespace Workforce.Test
             // TODO uncomment below to test the method and replace null with proper value
             //Absence absence = null;
             //instance.CreateOrUpdateAbsence(absence);
-            
         }
-        
+
         /// <summary>
         /// Test DeleteAbsence
         /// </summary>
@@ -76,9 +75,8 @@ namespace Workforce.Test
             // TODO uncomment below to test the method and replace null with proper value
             //Guid? id = null;
             //instance.DeleteAbsence(id);
-            
         }
-        
+
         /// <summary>
         /// Test GetAbsence
         /// </summary>
@@ -88,9 +86,9 @@ namespace Workforce.Test
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
             //var response = instance.GetAbsence(id);
-            //Assert.IsType<Absence> (response, "response is Absence");
+            //Assert.IsType<Absence>(response);
         }
-        
+
         /// <summary>
         /// Test GetAbsences
         /// </summary>
@@ -99,9 +97,9 @@ namespace Workforce.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.GetAbsences();
-            //Assert.IsType<List<Absence>> (response, "response is List<Absence>");
+            //Assert.IsType<List<Absence>>(response);
         }
-        
+
         /// <summary>
         /// Test GetAbsencesForEmployee
         /// </summary>
@@ -111,9 +109,9 @@ namespace Workforce.Test
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
             //var response = instance.GetAbsencesForEmployee(id);
-            //Assert.IsType<List<Absence>> (response, "response is List<Absence>");
+            //Assert.IsType<List<Absence>>(response);
         }
-        
+
         /// <summary>
         /// Test SearchAbsences
         /// </summary>
@@ -121,11 +119,12 @@ namespace Workforce.Test
         public void SearchAbsencesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //AbsenceSearchCriteria absenceSearchCriteria = null;
-            //var response = instance.SearchAbsences(absenceSearchCriteria);
-            //Assert.IsType<List<Absence>> (response, "response is List<Absence>");
+            //Guid? employeeId = null;
+            //DateTime? dateFrom = null;
+            //DateTime? dateTo = null;
+            //string notes = null;
+            //var response = instance.SearchAbsences(employeeId, dateFrom, dateTo, notes);
+            //Assert.IsType<List<Absence>>(response);
         }
-        
     }
-
 }

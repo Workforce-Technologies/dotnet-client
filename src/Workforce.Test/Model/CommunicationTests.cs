@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing Communication
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void CommunicationInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Communication
-            //Assert.IsInstanceOfType<Communication> (instance, "variable 'instance' is a Communication");
+            // TODO uncomment below to test "IsType" Communication
+            //Assert.IsType<Communication>(instance);
         }
 
 

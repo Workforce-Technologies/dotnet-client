@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Nationality
     /// </summary>
-    [DataContract]
-    public partial class Nationality :  IEquatable<Nationality>, IValidatableObject
+    [DataContract(Name = "Nationality")]
+    public partial class Nationality : IEquatable<Nationality>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Nationality" /> class.
@@ -47,17 +48,17 @@ namespace Workforce.Model
             this.NationalityName = nationalityName ?? throw new ArgumentNullException("nationalityName is a required property for Nationality and cannot be null");
             this.Id = id;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets NationalityName
         /// </summary>
-        [DataMember(Name="nationalityName", EmitDefaultValue=false)]
+        [DataMember(Name = "nationalityName", IsRequired = true, EmitDefaultValue = false)]
         public string NationalityName { get; set; }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

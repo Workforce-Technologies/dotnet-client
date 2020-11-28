@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Communication
     /// </summary>
-    [DataContract]
-    public partial class Communication :  IEquatable<Communication>, IValidatableObject
+    [DataContract(Name = "Communication")]
+    public partial class Communication : IEquatable<Communication>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Communication" /> class.
@@ -50,23 +51,23 @@ namespace Workforce.Model
             this.Detail = detail ?? throw new ArgumentNullException("detail is a required property for Communication and cannot be null");
             this.Id = id;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CommunicationType
         /// </summary>
-        [DataMember(Name="communicationType", EmitDefaultValue=false)]
+        [DataMember(Name = "communicationType", IsRequired = true, EmitDefaultValue = false)]
         public string CommunicationType { get; set; }
 
         /// <summary>
         /// Gets or Sets Detail
         /// </summary>
-        [DataMember(Name="detail", EmitDefaultValue=false)]
+        [DataMember(Name = "detail", IsRequired = true, EmitDefaultValue = false)]
         public string Detail { get; set; }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

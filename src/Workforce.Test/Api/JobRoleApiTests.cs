@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing JobRoleApi
@@ -50,46 +51,53 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' JobRoleApi
-            //Assert.IsType(typeof(JobRoleApi), instance, "instance is a JobRoleApi");
+            // TODO uncomment below to test 'IsType' JobRoleApi
+            //Assert.IsType<JobRoleApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test JobRoleById
+        /// Test CreateOrUpdateJobRole
         /// </summary>
         [Fact]
-        public void JobRoleByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.JobRoleById(id);
-            //Assert.IsType<JobRole> (response, "response is JobRole");
-        }
-        
-        /// <summary>
-        /// Test V1JobRoleGet
-        /// </summary>
-        [Fact]
-        public void V1JobRoleGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1JobRoleGet();
-            //Assert.IsType<List<JobRole>> (response, "response is List<JobRole>");
-        }
-        
-        /// <summary>
-        /// Test V1JobRolePost
-        /// </summary>
-        [Fact]
-        public void V1JobRolePostTest()
+        public void CreateOrUpdateJobRoleTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //JobRole jobRole = null;
-            //instance.V1JobRolePost(jobRole);
-            
+            //instance.CreateOrUpdateJobRole(jobRole);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteJobRole
+        /// </summary>
+        [Fact]
+        public void DeleteJobRoleTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteJobRole(id);
+        }
+
+        /// <summary>
+        /// Test GetJobRole
+        /// </summary>
+        [Fact]
+        public void GetJobRoleTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetJobRole(id);
+            //Assert.IsType<JobRole>(response);
+        }
+
+        /// <summary>
+        /// Test GetJobRoles
+        /// </summary>
+        [Fact]
+        public void GetJobRolesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetJobRoles();
+            //Assert.IsType<List<JobRole>>(response);
+        }
+    }
 }

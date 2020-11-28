@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing Location
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void LocationInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Location
-            //Assert.IsInstanceOfType<Location> (instance, "variable 'instance' is a Location");
+            // TODO uncomment below to test "IsType" Location
+            //Assert.IsType<Location>(instance);
         }
 
 

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -30,13 +30,10 @@ namespace Workforce.Api
         /// <summary>
         /// Add a new Absence to the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
         /// <returns></returns>
-        void CreateOrUpdateAbsence (Absence absence = default(Absence));
+        void CreateOrUpdateAbsence(Absence absence = default(Absence));
 
         /// <summary>
         /// Add a new Absence to the Workforce system
@@ -47,17 +44,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateOrUpdateAbsenceWithHttpInfo (Absence absence = default(Absence));
+        ApiResponse<Object> CreateOrUpdateAbsenceWithHttpInfo(Absence absence = default(Absence));
         /// <summary>
         /// Delete an Absence from the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        void DeleteAbsence (Guid? id = default(Guid?));
+        void DeleteAbsence(Guid? id = default(Guid?));
 
         /// <summary>
         /// Delete an Absence from the Workforce system
@@ -68,17 +62,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteAbsenceWithHttpInfo (Guid? id = default(Guid?));
+        ApiResponse<Object> DeleteAbsenceWithHttpInfo(Guid? id = default(Guid?));
         /// <summary>
         /// Get a specific Absence from Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
         /// <returns>Absence</returns>
-        Absence GetAbsence (Guid id);
+        Absence GetAbsence(Guid id);
 
         /// <summary>
         /// Get a specific Absence from Workforce
@@ -89,16 +80,13 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
         /// <returns>ApiResponse of Absence</returns>
-        ApiResponse<Absence> GetAbsenceWithHttpInfo (Guid id);
+        ApiResponse<Absence> GetAbsenceWithHttpInfo(Guid id);
         /// <summary>
         /// Get all Absences within Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Absence&gt;</returns>
-        List<Absence> GetAbsences ();
+        List<Absence> GetAbsences();
 
         /// <summary>
         /// Get all Absences within Workforce
@@ -108,17 +96,14 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Absence&gt;</returns>
-        ApiResponse<List<Absence>> GetAbsencesWithHttpInfo ();
+        ApiResponse<List<Absence>> GetAbsencesWithHttpInfo();
         /// <summary>
         /// Get a list of Absences from workforce for a specific Employee
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>List&lt;Absence&gt;</returns>
-        List<Absence> GetAbsencesForEmployee (Guid id);
+        List<Absence> GetAbsencesForEmployee(Guid id);
 
         /// <summary>
         /// Get a list of Absences from workforce for a specific Employee
@@ -129,7 +114,18 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>ApiResponse of List&lt;Absence&gt;</returns>
-        ApiResponse<List<Absence>> GetAbsencesForEmployeeWithHttpInfo (Guid id);
+        ApiResponse<List<Absence>> GetAbsencesForEmployeeWithHttpInfo(Guid id);
+        /// <summary>
+        /// Get a list of Absences from workforce that match the specified criteria
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"> (optional)</param>
+        /// <param name="dateFrom"> (optional)</param>
+        /// <param name="dateTo"> (optional)</param>
+        /// <param name="notes"> (optional)</param>
+        /// <returns>List&lt;Absence&gt;</returns>
+        List<Absence> SearchAbsences(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string));
+
         /// <summary>
         /// Get a list of Absences from workforce that match the specified criteria
         /// </summary>
@@ -141,22 +137,8 @@ namespace Workforce.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="notes"> (optional)</param>
-        /// <returns>List&lt;Absence&gt;</returns>
-        List<Absence> SearchAbsences (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string));
-
-        /// <summary>
-        /// Get a list of Absences from workforce that match the specified criteria
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"> (optional)</param>
-        /// <param name="dateFrom"> (optional)</param>
-        /// <param name="dateTo"> (optional)</param>
-        /// <param name="notes"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Absence&gt;</returns>
-        ApiResponse<List<Absence>> SearchAbsencesWithHttpInfo (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string));
+        ApiResponse<List<Absence>> SearchAbsencesWithHttpInfo(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string));
         #endregion Synchronous Operations
     }
 
@@ -174,8 +156,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateOrUpdateAbsenceAsync (Absence absence = default(Absence));
+        System.Threading.Tasks.Task CreateOrUpdateAbsenceAsync(Absence absence = default(Absence), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a new Absence to the Workforce system
@@ -185,8 +168,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateAbsenceAsyncWithHttpInfo (Absence absence = default(Absence));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateAbsenceWithHttpInfoAsync(Absence absence = default(Absence), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete an Absence from the Workforce system
         /// </summary>
@@ -195,8 +179,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAbsenceAsync (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task DeleteAbsenceAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete an Absence from the Workforce system
@@ -206,8 +191,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAbsenceAsyncWithHttpInfo (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAbsenceWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a specific Absence from Workforce
         /// </summary>
@@ -216,8 +202,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Absence</returns>
-        System.Threading.Tasks.Task<Absence> GetAbsenceAsync (Guid id);
+        System.Threading.Tasks.Task<Absence> GetAbsenceAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a specific Absence from Workforce
@@ -227,8 +214,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Absence)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Absence>> GetAbsenceAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Absence>> GetAbsenceWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Absences within Workforce
         /// </summary>
@@ -236,8 +224,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Absence&gt;</returns>
-        System.Threading.Tasks.Task<List<Absence>> GetAbsencesAsync ();
+        System.Threading.Tasks.Task<List<Absence>> GetAbsencesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Absences within Workforce
@@ -246,8 +235,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Absence&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Absence>>> GetAbsencesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<Absence>>> GetAbsencesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a list of Absences from workforce for a specific Employee
         /// </summary>
@@ -256,8 +246,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Absence&gt;</returns>
-        System.Threading.Tasks.Task<List<Absence>> GetAbsencesForEmployeeAsync (Guid id);
+        System.Threading.Tasks.Task<List<Absence>> GetAbsencesForEmployeeAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a list of Absences from workforce for a specific Employee
@@ -267,8 +258,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Absence&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Absence>>> GetAbsencesForEmployeeAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<List<Absence>>> GetAbsencesForEmployeeWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a list of Absences from workforce that match the specified criteria
         /// </summary>
@@ -280,8 +272,9 @@ namespace Workforce.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="notes"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Absence&gt;</returns>
-        System.Threading.Tasks.Task<List<Absence>> SearchAbsencesAsync (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string));
+        System.Threading.Tasks.Task<List<Absence>> SearchAbsencesAsync(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a list of Absences from workforce that match the specified criteria
@@ -294,8 +287,9 @@ namespace Workforce.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="notes"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Absence&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Absence>>> SearchAbsencesAsyncWithHttpInfo (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string));
+        System.Threading.Tasks.Task<ApiResponse<List<Absence>>> SearchAbsencesWithHttpInfoAsync(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -318,7 +312,7 @@ namespace Workforce.Api
         /// Initializes a new instance of the <see cref="AbsenceApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public AbsenceApi() : this((string) null)
+        public AbsenceApi() : this((string)null)
         {
         }
 
@@ -363,11 +357,11 @@ namespace Workforce.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public AbsenceApi(Workforce.Client.ISynchronousClient client,Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
+        public AbsenceApi(Workforce.Client.ISynchronousClient client, Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -398,7 +392,7 @@ namespace Workforce.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Workforce.Client.IReadableConfiguration Configuration {get; set;}
+        public Workforce.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -422,9 +416,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
         /// <returns></returns>
-        public void CreateOrUpdateAbsence (Absence absence = default(Absence))
+        public void CreateOrUpdateAbsence(Absence absence = default(Absence))
         {
-             CreateOrUpdateAbsenceWithHttpInfo(absence);
+            CreateOrUpdateAbsenceWithHttpInfo(absence);
         }
 
         /// <summary>
@@ -433,14 +427,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> CreateOrUpdateAbsenceWithHttpInfo (Absence absence = default(Absence))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateAbsenceWithHttpInfo(Absence absence = default(Absence))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
                 "application/_*+json"
             };
 
@@ -481,11 +475,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateOrUpdateAbsenceAsync (Absence absence = default(Absence))
+        public async System.Threading.Tasks.Task CreateOrUpdateAbsenceAsync(Absence absence = default(Absence), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await CreateOrUpdateAbsenceAsyncWithHttpInfo(absence);
-
+            await CreateOrUpdateAbsenceWithHttpInfoAsync(absence, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -493,8 +487,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="absence"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateAbsenceAsyncWithHttpInfo (Absence absence = default(Absence))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateAbsenceWithHttpInfoAsync(Absence absence = default(Absence), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -510,13 +505,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.Data = absence;
 
             // authentication (Bearer) required
@@ -528,7 +524,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Absence", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Absence", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -545,9 +541,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        public void DeleteAbsence (Guid? id = default(Guid?))
+        public void DeleteAbsence(Guid? id = default(Guid?))
         {
-             DeleteAbsenceWithHttpInfo(id);
+            DeleteAbsenceWithHttpInfo(id);
         }
 
         /// <summary>
@@ -556,7 +552,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> DeleteAbsenceWithHttpInfo (Guid? id = default(Guid?))
+        public Workforce.Client.ApiResponse<Object> DeleteAbsenceWithHttpInfo(Guid? id = default(Guid?))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -603,11 +599,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAbsenceAsync (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task DeleteAbsenceAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DeleteAbsenceAsyncWithHttpInfo(id);
-
+            await DeleteAbsenceWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -615,8 +611,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteAbsenceAsyncWithHttpInfo (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteAbsenceWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -628,13 +625,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             if (id != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "id", id));
@@ -649,7 +647,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/Absence", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/Absence", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -666,10 +664,10 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
         /// <returns>Absence</returns>
-        public Absence GetAbsence (Guid id)
+        public Absence GetAbsence(Guid id)
         {
-             Workforce.Client.ApiResponse<Absence> localVarResponse = GetAbsenceWithHttpInfo(id);
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<Absence> localVarResponse = GetAbsenceWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -678,7 +676,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
         /// <returns>ApiResponse of Absence</returns>
-        public Workforce.Client.ApiResponse< Absence > GetAbsenceWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse<Absence> GetAbsenceWithHttpInfo(Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -706,7 +704,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< Absence >("/v1/Absence/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Absence>("/v1/Absence/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -722,12 +720,12 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Absence</returns>
-        public async System.Threading.Tasks.Task<Absence> GetAbsenceAsync (Guid id)
+        public async System.Threading.Tasks.Task<Absence> GetAbsenceAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<Absence> localVarResponse = await GetAbsenceAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<Absence> localVarResponse = await GetAbsenceWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -735,8 +733,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Absence</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Absence)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Absence>> GetAbsenceAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Absence>> GetAbsenceWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -748,13 +747,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
@@ -766,7 +766,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Absence>("/v1/Absence/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Absence>("/v1/Absence/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -782,10 +782,10 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Absence&gt;</returns>
-        public List<Absence> GetAbsences ()
+        public List<Absence> GetAbsences()
         {
-             Workforce.Client.ApiResponse<List<Absence>> localVarResponse = GetAbsencesWithHttpInfo();
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<Absence>> localVarResponse = GetAbsencesWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -793,7 +793,7 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Absence&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Absence> > GetAbsencesWithHttpInfo ()
+        public Workforce.Client.ApiResponse<List<Absence>> GetAbsencesWithHttpInfo()
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -820,7 +820,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Absence> >("/v1/Absence", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Absence>>("/v1/Absence", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -835,20 +835,21 @@ namespace Workforce.Api
         /// Get all Absences within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Absence&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Absence>> GetAbsencesAsync ()
+        public async System.Threading.Tasks.Task<List<Absence>> GetAbsencesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<Absence>> localVarResponse = await GetAbsencesAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<Absence>> localVarResponse = await GetAbsencesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all Absences within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Absence&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Absence>>> GetAbsencesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Absence>>> GetAbsencesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -860,13 +861,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
 
             // authentication (Bearer) required
             // oauth required
@@ -877,7 +879,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Absence>>("/v1/Absence", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Absence>>("/v1/Absence", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -894,10 +896,10 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>List&lt;Absence&gt;</returns>
-        public List<Absence> GetAbsencesForEmployee (Guid id)
+        public List<Absence> GetAbsencesForEmployee(Guid id)
         {
-             Workforce.Client.ApiResponse<List<Absence>> localVarResponse = GetAbsencesForEmployeeWithHttpInfo(id);
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<Absence>> localVarResponse = GetAbsencesForEmployeeWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -906,7 +908,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
         /// <returns>ApiResponse of List&lt;Absence&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Absence> > GetAbsencesForEmployeeWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse<List<Absence>> GetAbsencesForEmployeeWithHttpInfo(Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -934,7 +936,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Absence> >("/v1/Absence/Employee/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Absence>>("/v1/Absence/Employee/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -950,12 +952,12 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Absence&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Absence>> GetAbsencesForEmployeeAsync (Guid id)
+        public async System.Threading.Tasks.Task<List<Absence>> GetAbsencesForEmployeeAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<Absence>> localVarResponse = await GetAbsencesForEmployeeAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<Absence>> localVarResponse = await GetAbsencesForEmployeeWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -963,8 +965,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Employee</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Absence&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Absence>>> GetAbsencesForEmployeeAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Absence>>> GetAbsencesForEmployeeWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -976,13 +979,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
@@ -994,7 +998,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Absence>>("/v1/Absence/Employee/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Absence>>("/v1/Absence/Employee/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1014,10 +1018,10 @@ namespace Workforce.Api
         /// <param name="dateTo"> (optional)</param>
         /// <param name="notes"> (optional)</param>
         /// <returns>List&lt;Absence&gt;</returns>
-        public List<Absence> SearchAbsences (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string))
+        public List<Absence> SearchAbsences(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string))
         {
-             Workforce.Client.ApiResponse<List<Absence>> localVarResponse = SearchAbsencesWithHttpInfo(employeeId, dateFrom, dateTo, notes);
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<Absence>> localVarResponse = SearchAbsencesWithHttpInfo(employeeId, dateFrom, dateTo, notes);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1029,7 +1033,7 @@ namespace Workforce.Api
         /// <param name="dateTo"> (optional)</param>
         /// <param name="notes"> (optional)</param>
         /// <returns>ApiResponse of List&lt;Absence&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Absence> > SearchAbsencesWithHttpInfo (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string))
+        public Workforce.Client.ApiResponse<List<Absence>> SearchAbsencesWithHttpInfo(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -1072,7 +1076,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Absence> >("/v1/Absence/Search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Absence>>("/v1/Absence/Search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1091,12 +1095,12 @@ namespace Workforce.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="notes"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Absence&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Absence>> SearchAbsencesAsync (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string))
+        public async System.Threading.Tasks.Task<List<Absence>> SearchAbsencesAsync(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<Absence>> localVarResponse = await SearchAbsencesAsyncWithHttpInfo(employeeId, dateFrom, dateTo, notes);
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<Absence>> localVarResponse = await SearchAbsencesWithHttpInfoAsync(employeeId, dateFrom, dateTo, notes, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1107,8 +1111,9 @@ namespace Workforce.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="notes"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Absence&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Absence>>> SearchAbsencesAsyncWithHttpInfo (Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Absence>>> SearchAbsencesWithHttpInfoAsync(Guid? employeeId = default(Guid?), DateTime? dateFrom = default(DateTime?), DateTime? dateTo = default(DateTime?), string notes = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -1120,13 +1125,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             if (employeeId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "EmployeeId", employeeId));
@@ -1153,7 +1159,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Absence>>("/v1/Absence/Search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Absence>>("/v1/Absence/Search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

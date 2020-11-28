@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -30,13 +30,10 @@ namespace Workforce.Api
         /// <summary>
         /// Add a new Department to the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns></returns>
-        void CreateOrUpdateDepartment (Department department = default(Department));
+        void CreateOrUpdateDepartment(Department department = default(Department));
 
         /// <summary>
         /// Add a new Department to the Workforce system
@@ -47,17 +44,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateOrUpdateDepartmentWithHttpInfo (Department department = default(Department));
+        ApiResponse<Object> CreateOrUpdateDepartmentWithHttpInfo(Department department = default(Department));
         /// <summary>
         /// Delete a Department from the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        void DeleteDepartment (Guid? id = default(Guid?));
+        void DeleteDepartment(Guid? id = default(Guid?));
 
         /// <summary>
         /// Delete a Department from the Workforce system
@@ -68,17 +62,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteDepartmentWithHttpInfo (Guid? id = default(Guid?));
+        ApiResponse<Object> DeleteDepartmentWithHttpInfo(Guid? id = default(Guid?));
         /// <summary>
         /// Get a specific Department from Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Department</returns>
-        Department GetDepartment (Guid id);
+        Department GetDepartment(Guid id);
 
         /// <summary>
         /// Get a specific Department from Workforce
@@ -89,16 +80,13 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>ApiResponse of Department</returns>
-        ApiResponse<Department> GetDepartmentWithHttpInfo (Guid id);
+        ApiResponse<Department> GetDepartmentWithHttpInfo(Guid id);
         /// <summary>
         /// Get all Departments within Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Department&gt;</returns>
-        List<Department> GetDepartments ();
+        List<Department> GetDepartments();
 
         /// <summary>
         /// Get all Departments within Workforce
@@ -108,7 +96,7 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Department&gt;</returns>
-        ApiResponse<List<Department>> GetDepartmentsWithHttpInfo ();
+        ApiResponse<List<Department>> GetDepartmentsWithHttpInfo();
         #endregion Synchronous Operations
     }
 
@@ -126,8 +114,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateOrUpdateDepartmentAsync (Department department = default(Department));
+        System.Threading.Tasks.Task CreateOrUpdateDepartmentAsync(Department department = default(Department), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a new Department to the Workforce system
@@ -137,8 +126,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateDepartmentAsyncWithHttpInfo (Department department = default(Department));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateDepartmentWithHttpInfoAsync(Department department = default(Department), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a Department from the Workforce system
         /// </summary>
@@ -147,8 +137,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteDepartmentAsync (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task DeleteDepartmentAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a Department from the Workforce system
@@ -158,8 +149,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDepartmentAsyncWithHttpInfo (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDepartmentWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a specific Department from Workforce
         /// </summary>
@@ -168,8 +160,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Department</returns>
-        System.Threading.Tasks.Task<Department> GetDepartmentAsync (Guid id);
+        System.Threading.Tasks.Task<Department> GetDepartmentAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a specific Department from Workforce
@@ -179,8 +172,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Department)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Department>> GetDepartmentAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Department>> GetDepartmentWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Departments within Workforce
         /// </summary>
@@ -188,8 +182,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Department&gt;</returns>
-        System.Threading.Tasks.Task<List<Department>> GetDepartmentsAsync ();
+        System.Threading.Tasks.Task<List<Department>> GetDepartmentsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Departments within Workforce
@@ -198,8 +193,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Department&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Department>>> GetDepartmentsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<Department>>> GetDepartmentsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -222,7 +218,7 @@ namespace Workforce.Api
         /// Initializes a new instance of the <see cref="DepartmentApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public DepartmentApi() : this((string) null)
+        public DepartmentApi() : this((string)null)
         {
         }
 
@@ -267,11 +263,11 @@ namespace Workforce.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public DepartmentApi(Workforce.Client.ISynchronousClient client,Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
+        public DepartmentApi(Workforce.Client.ISynchronousClient client, Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -302,7 +298,7 @@ namespace Workforce.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Workforce.Client.IReadableConfiguration Configuration {get; set;}
+        public Workforce.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -326,9 +322,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns></returns>
-        public void CreateOrUpdateDepartment (Department department = default(Department))
+        public void CreateOrUpdateDepartment(Department department = default(Department))
         {
-             CreateOrUpdateDepartmentWithHttpInfo(department);
+            CreateOrUpdateDepartmentWithHttpInfo(department);
         }
 
         /// <summary>
@@ -337,15 +333,15 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> CreateOrUpdateDepartmentWithHttpInfo (Department department = default(Department))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateDepartmentWithHttpInfo(Department department = default(Department))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/_*+json"
             };
 
             // to determine the Accept header
@@ -385,11 +381,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateOrUpdateDepartmentAsync (Department department = default(Department))
+        public async System.Threading.Tasks.Task CreateOrUpdateDepartmentAsync(Department department = default(Department), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await CreateOrUpdateDepartmentAsyncWithHttpInfo(department);
-
+            await CreateOrUpdateDepartmentWithHttpInfoAsync(department, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -397,30 +393,32 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="department"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateDepartmentAsyncWithHttpInfo (Department department = default(Department))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateDepartmentWithHttpInfoAsync(Department department = default(Department), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.Data = department;
 
             // authentication (Bearer) required
@@ -432,7 +430,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Department", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Department", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -449,9 +447,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        public void DeleteDepartment (Guid? id = default(Guid?))
+        public void DeleteDepartment(Guid? id = default(Guid?))
         {
-             DeleteDepartmentWithHttpInfo(id);
+            DeleteDepartmentWithHttpInfo(id);
         }
 
         /// <summary>
@@ -460,7 +458,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> DeleteDepartmentWithHttpInfo (Guid? id = default(Guid?))
+        public Workforce.Client.ApiResponse<Object> DeleteDepartmentWithHttpInfo(Guid? id = default(Guid?))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -507,11 +505,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteDepartmentAsync (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task DeleteDepartmentAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DeleteDepartmentAsyncWithHttpInfo(id);
-
+            await DeleteDepartmentWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -519,8 +517,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteDepartmentAsyncWithHttpInfo (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteDepartmentWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -532,13 +531,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             if (id != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "id", id));
@@ -553,7 +553,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/Department", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/Department", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -570,10 +570,10 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>Department</returns>
-        public Department GetDepartment (Guid id)
+        public Department GetDepartment(Guid id)
         {
-             Workforce.Client.ApiResponse<Department> localVarResponse = GetDepartmentWithHttpInfo(id);
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<Department> localVarResponse = GetDepartmentWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -582,7 +582,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
         /// <returns>ApiResponse of Department</returns>
-        public Workforce.Client.ApiResponse< Department > GetDepartmentWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse<Department> GetDepartmentWithHttpInfo(Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -610,7 +610,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< Department >("/v1/Department/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Department>("/v1/Department/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -626,12 +626,12 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Department</returns>
-        public async System.Threading.Tasks.Task<Department> GetDepartmentAsync (Guid id)
+        public async System.Threading.Tasks.Task<Department> GetDepartmentAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<Department> localVarResponse = await GetDepartmentAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<Department> localVarResponse = await GetDepartmentWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -639,8 +639,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Department</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Department)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Department>> GetDepartmentAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Department>> GetDepartmentWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -652,13 +653,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
@@ -670,7 +672,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Department>("/v1/Department/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Department>("/v1/Department/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -686,10 +688,10 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Department&gt;</returns>
-        public List<Department> GetDepartments ()
+        public List<Department> GetDepartments()
         {
-             Workforce.Client.ApiResponse<List<Department>> localVarResponse = GetDepartmentsWithHttpInfo();
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<Department>> localVarResponse = GetDepartmentsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -697,7 +699,7 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Department&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Department> > GetDepartmentsWithHttpInfo ()
+        public Workforce.Client.ApiResponse<List<Department>> GetDepartmentsWithHttpInfo()
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -724,7 +726,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Department> >("/v1/Department", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Department>>("/v1/Department", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -739,20 +741,21 @@ namespace Workforce.Api
         /// Get all Departments within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Department&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Department>> GetDepartmentsAsync ()
+        public async System.Threading.Tasks.Task<List<Department>> GetDepartmentsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<Department>> localVarResponse = await GetDepartmentsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<Department>> localVarResponse = await GetDepartmentsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all Departments within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Department&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Department>>> GetDepartmentsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Department>>> GetDepartmentsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -764,13 +767,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
 
             // authentication (Bearer) required
             // oauth required
@@ -781,7 +785,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Department>>("/v1/Department", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Department>>("/v1/Department", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

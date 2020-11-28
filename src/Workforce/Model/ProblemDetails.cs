@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// ProblemDetails
     /// </summary>
-    [DataContract]
-    public partial class ProblemDetails :  IEquatable<ProblemDetails>, IValidatableObject
+    [DataContract(Name = "ProblemDetails")]
+    public partial class ProblemDetails : IEquatable<ProblemDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProblemDetails" /> class.
@@ -47,42 +48,51 @@ namespace Workforce.Model
             this.Detail = detail;
             this.Instance = instance;
         }
-        
+
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=true)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public int? Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Detail
         /// </summary>
-        [DataMember(Name="detail", EmitDefaultValue=false)]
+        [DataMember(Name = "detail", EmitDefaultValue = false)]
         public string Detail { get; set; }
 
         /// <summary>
         /// Gets or Sets Instance
         /// </summary>
-        [DataMember(Name="instance", EmitDefaultValue=false)]
+        [DataMember(Name = "instance", EmitDefaultValue = false)]
         public string Instance { get; set; }
 
         /// <summary>
         /// Gets or Sets Extensions
         /// </summary>
-        [DataMember(Name="extensions", EmitDefaultValue=false)]
+        [DataMember(Name = "extensions", EmitDefaultValue = false)]
         public Dictionary<string, Object> Extensions { get; private set; }
+
+        /// <summary>
+        /// Returns false as Extensions should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeExtensions()
+        {
+            return false;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -101,7 +111,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -30,13 +30,10 @@ namespace Workforce.Api
         /// <summary>
         /// Add a new Nationality to the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
         /// <returns></returns>
-        void CreateOrUpdateCountry (Country country = default(Country));
+        void CreateOrUpdateCountry(Country country = default(Country));
 
         /// <summary>
         /// Add a new Nationality to the Workforce system
@@ -47,17 +44,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateOrUpdateCountryWithHttpInfo (Country country = default(Country));
+        ApiResponse<Object> CreateOrUpdateCountryWithHttpInfo(Country country = default(Country));
         /// <summary>
         /// Delete a Country from the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        void DeleteCountry (Guid? id = default(Guid?));
+        void DeleteCountry(Guid? id = default(Guid?));
 
         /// <summary>
         /// Delete a Country from the Workforce system
@@ -68,16 +62,13 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteCountryWithHttpInfo (Guid? id = default(Guid?));
+        ApiResponse<Object> DeleteCountryWithHttpInfo(Guid? id = default(Guid?));
         /// <summary>
         /// Get all Countries within Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Country&gt;</returns>
-        List<Country> GetCountries ();
+        List<Country> GetCountries();
 
         /// <summary>
         /// Get all Countries within Workforce
@@ -87,16 +78,13 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Country&gt;</returns>
-        ApiResponse<List<Country>> GetCountriesWithHttpInfo ();
+        ApiResponse<List<Country>> GetCountriesWithHttpInfo();
         /// <summary>
         /// Get all Countries within Workforce and the assoicated regions
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Country&gt;</returns>
-        List<Country> GetCountriesWithRegions ();
+        List<Country> GetCountriesWithRegions();
 
         /// <summary>
         /// Get all Countries within Workforce and the assoicated regions
@@ -106,17 +94,14 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Country&gt;</returns>
-        ApiResponse<List<Country>> GetCountriesWithRegionsWithHttpInfo ();
+        ApiResponse<List<Country>> GetCountriesWithRegionsWithHttpInfo();
         /// <summary>
         /// Get a specific Country from Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Country</returns>
-        Country GetCountry (Guid id);
+        Country GetCountry(Guid id);
 
         /// <summary>
         /// Get a specific Country from Workforce
@@ -127,7 +112,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>ApiResponse of Country</returns>
-        ApiResponse<Country> GetCountryWithHttpInfo (Guid id);
+        ApiResponse<Country> GetCountryWithHttpInfo(Guid id);
         #endregion Synchronous Operations
     }
 
@@ -145,8 +130,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateOrUpdateCountryAsync (Country country = default(Country));
+        System.Threading.Tasks.Task CreateOrUpdateCountryAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a new Nationality to the Workforce system
@@ -156,8 +142,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateCountryAsyncWithHttpInfo (Country country = default(Country));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateCountryWithHttpInfoAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a Country from the Workforce system
         /// </summary>
@@ -166,8 +153,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteCountryAsync (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task DeleteCountryAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a Country from the Workforce system
@@ -177,8 +165,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteCountryAsyncWithHttpInfo (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteCountryWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Countries within Workforce
         /// </summary>
@@ -186,8 +175,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Country&gt;</returns>
-        System.Threading.Tasks.Task<List<Country>> GetCountriesAsync ();
+        System.Threading.Tasks.Task<List<Country>> GetCountriesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Countries within Workforce
@@ -196,8 +186,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Country&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Country>>> GetCountriesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<Country>>> GetCountriesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Countries within Workforce and the assoicated regions
         /// </summary>
@@ -205,8 +196,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Country&gt;</returns>
-        System.Threading.Tasks.Task<List<Country>> GetCountriesWithRegionsAsync ();
+        System.Threading.Tasks.Task<List<Country>> GetCountriesWithRegionsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Countries within Workforce and the assoicated regions
@@ -215,8 +207,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Country&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Country>>> GetCountriesWithRegionsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<Country>>> GetCountriesWithRegionsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a specific Country from Workforce
         /// </summary>
@@ -225,8 +218,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Country</returns>
-        System.Threading.Tasks.Task<Country> GetCountryAsync (Guid id);
+        System.Threading.Tasks.Task<Country> GetCountryAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a specific Country from Workforce
@@ -236,8 +230,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Country)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Country>> GetCountryAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<Country>> GetCountryWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -260,7 +255,7 @@ namespace Workforce.Api
         /// Initializes a new instance of the <see cref="CountryApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public CountryApi() : this((string) null)
+        public CountryApi() : this((string)null)
         {
         }
 
@@ -305,11 +300,11 @@ namespace Workforce.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public CountryApi(Workforce.Client.ISynchronousClient client,Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
+        public CountryApi(Workforce.Client.ISynchronousClient client, Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -340,7 +335,7 @@ namespace Workforce.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Workforce.Client.IReadableConfiguration Configuration {get; set;}
+        public Workforce.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -364,9 +359,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
         /// <returns></returns>
-        public void CreateOrUpdateCountry (Country country = default(Country))
+        public void CreateOrUpdateCountry(Country country = default(Country))
         {
-             CreateOrUpdateCountryWithHttpInfo(country);
+            CreateOrUpdateCountryWithHttpInfo(country);
         }
 
         /// <summary>
@@ -375,15 +370,15 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> CreateOrUpdateCountryWithHttpInfo (Country country = default(Country))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateCountryWithHttpInfo(Country country = default(Country))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/_*+json"
             };
 
             // to determine the Accept header
@@ -423,11 +418,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateOrUpdateCountryAsync (Country country = default(Country))
+        public async System.Threading.Tasks.Task CreateOrUpdateCountryAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await CreateOrUpdateCountryAsyncWithHttpInfo(country);
-
+            await CreateOrUpdateCountryWithHttpInfoAsync(country, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -435,30 +430,32 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="country"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateCountryAsyncWithHttpInfo (Country country = default(Country))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateCountryWithHttpInfoAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.Data = country;
 
             // authentication (Bearer) required
@@ -470,7 +467,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Country", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/Country", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -487,9 +484,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        public void DeleteCountry (Guid? id = default(Guid?))
+        public void DeleteCountry(Guid? id = default(Guid?))
         {
-             DeleteCountryWithHttpInfo(id);
+            DeleteCountryWithHttpInfo(id);
         }
 
         /// <summary>
@@ -498,7 +495,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> DeleteCountryWithHttpInfo (Guid? id = default(Guid?))
+        public Workforce.Client.ApiResponse<Object> DeleteCountryWithHttpInfo(Guid? id = default(Guid?))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -545,11 +542,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteCountryAsync (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task DeleteCountryAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DeleteCountryAsyncWithHttpInfo(id);
-
+            await DeleteCountryWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -557,8 +554,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteCountryAsyncWithHttpInfo (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteCountryWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -570,13 +568,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             if (id != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "id", id));
@@ -591,7 +590,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/Country", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/Country", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -607,10 +606,10 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Country&gt;</returns>
-        public List<Country> GetCountries ()
+        public List<Country> GetCountries()
         {
-             Workforce.Client.ApiResponse<List<Country>> localVarResponse = GetCountriesWithHttpInfo();
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<Country>> localVarResponse = GetCountriesWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -618,7 +617,7 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Country&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Country> > GetCountriesWithHttpInfo ()
+        public Workforce.Client.ApiResponse<List<Country>> GetCountriesWithHttpInfo()
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -645,7 +644,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Country> >("/v1/Country", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Country>>("/v1/Country", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -660,20 +659,21 @@ namespace Workforce.Api
         /// Get all Countries within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Country&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Country>> GetCountriesAsync ()
+        public async System.Threading.Tasks.Task<List<Country>> GetCountriesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<Country>> localVarResponse = await GetCountriesAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<Country>> localVarResponse = await GetCountriesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all Countries within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Country&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Country>>> GetCountriesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Country>>> GetCountriesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -685,13 +685,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
 
             // authentication (Bearer) required
             // oauth required
@@ -702,7 +703,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Country>>("/v1/Country", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Country>>("/v1/Country", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -718,10 +719,10 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Country&gt;</returns>
-        public List<Country> GetCountriesWithRegions ()
+        public List<Country> GetCountriesWithRegions()
         {
-             Workforce.Client.ApiResponse<List<Country>> localVarResponse = GetCountriesWithRegionsWithHttpInfo();
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<Country>> localVarResponse = GetCountriesWithRegionsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -729,7 +730,7 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Country&gt;</returns>
-        public Workforce.Client.ApiResponse< List<Country> > GetCountriesWithRegionsWithHttpInfo ()
+        public Workforce.Client.ApiResponse<List<Country>> GetCountriesWithRegionsWithHttpInfo()
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -756,7 +757,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<Country> >("/v1/Country/full", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Country>>("/v1/Country/full", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -771,20 +772,21 @@ namespace Workforce.Api
         /// Get all Countries within Workforce and the assoicated regions 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Country&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Country>> GetCountriesWithRegionsAsync ()
+        public async System.Threading.Tasks.Task<List<Country>> GetCountriesWithRegionsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<Country>> localVarResponse = await GetCountriesWithRegionsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<Country>> localVarResponse = await GetCountriesWithRegionsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all Countries within Workforce and the assoicated regions 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Country&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Country>>> GetCountriesWithRegionsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Country>>> GetCountriesWithRegionsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -796,13 +798,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
 
             // authentication (Bearer) required
             // oauth required
@@ -813,7 +816,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Country>>("/v1/Country/full", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Country>>("/v1/Country/full", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -830,10 +833,10 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>Country</returns>
-        public Country GetCountry (Guid id)
+        public Country GetCountry(Guid id)
         {
-             Workforce.Client.ApiResponse<Country> localVarResponse = GetCountryWithHttpInfo(id);
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<Country> localVarResponse = GetCountryWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -842,7 +845,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
         /// <returns>ApiResponse of Country</returns>
-        public Workforce.Client.ApiResponse< Country > GetCountryWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse<Country> GetCountryWithHttpInfo(Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -870,7 +873,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< Country >("/v1/Country/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Country>("/v1/Country/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -886,12 +889,12 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Country</returns>
-        public async System.Threading.Tasks.Task<Country> GetCountryAsync (Guid id)
+        public async System.Threading.Tasks.Task<Country> GetCountryAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<Country> localVarResponse = await GetCountryAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<Country> localVarResponse = await GetCountryWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -899,8 +902,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Country</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Country)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Country>> GetCountryAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Country>> GetCountryWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -912,13 +916,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
@@ -930,7 +935,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Country>("/v1/Country/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Country>("/v1/Country/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

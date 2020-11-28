@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -30,13 +30,10 @@ namespace Workforce.Api
         /// <summary>
         /// Add a new Notice Period to the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
         /// <returns></returns>
-        void CreateOrUpdateNoticePeriod (NoticePeriod noticePeriod = default(NoticePeriod));
+        void CreateOrUpdateNoticePeriod(NoticePeriod noticePeriod = default(NoticePeriod));
 
         /// <summary>
         /// Add a new Notice Period to the Workforce system
@@ -47,17 +44,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateOrUpdateNoticePeriodWithHttpInfo (NoticePeriod noticePeriod = default(NoticePeriod));
+        ApiResponse<Object> CreateOrUpdateNoticePeriodWithHttpInfo(NoticePeriod noticePeriod = default(NoticePeriod));
         /// <summary>
         /// Delete a Notice Period from the Workforce system
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        void DeleteNoticePeriod (Guid? id = default(Guid?));
+        void DeleteNoticePeriod(Guid? id = default(Guid?));
 
         /// <summary>
         /// Delete a Notice Period from the Workforce system
@@ -68,17 +62,14 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteNoticePeriodWithHttpInfo (Guid? id = default(Guid?));
+        ApiResponse<Object> DeleteNoticePeriodWithHttpInfo(Guid? id = default(Guid?));
         /// <summary>
         /// Get a specific Notice Period from Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>NoticePeriod</returns>
-        NoticePeriod GetNoticePeriod (Guid id);
+        NoticePeriod GetNoticePeriod(Guid id);
 
         /// <summary>
         /// Get a specific Notice Period from Workforce
@@ -89,16 +80,13 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>ApiResponse of NoticePeriod</returns>
-        ApiResponse<NoticePeriod> GetNoticePeriodWithHttpInfo (Guid id);
+        ApiResponse<NoticePeriod> GetNoticePeriodWithHttpInfo(Guid id);
         /// <summary>
         /// Get all Notice Periods within Workforce
         /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;NoticePeriod&gt;</returns>
-        List<NoticePeriod> GetNoticePeriods ();
+        List<NoticePeriod> GetNoticePeriods();
 
         /// <summary>
         /// Get all Notice Periods within Workforce
@@ -108,7 +96,7 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;NoticePeriod&gt;</returns>
-        ApiResponse<List<NoticePeriod>> GetNoticePeriodsWithHttpInfo ();
+        ApiResponse<List<NoticePeriod>> GetNoticePeriodsWithHttpInfo();
         #endregion Synchronous Operations
     }
 
@@ -126,8 +114,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateOrUpdateNoticePeriodAsync (NoticePeriod noticePeriod = default(NoticePeriod));
+        System.Threading.Tasks.Task CreateOrUpdateNoticePeriodAsync(NoticePeriod noticePeriod = default(NoticePeriod), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a new Notice Period to the Workforce system
@@ -137,8 +126,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateNoticePeriodAsyncWithHttpInfo (NoticePeriod noticePeriod = default(NoticePeriod));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateNoticePeriodWithHttpInfoAsync(NoticePeriod noticePeriod = default(NoticePeriod), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a Notice Period from the Workforce system
         /// </summary>
@@ -147,8 +137,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteNoticePeriodAsync (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task DeleteNoticePeriodAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a Notice Period from the Workforce system
@@ -158,8 +149,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNoticePeriodAsyncWithHttpInfo (Guid? id = default(Guid?));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNoticePeriodWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a specific Notice Period from Workforce
         /// </summary>
@@ -168,8 +160,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NoticePeriod</returns>
-        System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodAsync (Guid id);
+        System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a specific Notice Period from Workforce
@@ -179,8 +172,9 @@ namespace Workforce.Api
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NoticePeriod)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NoticePeriod>> GetNoticePeriodAsyncWithHttpInfo (Guid id);
+        System.Threading.Tasks.Task<ApiResponse<NoticePeriod>> GetNoticePeriodWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Notice Periods within Workforce
         /// </summary>
@@ -188,8 +182,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NoticePeriod&gt;</returns>
-        System.Threading.Tasks.Task<List<NoticePeriod>> GetNoticePeriodsAsync ();
+        System.Threading.Tasks.Task<List<NoticePeriod>> GetNoticePeriodsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all Notice Periods within Workforce
@@ -198,8 +193,9 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NoticePeriod&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<NoticePeriod>>> GetNoticePeriodsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<NoticePeriod>>> GetNoticePeriodsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -222,7 +218,7 @@ namespace Workforce.Api
         /// Initializes a new instance of the <see cref="NoticePeriodApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public NoticePeriodApi() : this((string) null)
+        public NoticePeriodApi() : this((string)null)
         {
         }
 
@@ -267,11 +263,11 @@ namespace Workforce.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public NoticePeriodApi(Workforce.Client.ISynchronousClient client,Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
+        public NoticePeriodApi(Workforce.Client.ISynchronousClient client, Workforce.Client.IAsynchronousClient asyncClient, Workforce.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -302,7 +298,7 @@ namespace Workforce.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Workforce.Client.IReadableConfiguration Configuration {get; set;}
+        public Workforce.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -326,9 +322,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
         /// <returns></returns>
-        public void CreateOrUpdateNoticePeriod (NoticePeriod noticePeriod = default(NoticePeriod))
+        public void CreateOrUpdateNoticePeriod(NoticePeriod noticePeriod = default(NoticePeriod))
         {
-             CreateOrUpdateNoticePeriodWithHttpInfo(noticePeriod);
+            CreateOrUpdateNoticePeriodWithHttpInfo(noticePeriod);
         }
 
         /// <summary>
@@ -337,15 +333,15 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> CreateOrUpdateNoticePeriodWithHttpInfo (NoticePeriod noticePeriod = default(NoticePeriod))
+        public Workforce.Client.ApiResponse<Object> CreateOrUpdateNoticePeriodWithHttpInfo(NoticePeriod noticePeriod = default(NoticePeriod))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/_*+json"
             };
 
             // to determine the Accept header
@@ -385,11 +381,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateOrUpdateNoticePeriodAsync (NoticePeriod noticePeriod = default(NoticePeriod))
+        public async System.Threading.Tasks.Task CreateOrUpdateNoticePeriodAsync(NoticePeriod noticePeriod = default(NoticePeriod), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await CreateOrUpdateNoticePeriodAsyncWithHttpInfo(noticePeriod);
-
+            await CreateOrUpdateNoticePeriodWithHttpInfoAsync(noticePeriod, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -397,30 +393,32 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="noticePeriod"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateNoticePeriodAsyncWithHttpInfo (NoticePeriod noticePeriod = default(NoticePeriod))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateNoticePeriodWithHttpInfoAsync(NoticePeriod noticePeriod = default(NoticePeriod), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
+                "application/json-patch+json", 
                 "application/json", 
                 "text/json", 
-                "application/_*+json", 
-                "application/json-patch+json"
+                "application/_*+json"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.Data = noticePeriod;
 
             // authentication (Bearer) required
@@ -432,7 +430,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/NoticePeriod", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/NoticePeriod", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -449,9 +447,9 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns></returns>
-        public void DeleteNoticePeriod (Guid? id = default(Guid?))
+        public void DeleteNoticePeriod(Guid? id = default(Guid?))
         {
-             DeleteNoticePeriodWithHttpInfo(id);
+            DeleteNoticePeriodWithHttpInfo(id);
         }
 
         /// <summary>
@@ -460,7 +458,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Workforce.Client.ApiResponse<Object> DeleteNoticePeriodWithHttpInfo (Guid? id = default(Guid?))
+        public Workforce.Client.ApiResponse<Object> DeleteNoticePeriodWithHttpInfo(Guid? id = default(Guid?))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -507,11 +505,11 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteNoticePeriodAsync (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task DeleteNoticePeriodAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DeleteNoticePeriodAsyncWithHttpInfo(id);
-
+            await DeleteNoticePeriodWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -519,8 +517,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Id of the entity to delete (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteNoticePeriodAsyncWithHttpInfo (Guid? id = default(Guid?))
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> DeleteNoticePeriodWithHttpInfoAsync(Guid? id = default(Guid?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -532,13 +531,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             if (id != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "id", id));
@@ -553,7 +553,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/NoticePeriod", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/NoticePeriod", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -570,10 +570,10 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>NoticePeriod</returns>
-        public NoticePeriod GetNoticePeriod (Guid id)
+        public NoticePeriod GetNoticePeriod(Guid id)
         {
-             Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = GetNoticePeriodWithHttpInfo(id);
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = GetNoticePeriodWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -582,7 +582,7 @@ namespace Workforce.Api
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
         /// <returns>ApiResponse of NoticePeriod</returns>
-        public Workforce.Client.ApiResponse< NoticePeriod > GetNoticePeriodWithHttpInfo (Guid id)
+        public Workforce.Client.ApiResponse<NoticePeriod> GetNoticePeriodWithHttpInfo(Guid id)
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -610,7 +610,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< NoticePeriod >("/v1/NoticePeriod/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<NoticePeriod>("/v1/NoticePeriod/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -626,12 +626,12 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NoticePeriod</returns>
-        public async System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodAsync (Guid id)
+        public async System.Threading.Tasks.Task<NoticePeriod> GetNoticePeriodAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = await GetNoticePeriodAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<NoticePeriod> localVarResponse = await GetNoticePeriodWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -639,8 +639,9 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the Notice Period</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NoticePeriod)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<NoticePeriod>> GetNoticePeriodAsyncWithHttpInfo (Guid id)
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<NoticePeriod>> GetNoticePeriodWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -652,13 +653,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Workforce.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer) required
@@ -670,7 +672,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<NoticePeriod>("/v1/NoticePeriod/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<NoticePeriod>("/v1/NoticePeriod/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -686,10 +688,10 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;NoticePeriod&gt;</returns>
-        public List<NoticePeriod> GetNoticePeriods ()
+        public List<NoticePeriod> GetNoticePeriods()
         {
-             Workforce.Client.ApiResponse<List<NoticePeriod>> localVarResponse = GetNoticePeriodsWithHttpInfo();
-             return localVarResponse.Data;
+            Workforce.Client.ApiResponse<List<NoticePeriod>> localVarResponse = GetNoticePeriodsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -697,7 +699,7 @@ namespace Workforce.Api
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;NoticePeriod&gt;</returns>
-        public Workforce.Client.ApiResponse< List<NoticePeriod> > GetNoticePeriodsWithHttpInfo ()
+        public Workforce.Client.ApiResponse<List<NoticePeriod>> GetNoticePeriodsWithHttpInfo()
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -724,7 +726,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< List<NoticePeriod> >("/v1/NoticePeriod", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<NoticePeriod>>("/v1/NoticePeriod", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -739,20 +741,21 @@ namespace Workforce.Api
         /// Get all Notice Periods within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NoticePeriod&gt;</returns>
-        public async System.Threading.Tasks.Task<List<NoticePeriod>> GetNoticePeriodsAsync ()
+        public async System.Threading.Tasks.Task<List<NoticePeriod>> GetNoticePeriodsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Workforce.Client.ApiResponse<List<NoticePeriod>> localVarResponse = await GetNoticePeriodsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            Workforce.Client.ApiResponse<List<NoticePeriod>> localVarResponse = await GetNoticePeriodsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get all Notice Periods within Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NoticePeriod&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<NoticePeriod>>> GetNoticePeriodsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<NoticePeriod>>> GetNoticePeriodsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -764,13 +767,14 @@ namespace Workforce.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
 
             // authentication (Bearer) required
             // oauth required
@@ -781,7 +785,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<NoticePeriod>>("/v1/NoticePeriod", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<NoticePeriod>>("/v1/NoticePeriod", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Salary
     /// </summary>
-    [DataContract]
-    public partial class Salary :  IEquatable<Salary>, IValidatableObject
+    [DataContract(Name = "Salary")]
+    public partial class Salary : IEquatable<Salary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Salary" /> class.
@@ -48,39 +49,40 @@ namespace Workforce.Model
         {
             this.EmployeeId = employeeId;
             this.ValidFrom = validFrom;
-            this.Frequency = frequency;
+            // to ensure "frequency" is required (not null)
+            this.Frequency = frequency ?? throw new ArgumentNullException("frequency is a required property for Salary and cannot be null");
             this.Id = id;
             this.Value = value;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EmployeeId
         /// </summary>
-        [DataMember(Name="employeeId", EmitDefaultValue=false)]
+        [DataMember(Name = "employeeId", IsRequired = true, EmitDefaultValue = false)]
         public Guid EmployeeId { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidFrom
         /// </summary>
-        [DataMember(Name="validFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "validFrom", IsRequired = true, EmitDefaultValue = false)]
         public DateTime ValidFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public double Value { get; set; }
 
         /// <summary>
         /// Gets or Sets Frequency
         /// </summary>
-        [DataMember(Name="frequency", EmitDefaultValue=false)]
+        [DataMember(Name = "frequency", IsRequired = true, EmitDefaultValue = false)]
         public string Frequency { get; set; }
 
         /// <summary>
@@ -99,7 +101,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

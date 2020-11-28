@@ -1,6 +1,6 @@
 # Workforce.Api.CountryApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.workforcehr.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.workforcehr.org";
             // Configure OAuth2 access token for authorization: Bearer
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -71,7 +71,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json, application/json-patch+json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -103,7 +103,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.workforcehr.org";
             // Configure OAuth2 access token for authorization: Bearer
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -174,7 +174,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.workforcehr.org";
             // Configure OAuth2 access token for authorization: Bearer
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -241,7 +241,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.workforcehr.org";
             // Configure OAuth2 access token for authorization: Bearer
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -308,7 +308,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.workforcehr.org";
             // Configure OAuth2 access token for authorization: Bearer
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// EmployeeWorkTime
     /// </summary>
-    [DataContract]
-    public partial class EmployeeWorkTime :  IEquatable<EmployeeWorkTime>, IValidatableObject
+    [DataContract(Name = "EmployeeWorkTime")]
+    public partial class EmployeeWorkTime : IEquatable<EmployeeWorkTime>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeWorkTime" /> class.
@@ -48,39 +49,41 @@ namespace Workforce.Model
         {
             this.EmployeeId = employeeId;
             this.DayOfWeek = dayOfWeek;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
+            // to ensure "startTime" is required (not null)
+            this.StartTime = startTime ?? throw new ArgumentNullException("startTime is a required property for EmployeeWorkTime and cannot be null");
+            // to ensure "endTime" is required (not null)
+            this.EndTime = endTime ?? throw new ArgumentNullException("endTime is a required property for EmployeeWorkTime and cannot be null");
             this.Id = id;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EmployeeId
         /// </summary>
-        [DataMember(Name="employeeId", EmitDefaultValue=false)]
+        [DataMember(Name = "employeeId", IsRequired = true, EmitDefaultValue = false)]
         public Guid EmployeeId { get; set; }
 
         /// <summary>
         /// Gets or Sets DayOfWeek
         /// </summary>
-        [DataMember(Name="dayOfWeek", EmitDefaultValue=false)]
+        [DataMember(Name = "dayOfWeek", IsRequired = true, EmitDefaultValue = false)]
         public int DayOfWeek { get; set; }
 
         /// <summary>
         /// Gets or Sets StartTime
         /// </summary>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", IsRequired = true, EmitDefaultValue = false)]
         public string StartTime { get; set; }
 
         /// <summary>
         /// Gets or Sets EndTime
         /// </summary>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", IsRequired = true, EmitDefaultValue = false)]
         public string EndTime { get; set; }
 
         /// <summary>
@@ -99,7 +102,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

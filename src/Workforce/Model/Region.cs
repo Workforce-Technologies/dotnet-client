@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Region
     /// </summary>
-    [DataContract]
-    public partial class Region :  IEquatable<Region>, IValidatableObject
+    [DataContract(Name = "Region")]
+    public partial class Region : IEquatable<Region>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Region" /> class.
@@ -49,23 +50,23 @@ namespace Workforce.Model
             this.Id = id;
             this.ShortCode = shortCode;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets ShortCode
         /// </summary>
-        [DataMember(Name="shortCode", EmitDefaultValue=false)]
+        [DataMember(Name = "shortCode", EmitDefaultValue = false)]
         public string ShortCode { get; set; }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing NoticePeriod
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void NoticePeriodInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" NoticePeriod
-            //Assert.IsInstanceOfType<NoticePeriod> (instance, "variable 'instance' is a NoticePeriod");
+            // TODO uncomment below to test "IsType" NoticePeriod
+            //Assert.IsType<NoticePeriod>(instance);
         }
 
 

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing CountryApi
@@ -50,57 +51,64 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' CountryApi
-            //Assert.IsType(typeof(CountryApi), instance, "instance is a CountryApi");
+            // TODO uncomment below to test 'IsType' CountryApi
+            //Assert.IsType<CountryApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test CountryById
+        /// Test CreateOrUpdateCountry
         /// </summary>
         [Fact]
-        public void CountryByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.CountryById(id);
-            //Assert.IsType<Country> (response, "response is Country");
-        }
-        
-        /// <summary>
-        /// Test V1CountryFullGet
-        /// </summary>
-        [Fact]
-        public void V1CountryFullGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1CountryFullGet();
-            //Assert.IsType<List<Country>> (response, "response is List<Country>");
-        }
-        
-        /// <summary>
-        /// Test V1CountryGet
-        /// </summary>
-        [Fact]
-        public void V1CountryGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1CountryGet();
-            //Assert.IsType<List<Country>> (response, "response is List<Country>");
-        }
-        
-        /// <summary>
-        /// Test V1CountryPost
-        /// </summary>
-        [Fact]
-        public void V1CountryPostTest()
+        public void CreateOrUpdateCountryTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Country country = null;
-            //instance.V1CountryPost(country);
-            
+            //instance.CreateOrUpdateCountry(country);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteCountry
+        /// </summary>
+        [Fact]
+        public void DeleteCountryTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteCountry(id);
+        }
+
+        /// <summary>
+        /// Test GetCountries
+        /// </summary>
+        [Fact]
+        public void GetCountriesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetCountries();
+            //Assert.IsType<List<Country>>(response);
+        }
+
+        /// <summary>
+        /// Test GetCountriesWithRegions
+        /// </summary>
+        [Fact]
+        public void GetCountriesWithRegionsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetCountriesWithRegions();
+            //Assert.IsType<List<Country>>(response);
+        }
+
+        /// <summary>
+        /// Test GetCountry
+        /// </summary>
+        [Fact]
+        public void GetCountryTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetCountry(id);
+            //Assert.IsType<Country>(response);
+        }
+    }
 }

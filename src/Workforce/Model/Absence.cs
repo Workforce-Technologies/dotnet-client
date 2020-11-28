@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Absence
     /// </summary>
-    [DataContract]
-    public partial class Absence :  IEquatable<Absence>, IValidatableObject
+    [DataContract(Name = "Absence")]
+    public partial class Absence : IEquatable<Absence>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Absence" /> class.
@@ -49,41 +50,41 @@ namespace Workforce.Model
             this.EmployeeId = employeeId;
             this.Notes = notes;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets AbsenceType
         /// </summary>
-        [DataMember(Name="absenceType", EmitDefaultValue=false)]
+        [DataMember(Name = "absenceType", EmitDefaultValue = false)]
         public string AbsenceType { get; set; }
 
         /// <summary>
         /// Gets or Sets DateFrom
         /// </summary>
-        [DataMember(Name="dateFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "dateFrom", EmitDefaultValue = false)]
         public DateTime DateFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets DateTo
         /// </summary>
-        [DataMember(Name="dateTo", EmitDefaultValue=false)]
+        [DataMember(Name = "dateTo", EmitDefaultValue = false)]
         public DateTime DateTo { get; set; }
 
         /// <summary>
         /// Gets or Sets EmployeeId
         /// </summary>
-        [DataMember(Name="employeeId", EmitDefaultValue=false)]
+        [DataMember(Name = "employeeId", EmitDefaultValue = false)]
         public Guid EmployeeId { get; set; }
 
         /// <summary>
         /// Gets or Sets Notes
         /// </summary>
-        [DataMember(Name="notes", EmitDefaultValue=false)]
+        [DataMember(Name = "notes", EmitDefaultValue = false)]
         public string Notes { get; set; }
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

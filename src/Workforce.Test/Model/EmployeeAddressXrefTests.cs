@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing EmployeeAddressXref
@@ -52,11 +52,19 @@ namespace Workforce.Test
         [Fact]
         public void EmployeeAddressXrefInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" EmployeeAddressXref
-            //Assert.IsInstanceOfType<EmployeeAddressXref> (instance, "variable 'instance' is a EmployeeAddressXref");
+            // TODO uncomment below to test "IsType" EmployeeAddressXref
+            //Assert.IsType<EmployeeAddressXref>(instance);
         }
 
 
+        /// <summary>
+        /// Test the property 'Id'
+        /// </summary>
+        [Fact]
+        public void IdTest()
+        {
+            // TODO unit test for the property 'Id'
+        }
         /// <summary>
         /// Test the property 'AddressId'
         /// </summary>

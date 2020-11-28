@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Employee
     /// </summary>
-    [DataContract]
-    public partial class Employee :  IEquatable<Employee>, IValidatableObject
+    [DataContract(Name = "Employee")]
+    public partial class Employee : IEquatable<Employee>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Employee" /> class.
@@ -84,10 +85,13 @@ namespace Workforce.Model
         /// <param name="startDate">startDate.</param>
         /// <param name="leftDate">leftDate.</param>
         /// <param name="photo">photo.</param>
-        public Employee(Guid id = default(Guid), string title = default(string), string firstName = default(string), string lastName = default(string), DateTime? dateOfBirth = default(DateTime?), string gender = default(string), Guid? nationalityId = default(Guid?), Guid? employmentTypeId = default(Guid?), string nationalInsuranceNumber = default(string), Guid? noticePeriodId = default(Guid?), string recruitmentDetails = default(string), double recruitmentCost = default(double), DateTime? probationEndDate = default(DateTime?), int workDays = default(int), string bankName = default(string), string bankSortCode = default(string), string bankAccountNo = default(string), string bankNotes = default(string), bool isPensionOptedIn = default(bool), DateTime? pensionStartDate = default(DateTime?), string taxCode = default(string), List<Salary> salaries = default(List<Salary>), List<EmployeeCommunicationXref> communications = default(List<EmployeeCommunicationXref>), List<EmployeeWorkTime> workTimes = default(List<EmployeeWorkTime>), List<PensionContribution> contributions = default(List<PensionContribution>), List<EmployeeAddressXref> addresses = default(List<EmployeeAddressXref>), string nextOfKinTitle = default(string), string nextOfKinFirstName = default(string), string nextOfKinLastName = default(string), string nextOfKinOtherNames = default(string), string nextOfKinGender = default(string), DateTime? nextOfKinDateOfBirth = default(DateTime?), Guid? nextOfKinAddressId = default(Guid?), Address nextOfKinAddress = default(Address), Guid? managerId = default(Guid?), Employee manager = default(Employee), Guid? departmentId = default(Guid?), Department department = default(Department), Guid? branchId = default(Guid?), Branch branch = default(Branch), Guid? jobRoleId = default(Guid?), JobRole jobRole = default(JobRole), DateTime? startDate = default(DateTime?), DateTime? leftDate = default(DateTime?), EmployeePhoto photo = default(EmployeePhoto))
+        /// <param name="photoId">photoId.</param>
+        public Employee(Guid id = default(Guid), string title = default(string), string firstName = default(string), string lastName = default(string), DateTime? dateOfBirth = default(DateTime?), string gender = default(string), Guid? nationalityId = default(Guid?), Guid? employmentTypeId = default(Guid?), string nationalInsuranceNumber = default(string), Guid? noticePeriodId = default(Guid?), string recruitmentDetails = default(string), double recruitmentCost = default(double), DateTime? probationEndDate = default(DateTime?), int workDays = default(int), string bankName = default(string), string bankSortCode = default(string), string bankAccountNo = default(string), string bankNotes = default(string), bool isPensionOptedIn = default(bool), DateTime? pensionStartDate = default(DateTime?), string taxCode = default(string), List<Salary> salaries = default(List<Salary>), List<EmployeeCommunicationXref> communications = default(List<EmployeeCommunicationXref>), List<EmployeeWorkTime> workTimes = default(List<EmployeeWorkTime>), List<PensionContribution> contributions = default(List<PensionContribution>), List<EmployeeAddressXref> addresses = default(List<EmployeeAddressXref>), string nextOfKinTitle = default(string), string nextOfKinFirstName = default(string), string nextOfKinLastName = default(string), string nextOfKinOtherNames = default(string), string nextOfKinGender = default(string), DateTime? nextOfKinDateOfBirth = default(DateTime?), Guid? nextOfKinAddressId = default(Guid?), Address nextOfKinAddress = default(Address), Guid? managerId = default(Guid?), Employee manager = default(Employee), Guid? departmentId = default(Guid?), Department department = default(Department), Guid? branchId = default(Guid?), Branch branch = default(Branch), Guid? jobRoleId = default(Guid?), JobRole jobRole = default(JobRole), DateTime? startDate = default(DateTime?), DateTime? leftDate = default(DateTime?), EmployeePhoto photo = default(EmployeePhoto), Guid? photoId = default(Guid?))
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            // to ensure "firstName" is required (not null)
+            this.FirstName = firstName ?? throw new ArgumentNullException("firstName is a required property for Employee and cannot be null");
+            // to ensure "lastName" is required (not null)
+            this.LastName = lastName ?? throw new ArgumentNullException("lastName is a required property for Employee and cannot be null");
             this.RecruitmentCost = recruitmentCost;
             this.Id = id;
             this.Title = title;
@@ -131,283 +135,299 @@ namespace Workforce.Model
             this.StartDate = startDate;
             this.LeftDate = leftDate;
             this.Photo = photo;
+            this.PhotoId = photoId;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name="firstName", EmitDefaultValue=false)]
+        [DataMember(Name = "firstName", IsRequired = true, EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name="lastName", EmitDefaultValue=false)]
+        [DataMember(Name = "lastName", IsRequired = true, EmitDefaultValue = false)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets DateOfBirth
         /// </summary>
-        [DataMember(Name="dateOfBirth", EmitDefaultValue=true)]
+        [DataMember(Name = "dateOfBirth", EmitDefaultValue = true)]
         public DateTime? DateOfBirth { get; set; }
 
         /// <summary>
         /// Gets or Sets Gender
         /// </summary>
-        [DataMember(Name="gender", EmitDefaultValue=false)]
+        [DataMember(Name = "gender", EmitDefaultValue = false)]
         public string Gender { get; set; }
 
         /// <summary>
         /// Gets or Sets NationalityId
         /// </summary>
-        [DataMember(Name="nationalityId", EmitDefaultValue=true)]
+        [DataMember(Name = "nationalityId", EmitDefaultValue = true)]
         public Guid? NationalityId { get; set; }
 
         /// <summary>
         /// Gets or Sets EmploymentTypeId
         /// </summary>
-        [DataMember(Name="employmentTypeId", EmitDefaultValue=true)]
+        [DataMember(Name = "employmentTypeId", EmitDefaultValue = true)]
         public Guid? EmploymentTypeId { get; set; }
 
         /// <summary>
         /// Gets or Sets NationalInsuranceNumber
         /// </summary>
-        [DataMember(Name="nationalInsuranceNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "nationalInsuranceNumber", EmitDefaultValue = false)]
         public string NationalInsuranceNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets NoticePeriodId
         /// </summary>
-        [DataMember(Name="noticePeriodId", EmitDefaultValue=true)]
+        [DataMember(Name = "noticePeriodId", EmitDefaultValue = true)]
         public Guid? NoticePeriodId { get; set; }
 
         /// <summary>
         /// Gets or Sets RecruitmentDetails
         /// </summary>
-        [DataMember(Name="recruitmentDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "recruitmentDetails", EmitDefaultValue = false)]
         public string RecruitmentDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets RecruitmentCost
         /// </summary>
-        [DataMember(Name="recruitmentCost", EmitDefaultValue=false)]
+        [DataMember(Name = "recruitmentCost", IsRequired = true, EmitDefaultValue = false)]
         public double RecruitmentCost { get; set; }
 
         /// <summary>
         /// Gets or Sets ProbationEndDate
         /// </summary>
-        [DataMember(Name="probationEndDate", EmitDefaultValue=true)]
+        [DataMember(Name = "probationEndDate", EmitDefaultValue = true)]
         public DateTime? ProbationEndDate { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkDays
         /// </summary>
-        [DataMember(Name="workDays", EmitDefaultValue=false)]
+        [DataMember(Name = "workDays", EmitDefaultValue = false)]
         public int WorkDays { get; set; }
 
         /// <summary>
         /// Gets or Sets BankName
         /// </summary>
-        [DataMember(Name="bankName", EmitDefaultValue=false)]
+        [DataMember(Name = "bankName", EmitDefaultValue = false)]
         public string BankName { get; set; }
 
         /// <summary>
         /// Gets or Sets BankSortCode
         /// </summary>
-        [DataMember(Name="bankSortCode", EmitDefaultValue=false)]
+        [DataMember(Name = "bankSortCode", EmitDefaultValue = false)]
         public string BankSortCode { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAccountNo
         /// </summary>
-        [DataMember(Name="bankAccountNo", EmitDefaultValue=false)]
+        [DataMember(Name = "bankAccountNo", EmitDefaultValue = false)]
         public string BankAccountNo { get; set; }
 
         /// <summary>
         /// Gets or Sets BankNotes
         /// </summary>
-        [DataMember(Name="bankNotes", EmitDefaultValue=false)]
+        [DataMember(Name = "bankNotes", EmitDefaultValue = false)]
         public string BankNotes { get; set; }
 
         /// <summary>
         /// Gets or Sets IsPensionOptedIn
         /// </summary>
-        [DataMember(Name="isPensionOptedIn", EmitDefaultValue=false)]
+        [DataMember(Name = "isPensionOptedIn", EmitDefaultValue = false)]
         public bool IsPensionOptedIn { get; set; }
 
         /// <summary>
         /// Gets or Sets PensionStartDate
         /// </summary>
-        [DataMember(Name="pensionStartDate", EmitDefaultValue=true)]
+        [DataMember(Name = "pensionStartDate", EmitDefaultValue = true)]
         public DateTime? PensionStartDate { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxCode
         /// </summary>
-        [DataMember(Name="taxCode", EmitDefaultValue=false)]
+        [DataMember(Name = "taxCode", EmitDefaultValue = false)]
         public string TaxCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Salaries
         /// </summary>
-        [DataMember(Name="salaries", EmitDefaultValue=false)]
+        [DataMember(Name = "salaries", EmitDefaultValue = false)]
         public List<Salary> Salaries { get; set; }
 
         /// <summary>
         /// Gets or Sets Communications
         /// </summary>
-        [DataMember(Name="communications", EmitDefaultValue=false)]
+        [DataMember(Name = "communications", EmitDefaultValue = false)]
         public List<EmployeeCommunicationXref> Communications { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkTimes
         /// </summary>
-        [DataMember(Name="workTimes", EmitDefaultValue=false)]
+        [DataMember(Name = "workTimes", EmitDefaultValue = false)]
         public List<EmployeeWorkTime> WorkTimes { get; set; }
 
         /// <summary>
         /// Gets or Sets Contributions
         /// </summary>
-        [DataMember(Name="contributions", EmitDefaultValue=false)]
+        [DataMember(Name = "contributions", EmitDefaultValue = false)]
         public List<PensionContribution> Contributions { get; set; }
 
         /// <summary>
         /// Gets or Sets Addresses
         /// </summary>
-        [DataMember(Name="addresses", EmitDefaultValue=false)]
+        [DataMember(Name = "addresses", EmitDefaultValue = false)]
         public List<EmployeeAddressXref> Addresses { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinTitle
         /// </summary>
-        [DataMember(Name="nextOfKinTitle", EmitDefaultValue=false)]
+        [DataMember(Name = "nextOfKinTitle", EmitDefaultValue = false)]
         public string NextOfKinTitle { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinFirstName
         /// </summary>
-        [DataMember(Name="nextOfKinFirstName", EmitDefaultValue=false)]
+        [DataMember(Name = "nextOfKinFirstName", EmitDefaultValue = false)]
         public string NextOfKinFirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinLastName
         /// </summary>
-        [DataMember(Name="nextOfKinLastName", EmitDefaultValue=false)]
+        [DataMember(Name = "nextOfKinLastName", EmitDefaultValue = false)]
         public string NextOfKinLastName { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinOtherNames
         /// </summary>
-        [DataMember(Name="nextOfKinOtherNames", EmitDefaultValue=false)]
+        [DataMember(Name = "nextOfKinOtherNames", EmitDefaultValue = false)]
         public string NextOfKinOtherNames { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinGender
         /// </summary>
-        [DataMember(Name="nextOfKinGender", EmitDefaultValue=false)]
+        [DataMember(Name = "nextOfKinGender", EmitDefaultValue = false)]
         public string NextOfKinGender { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinDateOfBirth
         /// </summary>
-        [DataMember(Name="nextOfKinDateOfBirth", EmitDefaultValue=true)]
+        [DataMember(Name = "nextOfKinDateOfBirth", EmitDefaultValue = true)]
         public DateTime? NextOfKinDateOfBirth { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinAddressId
         /// </summary>
-        [DataMember(Name="nextOfKinAddressId", EmitDefaultValue=true)]
+        [DataMember(Name = "nextOfKinAddressId", EmitDefaultValue = true)]
         public Guid? NextOfKinAddressId { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinAddress
         /// </summary>
-        [DataMember(Name="nextOfKinAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "nextOfKinAddress", EmitDefaultValue = false)]
         public Address NextOfKinAddress { get; set; }
 
         /// <summary>
         /// Gets or Sets ManagerId
         /// </summary>
-        [DataMember(Name="managerId", EmitDefaultValue=true)]
+        [DataMember(Name = "managerId", EmitDefaultValue = true)]
         public Guid? ManagerId { get; set; }
 
         /// <summary>
         /// Gets or Sets Manager
         /// </summary>
-        [DataMember(Name="manager", EmitDefaultValue=false)]
+        [DataMember(Name = "manager", EmitDefaultValue = false)]
         public Employee Manager { get; set; }
 
         /// <summary>
         /// Gets or Sets DepartmentId
         /// </summary>
-        [DataMember(Name="departmentId", EmitDefaultValue=true)]
+        [DataMember(Name = "departmentId", EmitDefaultValue = true)]
         public Guid? DepartmentId { get; set; }
 
         /// <summary>
         /// Gets or Sets Department
         /// </summary>
-        [DataMember(Name="department", EmitDefaultValue=false)]
+        [DataMember(Name = "department", EmitDefaultValue = false)]
         public Department Department { get; set; }
 
         /// <summary>
         /// Gets or Sets BranchId
         /// </summary>
-        [DataMember(Name="branchId", EmitDefaultValue=true)]
+        [DataMember(Name = "branchId", EmitDefaultValue = true)]
         public Guid? BranchId { get; set; }
 
         /// <summary>
         /// Gets or Sets Branch
         /// </summary>
-        [DataMember(Name="branch", EmitDefaultValue=false)]
+        [DataMember(Name = "branch", EmitDefaultValue = false)]
         public Branch Branch { get; set; }
 
         /// <summary>
         /// Gets or Sets JobRoleId
         /// </summary>
-        [DataMember(Name="jobRoleId", EmitDefaultValue=true)]
+        [DataMember(Name = "jobRoleId", EmitDefaultValue = true)]
         public Guid? JobRoleId { get; set; }
 
         /// <summary>
         /// Gets or Sets JobRole
         /// </summary>
-        [DataMember(Name="jobRole", EmitDefaultValue=false)]
+        [DataMember(Name = "jobRole", EmitDefaultValue = false)]
         public JobRole JobRole { get; set; }
 
         /// <summary>
         /// Gets or Sets StartDate
         /// </summary>
-        [DataMember(Name="startDate", EmitDefaultValue=true)]
+        [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// Gets or Sets LeftDate
         /// </summary>
-        [DataMember(Name="leftDate", EmitDefaultValue=true)]
+        [DataMember(Name = "leftDate", EmitDefaultValue = true)]
         public DateTime? LeftDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Photo
         /// </summary>
-        [DataMember(Name="photo", EmitDefaultValue=false)]
+        [DataMember(Name = "photo", EmitDefaultValue = false)]
         public EmployeePhoto Photo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PhotoId
+        /// </summary>
+        [DataMember(Name = "photoId", EmitDefaultValue = true)]
+        public Guid? PhotoId { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
         public string DisplayName { get; private set; }
+
+        /// <summary>
+        /// Returns false as DisplayName should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeDisplayName()
+        {
+            return false;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -462,11 +482,12 @@ namespace Workforce.Model
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  LeftDate: ").Append(LeftDate).Append("\n");
             sb.Append("  Photo: ").Append(Photo).Append("\n");
+            sb.Append("  PhotoId: ").Append(PhotoId).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -725,6 +746,11 @@ namespace Workforce.Model
                     this.Photo.Equals(input.Photo))
                 ) && 
                 (
+                    this.PhotoId == input.PhotoId ||
+                    (this.PhotoId != null &&
+                    this.PhotoId.Equals(input.PhotoId))
+                ) && 
+                (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
@@ -827,6 +853,8 @@ namespace Workforce.Model
                     hashCode = hashCode * 59 + this.LeftDate.GetHashCode();
                 if (this.Photo != null)
                     hashCode = hashCode * 59 + this.Photo.GetHashCode();
+                if (this.PhotoId != null)
+                    hashCode = hashCode * 59 + this.PhotoId.GetHashCode();
                 if (this.DisplayName != null)
                     hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 return hashCode;

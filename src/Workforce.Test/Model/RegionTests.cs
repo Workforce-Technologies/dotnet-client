@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing Region
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void RegionInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Region
-            //Assert.IsInstanceOfType<Region> (instance, "variable 'instance' is a Region");
+            // TODO uncomment below to test "IsType" Region
+            //Assert.IsType<Region>(instance);
         }
 
 

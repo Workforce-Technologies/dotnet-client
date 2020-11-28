@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing Department
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void DepartmentInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Department
-            //Assert.IsInstanceOfType<Department> (instance, "variable 'instance' is a Department");
+            // TODO uncomment below to test "IsType" Department
+            //Assert.IsType<Department>(instance);
         }
 
 

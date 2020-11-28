@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing NoticePeriodApi
@@ -50,46 +51,53 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' NoticePeriodApi
-            //Assert.IsType(typeof(NoticePeriodApi), instance, "instance is a NoticePeriodApi");
+            // TODO uncomment below to test 'IsType' NoticePeriodApi
+            //Assert.IsType<NoticePeriodApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test NoticePeriodById
+        /// Test CreateOrUpdateNoticePeriod
         /// </summary>
         [Fact]
-        public void NoticePeriodByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.NoticePeriodById(id);
-            //Assert.IsType<NoticePeriod> (response, "response is NoticePeriod");
-        }
-        
-        /// <summary>
-        /// Test V1NoticePeriodGet
-        /// </summary>
-        [Fact]
-        public void V1NoticePeriodGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1NoticePeriodGet();
-            //Assert.IsType<List<NoticePeriod>> (response, "response is List<NoticePeriod>");
-        }
-        
-        /// <summary>
-        /// Test V1NoticePeriodPost
-        /// </summary>
-        [Fact]
-        public void V1NoticePeriodPostTest()
+        public void CreateOrUpdateNoticePeriodTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //NoticePeriod noticePeriod = null;
-            //instance.V1NoticePeriodPost(noticePeriod);
-            
+            //instance.CreateOrUpdateNoticePeriod(noticePeriod);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteNoticePeriod
+        /// </summary>
+        [Fact]
+        public void DeleteNoticePeriodTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteNoticePeriod(id);
+        }
+
+        /// <summary>
+        /// Test GetNoticePeriod
+        /// </summary>
+        [Fact]
+        public void GetNoticePeriodTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetNoticePeriod(id);
+            //Assert.IsType<NoticePeriod>(response);
+        }
+
+        /// <summary>
+        /// Test GetNoticePeriods
+        /// </summary>
+        [Fact]
+        public void GetNoticePeriodsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetNoticePeriods();
+            //Assert.IsType<List<NoticePeriod>>(response);
+        }
+    }
 }

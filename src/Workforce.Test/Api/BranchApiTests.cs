@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing BranchApi
@@ -50,46 +51,53 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' BranchApi
-            //Assert.IsType(typeof(BranchApi), instance, "instance is a BranchApi");
+            // TODO uncomment below to test 'IsType' BranchApi
+            //Assert.IsType<BranchApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test BranchById
+        /// Test CreateOrUpdateBranch
         /// </summary>
         [Fact]
-        public void BranchByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.BranchById(id);
-            //Assert.IsType<Branch> (response, "response is Branch");
-        }
-        
-        /// <summary>
-        /// Test V1BranchGet
-        /// </summary>
-        [Fact]
-        public void V1BranchGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1BranchGet();
-            //Assert.IsType<List<Branch>> (response, "response is List<Branch>");
-        }
-        
-        /// <summary>
-        /// Test V1BranchPost
-        /// </summary>
-        [Fact]
-        public void V1BranchPostTest()
+        public void CreateOrUpdateBranchTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Branch branch = null;
-            //instance.V1BranchPost(branch);
-            
+            //instance.CreateOrUpdateBranch(branch);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteBranch
+        /// </summary>
+        [Fact]
+        public void DeleteBranchTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteBranch(id);
+        }
+
+        /// <summary>
+        /// Test GetBranch
+        /// </summary>
+        [Fact]
+        public void GetBranchTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetBranch(id);
+            //Assert.IsType<Branch>(response);
+        }
+
+        /// <summary>
+        /// Test GetBranches
+        /// </summary>
+        [Fact]
+        public void GetBranchesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetBranches();
+            //Assert.IsType<List<Branch>>(response);
+        }
+    }
 }

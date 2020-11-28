@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Address
     /// </summary>
-    [DataContract]
-    public partial class Address :  IEquatable<Address>, IValidatableObject
+    [DataContract(Name = "Address")]
+    public partial class Address : IEquatable<Address>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Address" /> class.
@@ -51,62 +52,62 @@ namespace Workforce.Model
         {
             this.ValidFrom = validFrom;
             // to ensure "addressLine1" is required (not null)
-            this.AddressLine1 = addressLine1;
+            this.AddressLine1 = addressLine1 ?? throw new ArgumentNullException("addressLine1 is a required property for Address and cannot be null");
             // to ensure "postCode" is required (not null)
-            this.PostCode = postCode;
+            this.PostCode = postCode ?? throw new ArgumentNullException("postCode is a required property for Address and cannot be null");
             this.Id = id;
             this.AddressLine2 = addressLine2;
             this.TownCity = townCity;
             this.County = county;
             this.Country = country;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidFrom
         /// </summary>
-        [DataMember(Name="validFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "validFrom", IsRequired = true, EmitDefaultValue = false)]
         public DateTime ValidFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressLine1
         /// </summary>
-        [DataMember(Name="addressLine1", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine1", IsRequired = true, EmitDefaultValue = false)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressLine2
         /// </summary>
-        [DataMember(Name="addressLine2", EmitDefaultValue=false)]
+        [DataMember(Name = "addressLine2", EmitDefaultValue = false)]
         public string AddressLine2 { get; set; }
 
         /// <summary>
         /// Gets or Sets TownCity
         /// </summary>
-        [DataMember(Name="townCity", EmitDefaultValue=false)]
+        [DataMember(Name = "townCity", EmitDefaultValue = false)]
         public string TownCity { get; set; }
 
         /// <summary>
         /// Gets or Sets County
         /// </summary>
-        [DataMember(Name="county", EmitDefaultValue=false)]
+        [DataMember(Name = "county", EmitDefaultValue = false)]
         public string County { get; set; }
 
         /// <summary>
         /// Gets or Sets PostCode
         /// </summary>
-        [DataMember(Name="postCode", EmitDefaultValue=false)]
+        [DataMember(Name = "postCode", IsRequired = true, EmitDefaultValue = false)]
         public string PostCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// NoticePeriod
     /// </summary>
-    [DataContract]
-    public partial class NoticePeriod :  IEquatable<NoticePeriod>, IValidatableObject
+    [DataContract(Name = "NoticePeriod")]
+    public partial class NoticePeriod : IEquatable<NoticePeriod>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NoticePeriod" /> class.
@@ -50,23 +51,23 @@ namespace Workforce.Model
             this.LengthOfTime = lengthOfTime ?? throw new ArgumentNullException("lengthOfTime is a required property for NoticePeriod and cannot be null");
             this.Id = id;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets LengthOfTime
         /// </summary>
-        [DataMember(Name="lengthOfTime", EmitDefaultValue=false)]
+        [DataMember(Name = "lengthOfTime", IsRequired = true, EmitDefaultValue = false)]
         public string LengthOfTime { get; set; }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

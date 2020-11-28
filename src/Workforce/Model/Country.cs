@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// Country
     /// </summary>
-    [DataContract]
-    public partial class Country :  IEquatable<Country>, IValidatableObject
+    [DataContract(Name = "Country")]
+    public partial class Country : IEquatable<Country>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Country" /> class.
@@ -52,29 +53,29 @@ namespace Workforce.Model
             this.Id = id;
             this.Regions = regions;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CountryName
         /// </summary>
-        [DataMember(Name="countryName", EmitDefaultValue=false)]
+        [DataMember(Name = "countryName", IsRequired = true, EmitDefaultValue = false)]
         public string CountryName { get; set; }
 
         /// <summary>
         /// Gets or Sets CountryShortCode
         /// </summary>
-        [DataMember(Name="countryShortCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryShortCode", IsRequired = true, EmitDefaultValue = false)]
         public string CountryShortCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Regions
         /// </summary>
-        [DataMember(Name="regions", EmitDefaultValue=false)]
+        [DataMember(Name = "regions", EmitDefaultValue = false)]
         public List<Region> Regions { get; set; }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

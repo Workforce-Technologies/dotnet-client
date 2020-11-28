@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -10,16 +10,17 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Workforce.Client.OpenAPIDateConverter;
 
@@ -28,8 +29,8 @@ namespace Workforce.Model
     /// <summary>
     /// JobRole
     /// </summary>
-    [DataContract]
-    public partial class JobRole :  IEquatable<JobRole>, IValidatableObject
+    [DataContract(Name = "JobRole")]
+    public partial class JobRole : IEquatable<JobRole>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="JobRole" /> class.
@@ -52,29 +53,29 @@ namespace Workforce.Model
             this.Id = id;
             this.Department = department;
         }
-        
+
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Department
         /// </summary>
-        [DataMember(Name="department", EmitDefaultValue=false)]
+        [DataMember(Name = "department", EmitDefaultValue = false)]
         public Department Department { get; set; }
 
         /// <summary>
         /// Gets or Sets DepartmentId
         /// </summary>
-        [DataMember(Name="departmentId", EmitDefaultValue=true)]
+        [DataMember(Name = "departmentId", IsRequired = true, EmitDefaultValue = true)]
         public Guid? DepartmentId { get; set; }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Workforce.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>

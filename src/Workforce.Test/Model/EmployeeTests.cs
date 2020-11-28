@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing Employee
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void EmployeeInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Employee
-            //Assert.IsInstanceOfType<Employee> (instance, "variable 'instance' is a Employee");
+            // TODO uncomment below to test "IsType" Employee
+            //Assert.IsType<Employee>(instance);
         }
 
 
@@ -106,20 +106,20 @@ namespace Workforce.Test
             // TODO unit test for the property 'Gender'
         }
         /// <summary>
-        /// Test the property 'Nationality'
+        /// Test the property 'NationalityId'
         /// </summary>
         [Fact]
-        public void NationalityTest()
+        public void NationalityIdTest()
         {
-            // TODO unit test for the property 'Nationality'
+            // TODO unit test for the property 'NationalityId'
         }
         /// <summary>
-        /// Test the property 'EmploymentType'
+        /// Test the property 'EmploymentTypeId'
         /// </summary>
         [Fact]
-        public void EmploymentTypeTest()
+        public void EmploymentTypeIdTest()
         {
-            // TODO unit test for the property 'EmploymentType'
+            // TODO unit test for the property 'EmploymentTypeId'
         }
         /// <summary>
         /// Test the property 'NationalInsuranceNumber'
@@ -130,12 +130,12 @@ namespace Workforce.Test
             // TODO unit test for the property 'NationalInsuranceNumber'
         }
         /// <summary>
-        /// Test the property 'NoticePeriod'
+        /// Test the property 'NoticePeriodId'
         /// </summary>
         [Fact]
-        public void NoticePeriodTest()
+        public void NoticePeriodIdTest()
         {
-            // TODO unit test for the property 'NoticePeriod'
+            // TODO unit test for the property 'NoticePeriodId'
         }
         /// <summary>
         /// Test the property 'RecruitmentDetails'
@@ -416,6 +416,14 @@ namespace Workforce.Test
         public void PhotoTest()
         {
             // TODO unit test for the property 'Photo'
+        }
+        /// <summary>
+        /// Test the property 'PhotoId'
+        /// </summary>
+        [Fact]
+        public void PhotoIdTest()
+        {
+            // TODO unit test for the property 'PhotoId'
         }
         /// <summary>
         /// Test the property 'DisplayName'

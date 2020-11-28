@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing LocationApi
@@ -50,46 +51,53 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' LocationApi
-            //Assert.IsType(typeof(LocationApi), instance, "instance is a LocationApi");
+            // TODO uncomment below to test 'IsType' LocationApi
+            //Assert.IsType<LocationApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test LocationById
+        /// Test CreateOrUpdateLocation
         /// </summary>
         [Fact]
-        public void LocationByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.LocationById(id);
-            //Assert.IsType<Location> (response, "response is Location");
-        }
-        
-        /// <summary>
-        /// Test V1LocationGet
-        /// </summary>
-        [Fact]
-        public void V1LocationGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1LocationGet();
-            //Assert.IsType<List<EmploymentType>> (response, "response is List<EmploymentType>");
-        }
-        
-        /// <summary>
-        /// Test V1LocationPost
-        /// </summary>
-        [Fact]
-        public void V1LocationPostTest()
+        public void CreateOrUpdateLocationTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Location location = null;
-            //instance.V1LocationPost(location);
-            
+            //instance.CreateOrUpdateLocation(location);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteLocation
+        /// </summary>
+        [Fact]
+        public void DeleteLocationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteLocation(id);
+        }
+
+        /// <summary>
+        /// Test GetLocation
+        /// </summary>
+        [Fact]
+        public void GetLocationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetLocation(id);
+            //Assert.IsType<Location>(response);
+        }
+
+        /// <summary>
+        /// Test GetLocations
+        /// </summary>
+        [Fact]
+        public void GetLocationsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetLocations();
+            //Assert.IsType<List<Location>>(response);
+        }
+    }
 }

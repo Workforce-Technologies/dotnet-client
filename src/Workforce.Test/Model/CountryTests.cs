@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing Country
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void CountryInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" Country
-            //Assert.IsInstanceOfType<Country> (instance, "variable 'instance' is a Country");
+            // TODO uncomment below to test "IsType" Country
+            //Assert.IsType<Country>(instance);
         }
 
 

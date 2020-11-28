@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing EmploymentTypeApi
@@ -50,46 +51,53 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' EmploymentTypeApi
-            //Assert.IsType(typeof(EmploymentTypeApi), instance, "instance is a EmploymentTypeApi");
+            // TODO uncomment below to test 'IsType' EmploymentTypeApi
+            //Assert.IsType<EmploymentTypeApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test EmploymentTypeById
+        /// Test CreateOrUpdateEmploymentType
         /// </summary>
         [Fact]
-        public void EmploymentTypeByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.EmploymentTypeById(id);
-            //Assert.IsType<EmploymentType> (response, "response is EmploymentType");
-        }
-        
-        /// <summary>
-        /// Test V1EmploymentTypeGet
-        /// </summary>
-        [Fact]
-        public void V1EmploymentTypeGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1EmploymentTypeGet();
-            //Assert.IsType<List<EmploymentType>> (response, "response is List<EmploymentType>");
-        }
-        
-        /// <summary>
-        /// Test V1EmploymentTypePost
-        /// </summary>
-        [Fact]
-        public void V1EmploymentTypePostTest()
+        public void CreateOrUpdateEmploymentTypeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //EmploymentType employmentType = null;
-            //instance.V1EmploymentTypePost(employmentType);
-            
+            //instance.CreateOrUpdateEmploymentType(employmentType);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteEmploymentType
+        /// </summary>
+        [Fact]
+        public void DeleteEmploymentTypeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteEmploymentType(id);
+        }
+
+        /// <summary>
+        /// Test GetEmploymentType
+        /// </summary>
+        [Fact]
+        public void GetEmploymentTypeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetEmploymentType(id);
+            //Assert.IsType<EmploymentType>(response);
+        }
+
+        /// <summary>
+        /// Test GetEmploymentTypes
+        /// </summary>
+        [Fact]
+        public void GetEmploymentTypesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetEmploymentTypes();
+            //Assert.IsType<List<EmploymentType>>(response);
+        }
+    }
 }

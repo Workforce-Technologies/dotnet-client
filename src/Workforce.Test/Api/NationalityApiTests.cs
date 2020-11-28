@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -19,9 +19,10 @@ using Xunit;
 
 using Workforce.Client;
 using Workforce.Api;
-using Workforce.Model;
+// uncomment below to import models
+//using Workforce.Model;
 
-namespace Workforce.Test
+namespace Workforce.Test.Api
 {
     /// <summary>
     ///  Class for testing NationalityApi
@@ -50,46 +51,53 @@ namespace Workforce.Test
         [Fact]
         public void InstanceTest()
         {
-            // TODO uncomment below to test 'IsInstanceOfType' NationalityApi
-            //Assert.IsType(typeof(NationalityApi), instance, "instance is a NationalityApi");
+            // TODO uncomment below to test 'IsType' NationalityApi
+            //Assert.IsType<NationalityApi>(instance);
         }
 
-        
         /// <summary>
-        /// Test NationalityById
+        /// Test CreateOrUpdateNationality
         /// </summary>
         [Fact]
-        public void NationalityByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.NationalityById(id);
-            //Assert.IsType<Nationality> (response, "response is Nationality");
-        }
-        
-        /// <summary>
-        /// Test V1NationalityGet
-        /// </summary>
-        [Fact]
-        public void V1NationalityGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.V1NationalityGet();
-            //Assert.IsType<List<Nationality>> (response, "response is List<Nationality>");
-        }
-        
-        /// <summary>
-        /// Test V1NationalityPost
-        /// </summary>
-        [Fact]
-        public void V1NationalityPostTest()
+        public void CreateOrUpdateNationalityTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Nationality nationality = null;
-            //instance.V1NationalityPost(nationality);
-            
+            //instance.CreateOrUpdateNationality(nationality);
         }
-        
-    }
 
+        /// <summary>
+        /// Test DeleteNationality
+        /// </summary>
+        [Fact]
+        public void DeleteNationalityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? id = null;
+            //instance.DeleteNationality(id);
+        }
+
+        /// <summary>
+        /// Test GetNationalities
+        /// </summary>
+        [Fact]
+        public void GetNationalitiesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetNationalities();
+            //Assert.IsType<List<Nationality>>(response);
+        }
+
+        /// <summary>
+        /// Test GetNationality
+        /// </summary>
+        [Fact]
+        public void GetNationalityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetNationality(id);
+            //Assert.IsType<Nationality>(response);
+        }
+    }
 }

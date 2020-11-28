@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -21,7 +21,7 @@ using Workforce.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Workforce.Test
+namespace Workforce.Test.Model
 {
     /// <summary>
     ///  Class for testing EmploymentType
@@ -52,8 +52,8 @@ namespace Workforce.Test
         [Fact]
         public void EmploymentTypeInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" EmploymentType
-            //Assert.IsInstanceOfType<EmploymentType> (instance, "variable 'instance' is a EmploymentType");
+            // TODO uncomment below to test "IsType" EmploymentType
+            //Assert.IsType<EmploymentType>(instance);
         }
 
 

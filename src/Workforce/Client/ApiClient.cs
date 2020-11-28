@@ -1,4 +1,4 @@
-/* 
+/*
  * Workforce API
  *
  * Public API for the Workforce software
@@ -13,25 +13,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
+using System.Threading;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using RestSharp;
 using RestSharp.Deserializers;
 using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
 using RestSharpMethod = RestSharp.Method;
+using Polly;
 
 namespace Workforce.Client
 {
     /// <summary>
-    /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON. 
+    /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.
     /// </summary>
     internal class CustomJsonCodec : RestSharp.Serializers.ISerializer, RestSharp.Deserializers.IDeserializer
     {
@@ -45,7 +48,7 @@ namespace Workforce.Client
             {
                 NamingStrategy = new CamelCaseNamingStrategy
                 {
-                    OverrideSpecifiedNames = true
+                    OverrideSpecifiedNames = false
                 }
             }
         };
@@ -61,15 +64,27 @@ namespace Workforce.Client
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Serialize the object into a JSON string.
+        /// </summary>
+        /// <param name="obj">Object to be serialized.</param>
+        /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            var result = JsonConvert.SerializeObject(obj, _serializerSettings);
-            return result;
+            if (obj != null && obj is Workforce.Model.AbstractOpenAPISchema)
+            {
+                // the object to be serialized is an oneOf/anyOf schema
+                return ((Workforce.Model.AbstractOpenAPISchema)obj).ToJson();
+            }
+            else
+            {
+                return JsonConvert.SerializeObject(obj, _serializerSettings);
+            }
         }
 
         public T Deserialize<T>(IRestResponse response)
         {
-            var result = (T) Deserialize(response, typeof(T));
+            var result = (T)Deserialize(response, typeof(T));
             return result;
         }
 
@@ -113,7 +128,7 @@ namespace Workforce.Client
 
             if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
             {
-                return DateTime.Parse(response.Content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
+                return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
             if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
@@ -244,7 +259,7 @@ namespace Workforce.Client
             if (path == null) throw new ArgumentNullException("path");
             if (options == null) throw new ArgumentNullException("options");
             if (configuration == null) throw new ArgumentNullException("configuration");
-            
+
             RestRequest request = new RestRequest(Method(method))
             {
                 Resource = path,
@@ -258,7 +273,7 @@ namespace Workforce.Client
                     request.AddParameter(pathParam.Key, pathParam.Value, ParameterType.UrlSegment);
                 }
             }
-            
+
             if (options.QueryParameters != null)
             {
                 foreach (var queryParam in options.QueryParameters)
@@ -340,7 +355,7 @@ namespace Workforce.Client
                     request.AddCookie(cookie.Name, cookie.Value);
                 }
             }
-            
+
             return request;
         }
 
@@ -354,7 +369,7 @@ namespace Workforce.Client
                 ErrorText = response.ErrorMessage,
                 Cookies = new List<Cookie>()
             };
-            
+
             if (response.Headers != null)
             {
                 foreach (var responseHeader in response.Headers)
@@ -369,9 +384,9 @@ namespace Workforce.Client
                 {
                     transformed.Cookies.Add(
                         new Cookie(
-                            responseCookies.Name, 
-                            responseCookies.Value, 
-                            responseCookies.Path, 
+                            responseCookies.Name,
+                            responseCookies.Value,
+                            responseCookies.Path,
                             responseCookies.Domain)
                         );
                 }
@@ -388,16 +403,34 @@ namespace Workforce.Client
             var existingDeserializer = req.JsonSerializer as IDeserializer;
             if (existingDeserializer != null)
             {
-                client.AddHandler(() => existingDeserializer, "application/json", "text/json", "text/x-json", "text/javascript", "*+json");
+                client.AddHandler("application/json", () => existingDeserializer);
+                client.AddHandler("text/json", () => existingDeserializer);
+                client.AddHandler("text/x-json", () => existingDeserializer);
+                client.AddHandler("text/javascript", () => existingDeserializer);
+                client.AddHandler("*+json", () => existingDeserializer);
             }
             else
             {
-                client.AddHandler(() => new CustomJsonCodec(configuration), "application/json", "text/json", "text/x-json", "text/javascript", "*+json");
+                var customDeserializer = new CustomJsonCodec(configuration);
+                client.AddHandler("application/json", () => customDeserializer);
+                client.AddHandler("text/json", () => customDeserializer);
+                client.AddHandler("text/x-json", () => customDeserializer);
+                client.AddHandler("text/javascript", () => customDeserializer);
+                client.AddHandler("*+json", () => customDeserializer);
             }
 
-            client.AddHandler(() => new XmlDeserializer(), "application/xml", "text/xml", "*+xml", "*");
+            var xmlDeserializer = new XmlDeserializer();
+            client.AddHandler("application/xml", () => xmlDeserializer);
+            client.AddHandler("text/xml", () => xmlDeserializer);
+            client.AddHandler("*+xml", () => xmlDeserializer);
+            client.AddHandler("*", () => xmlDeserializer);
 
             client.Timeout = configuration.Timeout;
+
+            if (configuration.Proxy != null)
+            {
+                client.Proxy = configuration.Proxy;
+            }
 
             if (configuration.UserAgent != null)
             {
@@ -411,7 +444,21 @@ namespace Workforce.Client
 
             InterceptRequest(req);
 
-            var response = client.Execute<T>(req);
+            IRestResponse<T> response;
+            if (RetryConfiguration.RetryPolicy != null)
+            {
+                var policy = RetryConfiguration.RetryPolicy;
+                var policyResult = policy.ExecuteAndCapture(() => client.Execute(req));
+                response = (policyResult.Outcome == OutcomeType.Successful) ? client.Deserialize<T>(policyResult.Result) : new RestResponse<T>
+                {
+                    Request = req,
+                    ErrorException = policyResult.FinalException
+                };
+            }
+            else
+            {
+                response = client.Execute<T>(req);
+            }
 
             InterceptResponse(req, response);
 
@@ -423,7 +470,7 @@ namespace Workforce.Client
 
             if (response.Cookies != null && response.Cookies.Count > 0)
             {
-                if(result.Cookies == null) result.Cookies = new List<Cookie>();
+                if (result.Cookies == null) result.Cookies = new List<Cookie>();
                 foreach (var restResponseCookie in response.Cookies)
                 {
                     var cookie = new Cookie(
@@ -450,7 +497,7 @@ namespace Workforce.Client
             return result;
         }
 
-        private async Task<ApiResponse<T>> ExecAsync<T>(RestRequest req, IReadableConfiguration configuration)
+        private async Task<ApiResponse<T>> ExecAsync<T>(RestRequest req, IReadableConfiguration configuration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             RestClient client = new RestClient(_baseUrl);
 
@@ -458,16 +505,34 @@ namespace Workforce.Client
             var existingDeserializer = req.JsonSerializer as IDeserializer;
             if (existingDeserializer != null)
             {
-                client.AddHandler(() => existingDeserializer, "application/json", "text/json", "text/x-json", "text/javascript", "*+json");
+                client.AddHandler("application/json", () => existingDeserializer);
+                client.AddHandler("text/json", () => existingDeserializer);
+                client.AddHandler("text/x-json", () => existingDeserializer);
+                client.AddHandler("text/javascript", () => existingDeserializer);
+                client.AddHandler("*+json", () => existingDeserializer);
             }
             else
             {
-                client.AddHandler(() => new CustomJsonCodec(configuration), "application/json", "text/json", "text/x-json", "text/javascript", "*+json");
+                var customDeserializer = new CustomJsonCodec(configuration);
+                client.AddHandler("application/json", () => customDeserializer);
+                client.AddHandler("text/json", () => customDeserializer);
+                client.AddHandler("text/x-json", () => customDeserializer);
+                client.AddHandler("text/javascript", () => customDeserializer);
+                client.AddHandler("*+json", () => customDeserializer);
             }
 
-            client.AddHandler(() => new XmlDeserializer(), "application/xml", "text/xml", "*+xml", "*");
+            var xmlDeserializer = new XmlDeserializer();
+            client.AddHandler("application/xml", () => xmlDeserializer);
+            client.AddHandler("text/xml", () => xmlDeserializer);
+            client.AddHandler("*+xml", () => xmlDeserializer);
+            client.AddHandler("*", () => xmlDeserializer);
 
             client.Timeout = configuration.Timeout;
+
+            if (configuration.Proxy != null)
+            {
+                client.Proxy = configuration.Proxy;
+            }
 
             if (configuration.UserAgent != null)
             {
@@ -481,7 +546,30 @@ namespace Workforce.Client
 
             InterceptRequest(req);
 
-            var response = await client.ExecuteAsync<T>(req);
+            IRestResponse<T> response;
+            if (RetryConfiguration.AsyncRetryPolicy != null)
+            {
+                var policy = RetryConfiguration.AsyncRetryPolicy;
+                var policyResult = await policy.ExecuteAndCaptureAsync(() => client.ExecuteAsync(req, cancellationToken)).ConfigureAwait(false);
+                response = (policyResult.Outcome == OutcomeType.Successful) ? client.Deserialize<T>(policyResult.Result) : new RestResponse<T>
+                {
+                    Request = req,
+                    ErrorException = policyResult.FinalException
+                };
+            }
+            else
+            {
+                response = await client.ExecuteAsync<T>(req, cancellationToken).ConfigureAwait(false);
+            }
+
+            // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
+            if (typeof(Workforce.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            {
+                T instance = (T)Activator.CreateInstance(typeof(T));
+                MethodInfo method = typeof(T).GetMethod("FromJson");
+                method.Invoke(instance, new object[] { response.Content });
+                response.Data = instance;
+            }
 
             InterceptResponse(req, response);
 
@@ -493,7 +581,7 @@ namespace Workforce.Client
 
             if (response.Cookies != null && response.Cookies.Count > 0)
             {
-                if(result.Cookies == null) result.Cookies = new List<Cookie>();
+                if (result.Cookies == null) result.Cookies = new List<Cookie>();
                 foreach (var restResponseCookie in response.Cookies)
                 {
                     var cookie = new Cookie(
@@ -528,11 +616,12 @@ namespace Workforce.Client
         /// <param name="options">The additional request options.</param>
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
+        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> GetAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public Task<ApiResponse<T>> GetAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Get, path, options, config), config);
+            return ExecAsync<T>(NewRequest(HttpMethod.Get, path, options, config), config, cancellationToken);
         }
 
         /// <summary>
@@ -542,11 +631,12 @@ namespace Workforce.Client
         /// <param name="options">The additional request options.</param>
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
+        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PostAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public Task<ApiResponse<T>> PostAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Post, path, options, config), config);
+            return ExecAsync<T>(NewRequest(HttpMethod.Post, path, options, config), config, cancellationToken);
         }
 
         /// <summary>
@@ -556,11 +646,12 @@ namespace Workforce.Client
         /// <param name="options">The additional request options.</param>
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
+        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PutAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public Task<ApiResponse<T>> PutAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Put, path, options, config), config);
+            return ExecAsync<T>(NewRequest(HttpMethod.Put, path, options, config), config, cancellationToken);
         }
 
         /// <summary>
@@ -570,11 +661,12 @@ namespace Workforce.Client
         /// <param name="options">The additional request options.</param>
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
+        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> DeleteAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public Task<ApiResponse<T>> DeleteAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Delete, path, options, config), config);
+            return ExecAsync<T>(NewRequest(HttpMethod.Delete, path, options, config), config, cancellationToken);
         }
 
         /// <summary>
@@ -584,11 +676,12 @@ namespace Workforce.Client
         /// <param name="options">The additional request options.</param>
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
+        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> HeadAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public Task<ApiResponse<T>> HeadAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Head, path, options, config), config);
+            return ExecAsync<T>(NewRequest(HttpMethod.Head, path, options, config), config, cancellationToken);
         }
 
         /// <summary>
@@ -598,11 +691,12 @@ namespace Workforce.Client
         /// <param name="options">The additional request options.</param>
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
+        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> OptionsAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public Task<ApiResponse<T>> OptionsAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Options, path, options, config), config);
+            return ExecAsync<T>(NewRequest(HttpMethod.Options, path, options, config), config, cancellationToken);
         }
 
         /// <summary>
@@ -612,11 +706,12 @@ namespace Workforce.Client
         /// <param name="options">The additional request options.</param>
         /// <param name="configuration">A per-request configuration object. It is assumed that any merge with
         /// GlobalConfiguration has been done before calling this method.</param>
+        /// <param name="cancellationToken">Token that enables callers to cancel the request.</param>
         /// <returns>A Task containing ApiResponse</returns>
-        public Task<ApiResponse<T>> PatchAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null)
+        public Task<ApiResponse<T>> PatchAsync<T>(string path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var config = configuration ?? GlobalConfiguration.Instance;
-            return ExecAsync<T>(NewRequest(HttpMethod.Patch, path, options, config), config);
+            return ExecAsync<T>(NewRequest(HttpMethod.Patch, path, options, config), config, cancellationToken);
         }
         #endregion IAsynchronousClient
 
