@@ -33,7 +33,9 @@ docs/PensionContribution.md
 docs/ProblemDetails.md
 docs/Region.md
 docs/Salary.md
+docs/TimeSpan.md
 git_push.sh
+src/Workforce.Test/Model/TimeSpanTests.cs
 src/Workforce.Test/Workforce.Test.csproj
 src/Workforce/Api/AbsenceApi.cs
 src/Workforce/Api/BranchApi.cs
@@ -83,4 +85,5 @@ src/Workforce/Model/PensionContribution.cs
 src/Workforce/Model/ProblemDetails.cs
 src/Workforce/Model/Region.cs
 src/Workforce/Model/Salary.cs
+src/Workforce/Model/TimeSpan.cs
 src/Workforce/Workforce.csproj

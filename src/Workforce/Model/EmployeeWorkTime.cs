@@ -45,7 +45,7 @@ namespace Workforce.Model
         /// <param name="dayOfWeek">dayOfWeek (required).</param>
         /// <param name="startTime">startTime (required).</param>
         /// <param name="endTime">endTime (required).</param>
-        public EmployeeWorkTime(Guid id = default(Guid), Guid employeeId = default(Guid), int dayOfWeek = default(int), string startTime = default(string), string endTime = default(string))
+        public EmployeeWorkTime(Guid id = default(Guid), Guid employeeId = default(Guid), int dayOfWeek = default(int), TimeSpan startTime = default(TimeSpan), TimeSpan endTime = default(TimeSpan))
         {
             this.EmployeeId = employeeId;
             this.DayOfWeek = dayOfWeek;
@@ -78,13 +78,13 @@ namespace Workforce.Model
         /// Gets or Sets StartTime
         /// </summary>
         [DataMember(Name = "startTime", IsRequired = true, EmitDefaultValue = false)]
-        public string StartTime { get; set; }
+        public TimeSpan StartTime { get; set; }
 
         /// <summary>
         /// Gets or Sets EndTime
         /// </summary>
         [DataMember(Name = "endTime", IsRequired = true, EmitDefaultValue = false)]
-        public string EndTime { get; set; }
+        public TimeSpan EndTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

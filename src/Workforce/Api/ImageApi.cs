@@ -30,7 +30,7 @@ namespace Workforce.Api
         /// 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <returns></returns>
@@ -43,7 +43,7 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -64,7 +64,7 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -78,7 +78,7 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -208,7 +208,7 @@ namespace Workforce.Api
         ///  
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <returns></returns>
@@ -221,7 +221,7 @@ namespace Workforce.Api
         ///  
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -278,7 +278,7 @@ namespace Workforce.Api
         ///  
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -292,7 +292,7 @@ namespace Workforce.Api
         ///  
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional, default to &quot;&quot;)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="width"> (optional)</param>
         /// <param name="height"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

@@ -60,7 +60,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets LinkType
         /// </summary>
-        [DataMember(Name = "linkType", EmitDefaultValue = false)]
+        [DataMember(Name = "linkType", EmitDefaultValue = true)]
         public string LinkType { get; set; }
 
         /// <summary>

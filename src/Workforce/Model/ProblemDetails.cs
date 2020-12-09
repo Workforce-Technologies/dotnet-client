@@ -30,7 +30,7 @@ namespace Workforce.Model
     /// ProblemDetails
     /// </summary>
     [DataContract(Name = "ProblemDetails")]
-    public partial class ProblemDetails : IEquatable<ProblemDetails>, IValidatableObject
+    public partial class ProblemDetails : Dictionary<String, Object>, IEquatable<ProblemDetails>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProblemDetails" /> class.
@@ -40,7 +40,7 @@ namespace Workforce.Model
         /// <param name="status">status.</param>
         /// <param name="detail">detail.</param>
         /// <param name="instance">instance.</param>
-        public ProblemDetails(string type = default(string), string title = default(string), int? status = default(int?), string detail = default(string), string instance = default(string))
+        public ProblemDetails(string type = default(string), string title = default(string), int? status = default(int?), string detail = default(string), string instance = default(string)) : base()
         {
             this.Type = type;
             this.Title = title;
@@ -52,13 +52,13 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
@@ -70,29 +70,14 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets Detail
         /// </summary>
-        [DataMember(Name = "detail", EmitDefaultValue = false)]
+        [DataMember(Name = "detail", EmitDefaultValue = true)]
         public string Detail { get; set; }
 
         /// <summary>
         /// Gets or Sets Instance
         /// </summary>
-        [DataMember(Name = "instance", EmitDefaultValue = false)]
+        [DataMember(Name = "instance", EmitDefaultValue = true)]
         public string Instance { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Extensions
-        /// </summary>
-        [DataMember(Name = "extensions", EmitDefaultValue = false)]
-        public Dictionary<string, Object> Extensions { get; private set; }
-
-        /// <summary>
-        /// Returns false as Extensions should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeExtensions()
-        {
-            return false;
-        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -102,12 +87,12 @@ namespace Workforce.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ProblemDetails {\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Detail: ").Append(Detail).Append("\n");
             sb.Append("  Instance: ").Append(Instance).Append("\n");
-            sb.Append("  Extensions: ").Append(Extensions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,7 +101,7 @@ namespace Workforce.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -141,37 +126,31 @@ namespace Workforce.Model
             if (input == null)
                 return false;
 
-            return 
+            return base.Equals(input) && 
                 (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Detail == input.Detail ||
                     (this.Detail != null &&
                     this.Detail.Equals(input.Detail))
-                ) && 
+                ) && base.Equals(input) && 
                 (
                     this.Instance == input.Instance ||
                     (this.Instance != null &&
                     this.Instance.Equals(input.Instance))
-                ) && 
-                (
-                    this.Extensions == input.Extensions ||
-                    this.Extensions != null &&
-                    input.Extensions != null &&
-                    this.Extensions.SequenceEqual(input.Extensions)
                 );
         }
 
@@ -183,7 +162,7 @@ namespace Workforce.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
+                int hashCode = base.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Title != null)
@@ -194,8 +173,6 @@ namespace Workforce.Model
                     hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 if (this.Instance != null)
                     hashCode = hashCode * 59 + this.Instance.GetHashCode();
-                if (this.Extensions != null)
-                    hashCode = hashCode * 59 + this.Extensions.GetHashCode();
                 return hashCode;
             }
         }

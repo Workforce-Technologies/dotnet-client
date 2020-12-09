@@ -75,7 +75,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets Regions
         /// </summary>
-        [DataMember(Name = "regions", EmitDefaultValue = false)]
+        [DataMember(Name = "regions", EmitDefaultValue = true)]
         public List<Region> Regions { get; set; }
 
         /// <summary>

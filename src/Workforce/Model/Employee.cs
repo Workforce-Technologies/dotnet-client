@@ -43,7 +43,7 @@ namespace Workforce.Model
         /// <param name="id">id.</param>
         /// <param name="title">title.</param>
         /// <param name="firstName">firstName (required).</param>
-        /// <param name="lastName">lastName (required).</param>
+        /// <param name="lastName">lastName.</param>
         /// <param name="dateOfBirth">dateOfBirth.</param>
         /// <param name="gender">gender.</param>
         /// <param name="nationalityId">nationalityId.</param>
@@ -51,7 +51,7 @@ namespace Workforce.Model
         /// <param name="nationalInsuranceNumber">nationalInsuranceNumber.</param>
         /// <param name="noticePeriodId">noticePeriodId.</param>
         /// <param name="recruitmentDetails">recruitmentDetails.</param>
-        /// <param name="recruitmentCost">recruitmentCost (required).</param>
+        /// <param name="recruitmentCost">recruitmentCost.</param>
         /// <param name="probationEndDate">probationEndDate.</param>
         /// <param name="workDays">workDays.</param>
         /// <param name="bankName">bankName.</param>
@@ -90,11 +90,9 @@ namespace Workforce.Model
         {
             // to ensure "firstName" is required (not null)
             this.FirstName = firstName ?? throw new ArgumentNullException("firstName is a required property for Employee and cannot be null");
-            // to ensure "lastName" is required (not null)
-            this.LastName = lastName ?? throw new ArgumentNullException("lastName is a required property for Employee and cannot be null");
-            this.RecruitmentCost = recruitmentCost;
             this.Id = id;
             this.Title = title;
+            this.LastName = lastName;
             this.DateOfBirth = dateOfBirth;
             this.Gender = gender;
             this.NationalityId = nationalityId;
@@ -102,6 +100,7 @@ namespace Workforce.Model
             this.NationalInsuranceNumber = nationalInsuranceNumber;
             this.NoticePeriodId = noticePeriodId;
             this.RecruitmentDetails = recruitmentDetails;
+            this.RecruitmentCost = recruitmentCost;
             this.ProbationEndDate = probationEndDate;
             this.WorkDays = workDays;
             this.BankName = bankName;
@@ -147,7 +146,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
@@ -159,7 +158,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name = "lastName", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "lastName", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
@@ -171,7 +170,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets Gender
         /// </summary>
-        [DataMember(Name = "gender", EmitDefaultValue = false)]
+        [DataMember(Name = "gender", EmitDefaultValue = true)]
         public string Gender { get; set; }
 
         /// <summary>
@@ -189,7 +188,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets NationalInsuranceNumber
         /// </summary>
-        [DataMember(Name = "nationalInsuranceNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "nationalInsuranceNumber", EmitDefaultValue = true)]
         public string NationalInsuranceNumber { get; set; }
 
         /// <summary>
@@ -201,13 +200,13 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets RecruitmentDetails
         /// </summary>
-        [DataMember(Name = "recruitmentDetails", EmitDefaultValue = false)]
+        [DataMember(Name = "recruitmentDetails", EmitDefaultValue = true)]
         public string RecruitmentDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets RecruitmentCost
         /// </summary>
-        [DataMember(Name = "recruitmentCost", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "recruitmentCost", EmitDefaultValue = false)]
         public double RecruitmentCost { get; set; }
 
         /// <summary>
@@ -225,25 +224,25 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets BankName
         /// </summary>
-        [DataMember(Name = "bankName", EmitDefaultValue = false)]
+        [DataMember(Name = "bankName", EmitDefaultValue = true)]
         public string BankName { get; set; }
 
         /// <summary>
         /// Gets or Sets BankSortCode
         /// </summary>
-        [DataMember(Name = "bankSortCode", EmitDefaultValue = false)]
+        [DataMember(Name = "bankSortCode", EmitDefaultValue = true)]
         public string BankSortCode { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAccountNo
         /// </summary>
-        [DataMember(Name = "bankAccountNo", EmitDefaultValue = false)]
+        [DataMember(Name = "bankAccountNo", EmitDefaultValue = true)]
         public string BankAccountNo { get; set; }
 
         /// <summary>
         /// Gets or Sets BankNotes
         /// </summary>
-        [DataMember(Name = "bankNotes", EmitDefaultValue = false)]
+        [DataMember(Name = "bankNotes", EmitDefaultValue = true)]
         public string BankNotes { get; set; }
 
         /// <summary>
@@ -261,67 +260,67 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets TaxCode
         /// </summary>
-        [DataMember(Name = "taxCode", EmitDefaultValue = false)]
+        [DataMember(Name = "taxCode", EmitDefaultValue = true)]
         public string TaxCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Salaries
         /// </summary>
-        [DataMember(Name = "salaries", EmitDefaultValue = false)]
+        [DataMember(Name = "salaries", EmitDefaultValue = true)]
         public List<Salary> Salaries { get; set; }
 
         /// <summary>
         /// Gets or Sets Communications
         /// </summary>
-        [DataMember(Name = "communications", EmitDefaultValue = false)]
+        [DataMember(Name = "communications", EmitDefaultValue = true)]
         public List<EmployeeCommunicationXref> Communications { get; set; }
 
         /// <summary>
         /// Gets or Sets WorkTimes
         /// </summary>
-        [DataMember(Name = "workTimes", EmitDefaultValue = false)]
+        [DataMember(Name = "workTimes", EmitDefaultValue = true)]
         public List<EmployeeWorkTime> WorkTimes { get; set; }
 
         /// <summary>
         /// Gets or Sets Contributions
         /// </summary>
-        [DataMember(Name = "contributions", EmitDefaultValue = false)]
+        [DataMember(Name = "contributions", EmitDefaultValue = true)]
         public List<PensionContribution> Contributions { get; set; }
 
         /// <summary>
         /// Gets or Sets Addresses
         /// </summary>
-        [DataMember(Name = "addresses", EmitDefaultValue = false)]
+        [DataMember(Name = "addresses", EmitDefaultValue = true)]
         public List<EmployeeAddressXref> Addresses { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinTitle
         /// </summary>
-        [DataMember(Name = "nextOfKinTitle", EmitDefaultValue = false)]
+        [DataMember(Name = "nextOfKinTitle", EmitDefaultValue = true)]
         public string NextOfKinTitle { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinFirstName
         /// </summary>
-        [DataMember(Name = "nextOfKinFirstName", EmitDefaultValue = false)]
+        [DataMember(Name = "nextOfKinFirstName", EmitDefaultValue = true)]
         public string NextOfKinFirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinLastName
         /// </summary>
-        [DataMember(Name = "nextOfKinLastName", EmitDefaultValue = false)]
+        [DataMember(Name = "nextOfKinLastName", EmitDefaultValue = true)]
         public string NextOfKinLastName { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinOtherNames
         /// </summary>
-        [DataMember(Name = "nextOfKinOtherNames", EmitDefaultValue = false)]
+        [DataMember(Name = "nextOfKinOtherNames", EmitDefaultValue = true)]
         public string NextOfKinOtherNames { get; set; }
 
         /// <summary>
         /// Gets or Sets NextOfKinGender
         /// </summary>
-        [DataMember(Name = "nextOfKinGender", EmitDefaultValue = false)]
+        [DataMember(Name = "nextOfKinGender", EmitDefaultValue = true)]
         public string NextOfKinGender { get; set; }
 
         /// <summary>
@@ -417,7 +416,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name = "displayName", EmitDefaultValue = false)]
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
         public string DisplayName { get; private set; }
 
         /// <summary>

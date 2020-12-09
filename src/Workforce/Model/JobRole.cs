@@ -44,12 +44,11 @@ namespace Workforce.Model
         /// <param name="name">name (required).</param>
         /// <param name="department">department.</param>
         /// <param name="departmentId">departmentId (required).</param>
-        public JobRole(Guid id = default(Guid), string name = default(string), Department department = default(Department), Guid? departmentId = default(Guid?))
+        public JobRole(Guid id = default(Guid), string name = default(string), Department department = default(Department), Guid departmentId = default(Guid))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for JobRole and cannot be null");
-            // to ensure "departmentId" is required (not null)
-            this.DepartmentId = departmentId ?? throw new ArgumentNullException("departmentId is a required property for JobRole and cannot be null");
+            this.DepartmentId = departmentId;
             this.Id = id;
             this.Department = department;
         }
@@ -75,8 +74,8 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets DepartmentId
         /// </summary>
-        [DataMember(Name = "departmentId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid? DepartmentId { get; set; }
+        [DataMember(Name = "departmentId", IsRequired = true, EmitDefaultValue = false)]
+        public Guid DepartmentId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

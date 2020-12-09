@@ -36,7 +36,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new NationalityApi(config);
-            var nationality = new Nationality(); // Nationality |  (optional) 
+            var nationality = new Nationality(); // Nationality | The nationality to add (optional) 
 
             try
             {
@@ -58,7 +58,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nationality** | [**Nationality**](Nationality.md)|  | [optional] 
+ **nationality** | [**Nationality**](Nationality.md)| The nationality to add | [optional] 
 
 ### Return type
 

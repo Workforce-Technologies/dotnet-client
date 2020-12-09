@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
  - [Model.ProblemDetails](docs/ProblemDetails.md)
  - [Model.Region](docs/Region.md)
  - [Model.Salary](docs/Salary.md)
+ - [Model.TimeSpan](docs/TimeSpan.md)
 
 
 <a name="documentation-for-authorization"></a>

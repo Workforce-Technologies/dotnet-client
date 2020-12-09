@@ -37,7 +37,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CountryApi(config);
-            var country = new Country(); // Country |  (optional) 
+            var country = new Country(); // Country | The nationality to add (optional) 
 
             try
             {
@@ -59,7 +59,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | [**Country**](Country.md)|  | [optional] 
+ **country** | [**Country**](Country.md)| The nationality to add | [optional] 
 
 ### Return type
 

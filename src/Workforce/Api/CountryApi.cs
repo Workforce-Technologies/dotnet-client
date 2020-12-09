@@ -31,7 +31,7 @@ namespace Workforce.Api
         /// Add a new Nationality to the Workforce system
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <returns></returns>
         void CreateOrUpdateCountry(Country country = default(Country));
 
@@ -42,7 +42,7 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateOrUpdateCountryWithHttpInfo(Country country = default(Country));
         /// <summary>
@@ -129,7 +129,7 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task CreateOrUpdateCountryAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -141,7 +141,7 @@ namespace Workforce.Api
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateOrUpdateCountryWithHttpInfoAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -357,7 +357,7 @@ namespace Workforce.Api
         /// Add a new Nationality to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <returns></returns>
         public void CreateOrUpdateCountry(Country country = default(Country))
         {
@@ -368,7 +368,7 @@ namespace Workforce.Api
         /// Add a new Nationality to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public Workforce.Client.ApiResponse<Object> CreateOrUpdateCountryWithHttpInfo(Country country = default(Country))
         {
@@ -417,7 +417,7 @@ namespace Workforce.Api
         /// Add a new Nationality to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task CreateOrUpdateCountryAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -429,7 +429,7 @@ namespace Workforce.Api
         /// Add a new Nationality to the Workforce system 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="country"> (optional)</param>
+        /// <param name="country">The nationality to add (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<Object>> CreateOrUpdateCountryWithHttpInfoAsync(Country country = default(Country), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

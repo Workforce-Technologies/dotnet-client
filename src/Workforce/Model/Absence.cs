@@ -60,7 +60,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets AbsenceType
         /// </summary>
-        [DataMember(Name = "absenceType", EmitDefaultValue = false)]
+        [DataMember(Name = "absenceType", EmitDefaultValue = true)]
         public string AbsenceType { get; set; }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets Notes
         /// </summary>
-        [DataMember(Name = "notes", EmitDefaultValue = false)]
+        [DataMember(Name = "notes", EmitDefaultValue = true)]
         public string Notes { get; set; }
 
         /// <summary>

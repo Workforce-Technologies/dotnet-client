@@ -66,7 +66,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets ShortCode
         /// </summary>
-        [DataMember(Name = "shortCode", EmitDefaultValue = false)]
+        [DataMember(Name = "shortCode", EmitDefaultValue = true)]
         public string ShortCode { get; set; }
 
         /// <summary>

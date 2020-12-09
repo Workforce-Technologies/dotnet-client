@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Id** | **Guid** |  | [optional] 
 **Title** | **string** |  | [optional] 
 **FirstName** | **string** |  | 
-**LastName** | **string** |  | 
+**LastName** | **string** |  | [optional] 
 **DateOfBirth** | **DateTime?** |  | [optional] 
 **Gender** | **string** |  | [optional] 
 **NationalityId** | **Guid?** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **NationalInsuranceNumber** | **string** |  | [optional] 
 **NoticePeriodId** | **Guid?** |  | [optional] 
 **RecruitmentDetails** | **string** |  | [optional] 
-**RecruitmentCost** | **double** |  | 
+**RecruitmentCost** | **double** |  | [optional] 
 **ProbationEndDate** | **DateTime?** |  | [optional] 
 **WorkDays** | **int** |  | [optional] 
 **BankName** | **string** |  | [optional] 

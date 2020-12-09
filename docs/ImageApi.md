@@ -33,7 +33,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ImageApi(config);
-            var id = id_example;  // string |  (optional)  (default to "")
+            var id = id_example;  // string |  (optional) 
             var width = 56;  // int? |  (optional) 
             var height = 56;  // int? |  (optional) 
 
@@ -56,7 +56,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  | [optional] [default to &quot;&quot;]
+ **id** | **string**|  | [optional] 
  **width** | **int?**|  | [optional] 
  **height** | **int?**|  | [optional] 
 

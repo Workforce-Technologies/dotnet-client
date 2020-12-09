@@ -83,19 +83,19 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets AddressLine2
         /// </summary>
-        [DataMember(Name = "addressLine2", EmitDefaultValue = false)]
+        [DataMember(Name = "addressLine2", EmitDefaultValue = true)]
         public string AddressLine2 { get; set; }
 
         /// <summary>
         /// Gets or Sets TownCity
         /// </summary>
-        [DataMember(Name = "townCity", EmitDefaultValue = false)]
+        [DataMember(Name = "townCity", EmitDefaultValue = true)]
         public string TownCity { get; set; }
 
         /// <summary>
         /// Gets or Sets County
         /// </summary>
-        [DataMember(Name = "county", EmitDefaultValue = false)]
+        [DataMember(Name = "county", EmitDefaultValue = true)]
         public string County { get; set; }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Workforce.Model
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
-        [DataMember(Name = "country", EmitDefaultValue = false)]
+        [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>

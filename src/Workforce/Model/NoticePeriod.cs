@@ -43,7 +43,7 @@ namespace Workforce.Model
         /// <param name="id">id.</param>
         /// <param name="description">description (required).</param>
         /// <param name="lengthOfTime">lengthOfTime (required).</param>
-        public NoticePeriod(Guid id = default(Guid), string description = default(string), string lengthOfTime = default(string))
+        public NoticePeriod(Guid id = default(Guid), string description = default(string), TimeSpan lengthOfTime = default(TimeSpan))
         {
             // to ensure "description" is required (not null)
             this.Description = description ?? throw new ArgumentNullException("description is a required property for NoticePeriod and cannot be null");
@@ -68,7 +68,7 @@ namespace Workforce.Model
         /// Gets or Sets LengthOfTime
         /// </summary>
         [DataMember(Name = "lengthOfTime", IsRequired = true, EmitDefaultValue = false)]
-        public string LengthOfTime { get; set; }
+        public TimeSpan LengthOfTime { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
