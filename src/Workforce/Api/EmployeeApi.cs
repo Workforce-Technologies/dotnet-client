@@ -82,27 +82,27 @@ namespace Workforce.Api
         /// <returns>ApiResponse of Employee</returns>
         ApiResponse<Employee> GetEmployeeWithHttpInfo(Guid id);
         /// <summary>
-        /// 
+        /// Get a single Employee Photo from Workforce
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
-        /// <returns>List&lt;Employee&gt;</returns>
-        List<Employee> GetEmployeePhoto(Guid employeeId, int? height = default(int?), int? width = default(int?));
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
+        /// <returns>byte[]</returns>
+        byte[] GetEmployeePhoto(Guid employeeId, int? height = default(int?), int? width = default(int?));
 
         /// <summary>
-        /// 
+        /// Get a single Employee Photo from Workforce
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
-        ApiResponse<List<Employee>> GetEmployeePhotoWithHttpInfo(Guid employeeId, int? height = default(int?), int? width = default(int?));
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> GetEmployeePhotoWithHttpInfo(Guid employeeId, int? height = default(int?), int? width = default(int?));
         /// <summary>
         /// Get all Employees within Workforce
         /// </summary>
@@ -218,32 +218,32 @@ namespace Workforce.Api
         /// <returns>Task of ApiResponse (Employee)</returns>
         System.Threading.Tasks.Task<ApiResponse<Employee>> GetEmployeeWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get a single Employee Photo from Workforce
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Employee&gt;</returns>
-        System.Threading.Tasks.Task<List<Employee>> GetEmployeePhotoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> GetEmployeePhotoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get a single Employee Photo from Workforce
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Employee>>> GetEmployeePhotoWithHttpInfoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> GetEmployeePhotoWithHttpInfoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Employees within Workforce
         /// </summary>
@@ -780,28 +780,28 @@ namespace Workforce.Api
         }
 
         /// <summary>
-        ///  
+        /// Get a single Employee Photo from Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
-        /// <returns>List&lt;Employee&gt;</returns>
-        public List<Employee> GetEmployeePhoto(Guid employeeId, int? height = default(int?), int? width = default(int?))
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
+        /// <returns>byte[]</returns>
+        public byte[] GetEmployeePhoto(Guid employeeId, int? height = default(int?), int? width = default(int?))
         {
-            Workforce.Client.ApiResponse<List<Employee>> localVarResponse = GetEmployeePhotoWithHttpInfo(employeeId, height, width);
+            Workforce.Client.ApiResponse<byte[]> localVarResponse = GetEmployeePhotoWithHttpInfo(employeeId, height, width);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Get a single Employee Photo from Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
-        public Workforce.Client.ApiResponse<List<Employee>> GetEmployeePhotoWithHttpInfo(Guid employeeId, int? height = default(int?), int? width = default(int?))
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public Workforce.Client.ApiResponse<byte[]> GetEmployeePhotoWithHttpInfo(Guid employeeId, int? height = default(int?), int? width = default(int?))
         {
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
 
@@ -837,7 +837,7 @@ namespace Workforce.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Employee>>("/v1/Employee/employees/{employeeId}/photo", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<byte[]>("/v1/Employee/employees/{employeeId}/photo", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -849,30 +849,30 @@ namespace Workforce.Api
         }
 
         /// <summary>
-        ///  
+        /// Get a single Employee Photo from Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Employee&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Employee>> GetEmployeePhotoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> GetEmployeePhotoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Workforce.Client.ApiResponse<List<Employee>> localVarResponse = await GetEmployeePhotoWithHttpInfoAsync(employeeId, height, width, cancellationToken).ConfigureAwait(false);
+            Workforce.Client.ApiResponse<byte[]> localVarResponse = await GetEmployeePhotoWithHttpInfoAsync(employeeId, height, width, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Get a single Employee Photo from Workforce 
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="employeeId"></param>
-        /// <param name="height"> (optional)</param>
-        /// <param name="width"> (optional)</param>
+        /// <param name="employeeId">Unique ID of the Employee</param>
+        /// <param name="height">Height in pixels of the image to be returned (optional)</param>
+        /// <param name="width">Width in pixels of the image to be returned (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
-        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Employee>>> GetEmployeePhotoWithHttpInfoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<byte[]>> GetEmployeePhotoWithHttpInfoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
@@ -911,7 +911,7 @@ namespace Workforce.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Employee>>("/v1/Employee/employees/{employeeId}/photo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<byte[]>("/v1/Employee/employees/{employeeId}/photo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

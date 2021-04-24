@@ -125,7 +125,7 @@ Class | Method | HTTP request | Description
 *EmployeeApi* | [**CreateOrUpdateEmployee**](docs/EmployeeApi.md#createorupdateemployee) | **POST** /v1/Employee | Add a new Employee to the Workforce system
 *EmployeeApi* | [**DeleteEmployee**](docs/EmployeeApi.md#deleteemployee) | **DELETE** /v1/Employee | Delete an Employee from the Workforce system
 *EmployeeApi* | [**GetEmployee**](docs/EmployeeApi.md#getemployee) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
-*EmployeeApi* | [**GetEmployeePhoto**](docs/EmployeeApi.md#getemployeephoto) | **GET** /v1/Employee/employees/{employeeId}/photo | 
+*EmployeeApi* | [**GetEmployeePhoto**](docs/EmployeeApi.md#getemployeephoto) | **GET** /v1/Employee/employees/{employeeId}/photo | Get a single Employee Photo from Workforce
 *EmployeeApi* | [**GetEmployees**](docs/EmployeeApi.md#getemployees) | **GET** /v1/Employee | Get all Employees within Workforce
 *EmployeeApi* | [**SearchEmployees**](docs/EmployeeApi.md#searchemployees) | **GET** /v1/Employee/search | Search for Employees within Workforce
 *EmploymentTypeApi* | [**CreateOrUpdateEmploymentType**](docs/EmploymentTypeApi.md#createorupdateemploymenttype) | **POST** /v1/EmploymentType | Add a new Employment Type to the Workforce system
@@ -185,7 +185,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: password
-- **Authorization URL**: https://identity.workforcehr.org/
+- **Authorization URL**: 
 - **Scopes**: 
   - workforce_api: Access Workforce API
   - openid: Open ID

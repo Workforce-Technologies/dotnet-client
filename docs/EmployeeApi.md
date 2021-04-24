@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**CreateOrUpdateEmployee**](EmployeeApi.md#createorupdateemployee) | **POST** /v1/Employee | Add a new Employee to the Workforce system
 [**DeleteEmployee**](EmployeeApi.md#deleteemployee) | **DELETE** /v1/Employee | Delete an Employee from the Workforce system
 [**GetEmployee**](EmployeeApi.md#getemployee) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
-[**GetEmployeePhoto**](EmployeeApi.md#getemployeephoto) | **GET** /v1/Employee/employees/{employeeId}/photo | 
+[**GetEmployeePhoto**](EmployeeApi.md#getemployeephoto) | **GET** /v1/Employee/employees/{employeeId}/photo | Get a single Employee Photo from Workforce
 [**GetEmployees**](EmployeeApi.md#getemployees) | **GET** /v1/Employee | Get all Employees within Workforce
 [**SearchEmployees**](EmployeeApi.md#searchemployees) | **GET** /v1/Employee/search | Search for Employees within Workforce
 
@@ -229,9 +229,9 @@ Name | Type | Description  | Notes
 
 <a name="getemployeephoto"></a>
 # **GetEmployeePhoto**
-> List&lt;Employee&gt; GetEmployeePhoto (Guid employeeId, int? height = null, int? width = null)
+> byte[] GetEmployeePhoto (Guid employeeId, int? height = null, int? width = null)
 
-
+Get a single Employee Photo from Workforce
 
 ### Example
 ```csharp
@@ -253,13 +253,14 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new EmployeeApi(config);
-            var employeeId = new Guid(); // Guid | 
-            var height = 56;  // int? |  (optional) 
-            var width = 56;  // int? |  (optional) 
+            var employeeId = new Guid(); // Guid | Unique ID of the Employee
+            var height = 56;  // int? | Height in pixels of the image to be returned (optional) 
+            var width = 56;  // int? | Width in pixels of the image to be returned (optional) 
 
             try
             {
-                List<Employee> result = apiInstance.GetEmployeePhoto(employeeId, height, width);
+                // Get a single Employee Photo from Workforce
+                byte[] result = apiInstance.GetEmployeePhoto(employeeId, height, width);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -277,13 +278,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employeeId** | [**Guid**](Guid.md)|  | 
- **height** | **int?**|  | [optional] 
- **width** | **int?**|  | [optional] 
+ **employeeId** | [**Guid**](Guid.md)| Unique ID of the Employee | 
+ **height** | **int?**| Height in pixels of the image to be returned | [optional] 
+ **width** | **int?**| Width in pixels of the image to be returned | [optional] 
 
 ### Return type
 
-[**List&lt;Employee&gt;**](Employee.md)
+**byte[]**
 
 ### Authorization
 
@@ -297,7 +298,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | Returns the image |  -  |
+| **404** | If the Employee doesn&#39;t exist |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
