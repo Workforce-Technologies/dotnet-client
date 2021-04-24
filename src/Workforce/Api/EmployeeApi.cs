@@ -82,6 +82,28 @@ namespace Workforce.Api
         /// <returns>ApiResponse of Employee</returns>
         ApiResponse<Employee> GetEmployeeWithHttpInfo(Guid id);
         /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <returns>List&lt;Employee&gt;</returns>
+        List<Employee> GetEmployeePhoto(Guid employeeId, int? height = default(int?), int? width = default(int?));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
+        ApiResponse<List<Employee>> GetEmployeePhotoWithHttpInfo(Guid employeeId, int? height = default(int?), int? width = default(int?));
+        /// <summary>
         /// Get all Employees within Workforce
         /// </summary>
         /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
@@ -195,6 +217,33 @@ namespace Workforce.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Employee)</returns>
         System.Threading.Tasks.Task<ApiResponse<Employee>> GetEmployeeWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Employee&gt;</returns>
+        System.Threading.Tasks.Task<List<Employee>> GetEmployeePhotoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Employee>>> GetEmployeePhotoWithHttpInfoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Employees within Workforce
         /// </summary>
@@ -724,6 +773,149 @@ namespace Workforce.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetEmployee", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <returns>List&lt;Employee&gt;</returns>
+        public List<Employee> GetEmployeePhoto(Guid employeeId, int? height = default(int?), int? width = default(int?))
+        {
+            Workforce.Client.ApiResponse<List<Employee>> localVarResponse = GetEmployeePhotoWithHttpInfo(employeeId, height, width);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;Employee&gt;</returns>
+        public Workforce.Client.ApiResponse<List<Employee>> GetEmployeePhotoWithHttpInfo(Guid employeeId, int? height = default(int?), int? width = default(int?))
+        {
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("employeeId", Workforce.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
+            if (height != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "height", height));
+            }
+            if (width != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "width", width));
+            }
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<Employee>>("/v1/Employee/employees/{employeeId}/photo", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmployeePhoto", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Employee&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Employee>> GetEmployeePhotoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Workforce.Client.ApiResponse<List<Employee>> localVarResponse = await GetEmployeePhotoWithHttpInfoAsync(employeeId, height, width, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Workforce.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId"></param>
+        /// <param name="height"> (optional)</param>
+        /// <param name="width"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Employee&gt;)</returns>
+        public async System.Threading.Tasks.Task<Workforce.Client.ApiResponse<List<Employee>>> GetEmployeePhotoWithHttpInfoAsync(Guid employeeId, int? height = default(int?), int? width = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Workforce.Client.RequestOptions localVarRequestOptions = new Workforce.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Workforce.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Workforce.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("employeeId", Workforce.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
+            if (height != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "height", height));
+            }
+            if (width != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Workforce.Client.ClientUtils.ParameterToMultiMap("", "width", width));
+            }
+
+            // authentication (Bearer) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Employee>>("/v1/Employee/employees/{employeeId}/photo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetEmployeePhoto", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateOrUpdateEmployee**](EmployeeApi.md#createorupdateemployee) | **POST** /v1/Employee | Add a new Employee to the Workforce system
 [**DeleteEmployee**](EmployeeApi.md#deleteemployee) | **DELETE** /v1/Employee | Delete an Employee from the Workforce system
 [**GetEmployee**](EmployeeApi.md#getemployee) | **GET** /v1/Employee/{id} | Get a specific Employee from Workforce
+[**GetEmployeePhoto**](EmployeeApi.md#getemployeephoto) | **GET** /v1/Employee/employees/{employeeId}/photo | 
 [**GetEmployees**](EmployeeApi.md#getemployees) | **GET** /v1/Employee | Get all Employees within Workforce
 [**SearchEmployees**](EmployeeApi.md#searchemployees) | **GET** /v1/Employee/search | Search for Employees within Workforce
 
@@ -223,6 +224,80 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | Returns the Employee |  -  |
 | **404** | If the Employee doesn&#39;t exist |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getemployeephoto"></a>
+# **GetEmployeePhoto**
+> List&lt;Employee&gt; GetEmployeePhoto (Guid employeeId, int? height = null, int? width = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Workforce.Api;
+using Workforce.Client;
+using Workforce.Model;
+
+namespace Example
+{
+    public class GetEmployeePhotoExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.workforcehr.org";
+            // Configure OAuth2 access token for authorization: Bearer
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new EmployeeApi(config);
+            var employeeId = new Guid(); // Guid | 
+            var height = 56;  // int? |  (optional) 
+            var width = 56;  // int? |  (optional) 
+
+            try
+            {
+                List<Employee> result = apiInstance.GetEmployeePhoto(employeeId, height, width);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling EmployeeApi.GetEmployeePhoto: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **employeeId** | [**Guid**](Guid.md)|  | 
+ **height** | **int?**|  | [optional] 
+ **width** | **int?**|  | [optional] 
+
+### Return type
+
+[**List&lt;Employee&gt;**](Employee.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
